@@ -44,7 +44,7 @@ html {
 .block-main {
   background-color: brown;
   width: 100%;
-  height: 500px;
+  height: 560px;
   position: relative;
 }
 
@@ -94,12 +94,10 @@ footer * {
 
 .block-ul-social__link {
   padding: 10px;
-}
-
-.block-pago {
-  text-align: end;
+  display: inline-block;
 }
 
 .block-ul-pagos__link {
   padding: 10px;
+  display: inline-block;
 }
