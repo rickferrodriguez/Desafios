@@ -82,18 +82,24 @@ html {
 
 /* Footer */
 
-footer {
+footer * {
   height: 100%;
+  list-style: none;
+  background-color: violet;
 }
 
-.block-redes {
+.block-footer {
   display: inline-block;
-  width: 50%;
 }
 
-.block-ul-social {
+.block-ul-social__link {
+  padding: 10px;
 }
 
 .block-pago {
-  display: inline-block;
+  text-align: end;
+}
+
+.block-ul-pagos__link {
+  padding: 10px;
 }
