@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Header */
+.header-nav {
+  background-color: burlywood;
+  height: 40px;
+}
+
+.block-logo {
+  position: relative;
+  text-align: start;
+  top: 12px;
+}
+
+.block-opciones {
+  position: relative;
+  list-style: none;
+  text-align: end;
+  bottom: 10px;
+}
+
+.block-ul__lista {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.block-ul__link {
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+/* Body */
+
+/* Side Bar*/
+
+.block-main {
+  background-color: brown;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.section-aside {
+  display: block;
+  height: 100%;
+}
+.block-aside__div {
+  background-color: aqua;
+  border: 2px black dotted;
+  margin: 5px;
+  height: 23.5%;
+}
+
+.block-aside {
+  background-color: rgb(67, 123, 228);
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  position: relative;
+}
+
+.block-par {
+  text-align: justify;
+  position: absolute;
+  background-color: blue;
+  display: inline-block;
+  height: 100%;
+  width: 80%;
+}
+
+.block-par__text {
+  font-size: 1.6rem;
+}
+
+/* Footer */
+
+footer {
+  height: 100%;
+}
+
+.block-redes {
+  display: inline-block;
+  width: 50%;
+}
+
+.block-ul-social {
+}
+
+.block-pago {
+  display: inline-block;
+}
