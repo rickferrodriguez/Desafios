@@ -99,6 +99,9 @@ select {
 }
 
 /* footer */
+.footer-container {
+  background: rgb(69, 189, 141);
+}
 
 .footer-columns {
   display: flex;
