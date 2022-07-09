@@ -67,3 +67,54 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* header */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  background: wheat;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+/* main */
+.main-columns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-column {
+  background: yellow;
+}
+
+.left-items li {
+  list-style: none;
+  margin: 10px;
+  border: 2px black dotted;
+}
+
+/* footer */
+
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fo-co-right {
+  display: flex;
+}
+
+.list-fo-social {
+  display: flex;
+  gap: 20px;
+}
+
+.list-fo-contact {
+  display: flex;
+  gap: 20px;
+}

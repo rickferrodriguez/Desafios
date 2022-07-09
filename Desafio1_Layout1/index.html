@@ -11,7 +11,7 @@
   <body>
     <header class="primary-header">
       <!-- Este va a contener todos los elementos dentro del header -->
-      <div class="container">
+      <div class="header-container">
         <a href="#"><img src="./" alt="" />Logo</a>
         <nav class="primary-navigation">
           <ul aria-label="primary" role="list" class="nav-list">
@@ -28,9 +28,9 @@
 
     <main>
       <section>
-        <div class="container">
-          <div class="even-columns">
-            <div>
+        <div class="main-container">
+          <div class="main-columns">
+            <div class="left-column">
               <ul role="list" class="left-items">
                 <li>
                   <h3 class="font3">1</h3>
@@ -50,7 +50,7 @@
                 </li>
               </ul>
             </div>
-            <div>
+            <div class="right-column">
               <h1>Lorem, ipsum dolor.</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,25 +65,25 @@
     </main>
 
     <footer>
-      <div class="container">
-        <div class="even-colums">
-          <div>
+      <div class="footer-container">
+        <div class="footer-columns">
+          <div class="fo-co-right">
             <a href="#">Logo<img src="/" alt="" /></a>
-            <ul role="list" aria-label="social links">
-              <li><a aria-label="Facebook" href="#"></a></li>
-              <li><a aria-label="Youtube" href="#"></a></li>
-              <li><a aria-label="Twitter" href="#"></a></li>
-              <li><a aria-label="Pinterest" href="#"></a></li>
-              <li><a aria-label="Instagram" href="#"></a></li>
+            <ul role="list" aria-label="social links" class="list-fo-social">
+              <li><a aria-label="Facebook" href="#">F</a></li>
+              <li><a aria-label="Youtube" href="#">Y</a></li>
+              <li><a aria-label="Twitter" href="#">T</a></li>
+              <li><a aria-label="Pinterest" href="#">P</a></li>
+              <li><a aria-label="Instagram" href="#">I</a></li>
             </ul>
           </div>
-          <div>
-            <nav>
-              <ul aria-label="Footer" role="list">
-                <li><a href="#"></a>Home</li>
-                <li><a href="#"></a>Class</li>
-                <li><a href="#"></a>Contact</li>
-                <li><a href="#"></a>Blog</li>
+          <div class="fo-co-left">
+            <nav class="nav-fo-contact">
+              <ul aria-label="Footer" role="list" class="list-fo-contact">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Class</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
               </ul>
             </nav>
           </div>
