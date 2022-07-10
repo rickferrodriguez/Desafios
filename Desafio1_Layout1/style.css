@@ -30,6 +30,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: "Edu SA Beginner", cursive;
 }
 
 /* A elements that don't have a class get default styles */
@@ -73,13 +74,22 @@ select {
 .header-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: wheat;
+}
+
+.img-logo {
+  width: 20%;
+  margin: 10px;
 }
 
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 20px;
+}
+
+.nav-list li {
+  margin: 5px;
 }
 
 /* main */
@@ -89,13 +99,67 @@ select {
 }
 
 .left-column {
-  background: yellow;
+  background: rgb(255, 0, 64);
+  width: 32%;
+}
+
+.left-items {
+  position: relative;
+  padding: 0;
 }
 
 .left-items li {
   list-style: none;
-  margin: 10px;
+  margin: 20px 5px;
   border: 2px black dotted;
+  height: 150px;
+  width: 92%;
+  border-radius: 9px;
+  background: rgb(129, 24, 24);
+}
+
+.font3 {
+  color: rgb(238, 235, 230);
+  width: 50%;
+  margin: 10px 10px;
+  background-color: dimgrey;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.text {
+  font-size: 15px;
+  width: 60%;
+  margin-left: 30px;
+  color: rgb(238, 235, 230);
+}
+
+.mob {
+  width: 70%;
+  position: absolute;
+  top: -25px;
+  right: -33px;
+}
+
+.eren {
+  width: 45%;
+  position: absolute;
+  right: -10px;
+  bottom: 51.5%;
+}
+
+.full {
+  width: 50%;
+  position: absolute;
+  bottom: 25.7%;
+  right: 0px;
+}
+
+.tanjiro {
+  width: 60%;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
 }
 
 /* footer */
@@ -120,4 +184,9 @@ select {
 .list-fo-contact {
   display: flex;
   gap: 20px;
+}
+
+.logo-footer {
+  width: 20%;
+  margin: 10px;
 }
