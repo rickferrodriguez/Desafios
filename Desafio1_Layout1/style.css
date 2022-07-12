@@ -169,7 +169,7 @@ select {
 
 .footer-columns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .fo-co-right {
@@ -179,14 +179,39 @@ select {
 .list-fo-social {
   display: flex;
   gap: 20px;
+  list-style: none;
+  align-items: center;
 }
 
-.list-fo-contact {
-  display: flex;
-  gap: 20px;
+.logo-footer img {
+  height: 90px;
+}
+
+.list-fo-social img {
+  height: 40px;
 }
 
 .logo-footer {
   width: 20%;
-  margin: 10px;
+  margin: 20px;
+}
+
+.fo-co-left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.list-fo-contact {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.list-fo-contact li {
+  margin: 0 10px;
+}
+
+.list-fo-contact a {
+  text-decoration: none;
 }
