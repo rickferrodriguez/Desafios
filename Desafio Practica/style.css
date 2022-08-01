@@ -12,13 +12,21 @@ img {
   width: 100%;
 }
 
-p {
+body {
   font-size: 1.6rem;
 }
 
-.t2 {
+h2 {
   font-size: 2rem;
 }
+
+ul {
+  display: flex;
+}
+.nav-li {
+  text-decoration: none;
+}
+
 .card {
   border: 10px;
   border-style: solid;
