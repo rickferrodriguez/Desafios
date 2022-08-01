@@ -11,3 +11,25 @@ html {
 img {
   width: 100%;
 }
+
+p {
+  font-size: 1.6rem;
+}
+
+.t2 {
+  font-size: 2rem;
+}
+.card {
+  border: 10px;
+  border-style: solid;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 29px;
+}
+.header-card {
+  font-size: 3rem;
+  align-self: center;
+  border: 2px;
+  border-style: solid;
+  border-color: aqua;
+}
