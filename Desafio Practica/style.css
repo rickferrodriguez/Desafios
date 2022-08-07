@@ -23,9 +23,10 @@ h2 {
 ul {
   display: flex;
   justify-content: flex-end;
+  list-style: none;
 }
 .nav-li {
-  text-decoration: none;
+  margin: 12px;
 }
 
 .card {
