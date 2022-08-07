@@ -14,6 +14,7 @@ img {
 
 body {
   font-size: 1.6rem;
+  margin: 29px;
 }
 
 h2 {
@@ -34,9 +35,9 @@ ul {
   border-style: solid;
   display: flex;
   flex-flow: row wrap;
-  margin: 29px;
 }
-
+/* Solo existen 3 divs dentro,
+por eso es que salen 3 columnas */
 .card > div {
   width: 61rem;
 }
