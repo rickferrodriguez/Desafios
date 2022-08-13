@@ -1,186 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Practice with Vim</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><p class="nav-li">Home</p></li>
-          <li><p class="nav-li">Blog</p></li>
-          <li><p class="nav-li">Skills</p></li>
-          <li><p class="nav-li">Quit</p></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="card">
-        <div class="header-card">Clases de Vim</div>
-        <div class="text-card">
-          <h2 class="t2">Saltos de Linea</h2>
-          <p>
-            Importante algo que no me acordaba, para saltar hacia adelante
-            existen dos formas:
-          </p>
-          <ol>
-            <li>
-              La primera es usando la letra 'E' y te lleva al final de cada
-              palabra.
-            </li>
-            <li>
-              La segunda es con la letra 'W' esta te lleva al principio de cada
-              palabra.
-            </li>
-          </ol>
-          <h2>Insertar Texto</h2>
-          <p>
-            Para agregar texto ademas de las teclas 'a' y 'i' existe una letra
-            que agrega texto al final de la palabra si te encuentras por ejemplo
-            en medio de ella, esta es la 'A' mayuscula y parece muy interesante
-            de usar.
-          </p>
-          <h2>Eliminar Texto</h2>
-          <p>
-            Para eliminar texto se puede presionar la tecla 'x' en el modo de
-            visualizacion. Tambien tengo entendido que se puede borrar una linea
-            completa con la letra 'd' dos veces, en el modo de visualizacion.
-          </p>
-          <h2>Guardar Cambios</h2>
-          <p>
-            Aunque esto ya la sabia para poder guardar un cambio es necesario
-            presionar la tecla de los dos puntos ':' y despues la 'w' si despues
-            deseas guardar y salir puedes presionar 'wq' esto es para guardar y
-            salir.
-          </p>
-          <h2>Moverse entre Archivos</h2>
-          <p>
-            Si deseas llegar a la definicion de cualquier objeto puedes combinar
-            las teclas 'g' y 'd' Pero si se desea ir directamente al archivo
-            puedes presionar las teclas 'g' y 'f' por ejemplo desde este archivo
-            HTML hasta el archivo style.css Importante: Una vez se guarde este
-            archivo podras navegar hacia otros archivos.
-          </p>
-          <h3>Nota:</h3>
-          <p>
-            Existe una serie de historial cuando se navega entre definiciones o
-            archivos, por lo tanto puedes volver hacia atras con las teclas
-            'Control'+ 'O'
-          </p>
-          <h3>Eliminar, undo y redo</h3>
-          <p>
-            Para eliminar una palabra dentro del modo de visualizacion se puede
-            hacer presionando la tecla 'd' y la tecla 'w' de 'palabra'
-          </p>
-          <h3>Rehacer</h3>
-          <p>
-            Para rehacer cambios se puede presionar las teclas 'control' y 'r'
-          </p>
-          <h3>Eliminar texto de una Linea completa sin borrar la linea</h3>
-          <p>Se debe presionar las teclas 'd' y '$'</p>
-          <h2>Cortar y pegar</h2>
-          <p>
-            En realidad cuando se elimina una linea con la tecla 'd' dos veces,
-            tecla 'p' esto lo hara despues de la linea donde se encuentra el
-            cursor. Para pegarlo antes se realiza con la 'P' mayuscula.
-          </p>
-          <h2>Remplazar</h2>
-          <p>
-            Este comando la verdad es una porqueria porque solo remplazas una
-            sola letra, pero bueno esto se realiza con la letra 'r'.
-          </p>
-          <h2>Remplazar una palabra</h2>
-          <p>
-            Este comando es mas util porque puedes remplazar una cadena de
-            caracteres. Esto se realiza con la letra 'c' + 'w' esto significa
-            change word aunque remplazara el texto desde la posicion del cursor
-            en adelante.
-          </p>
-          <h2>Remplazar una palabra sin importar la posicion del mouse</h2>
-          <p>
-            Tal como su nombre lo indica puedo remplazar una palabra sin
-            importar la posicion del mouse. Esto se realiza con la combinacion
-            de teclas 'c'+'i'+'w'
-          </p>
-          <h2>Saltos de linea</h2>
-          <p>
-            Para viajar a la primera linea del documento se presiona dos veces
-            la letra 'g' y para ir al final del documento presiona la letra 'G'
-            mayuscula. Tambien para viajar hacia una linea en especifico cuando
-            te encuentres en modo normal, escribe el numero de la linea y
-            presiona la tecla 'G' mayuscula.
-          </p>
-          <h2>Busqueda de palabras</h2>
-          <p>
-            El siguiente comando solo sirve para realizar busquedas despues de
-            la posicion del cursor. Se realiza con las teclas '/'+ La palabra
-            que se desea buscar. Tambien para buscar desde la posicion del
-            cursor hacia atras se realiza desde el modo normal con la tecla '?'
-            + La palabra que estamos buscando. IMPORTANTE: Si tienes muchos
-            resultados puedes navegar entre ellos con la tecla 'n'. Si por
-            alguna razon te pasaste al momento de buscar puedes volver con la
-            tecla 'N' mayuscula.
-          </p>
-          <h2>Viajar entre los parentecis</h2>
-          <p>
-            Se posiciona el mouse en el parentecis o llaves y se presiona el
-            simbolo de porcentaje (%)
-          </p>
-          <h2>Viajar a la primera linea de codigo</h2>
-          <p>Esto se realiza con el numero '0'</p>
-          <h2>Viajar a la ultima linea de codigo</h2>
-          <p>Esto se realiza con el simbolo de '$'</p>
-          <h2>Copiar una linea de codigo</h2>
-          <p>
-            Esto se realiza con la letra 'y' dos veces y si deseas copiar desde
-            la posicion del cursor hasta la ultima linea se realiza con las
-            teclas 'y'+'$'. Para copiar desde la posicion del raton hacia atras
-            se realiza con las teclas 'y'+'0'
-          </p>
-          <h2>Remplazar palabras</h2>
-          <p>
-            Esto se realiza en el modo normal con el comando ':s' seguido de
-            ello escribe la palabra que queremos remplazar con un slash '/the' y
-            despues se escribe la palabra del remplazo '/de'. Al final el
-            resultado es el siguiente: ':s/the/de'. Sin embargo esto solo
-            remplazara la primera ocurrencia, para remplazarlas todas en esa
-            linea donde se encuentra el cursor es necesario al final del comando
-            agregar una '/g'. De esta manera ':s/the/de/g'
-          </p>
-          <h2>Remplazar palabras en todo el Documento</h2>
-          <p>
-            Esto se realiza desde el modo de VISTA con el siguiente comando:
-            '%s/palabra/palabra-remplazo/g' Lo que hace esto es pregutar cada
-            vez que va a remplazar la letra.
-          </p>
-          <h2>Insertar una nueva linea</h2>
-          <p>
-            Esto agregara la nueva linea debajo de donde se encuentra el cursor,
-            se realiza con la tecla 'o' y para agregar texto en la parte
-            superior de donde se encuentra el cursor se realiza con la 'O'
-            mayuscula.
-          </p>
-          <h2>Remplazar con el comando inutil</h2>
-          <p>
-            Si se presiona la letra 'R' mayuscula se remplazara el texto desde
-            donde se encuentra el cursor.
-          </p>
-          <h2>Seleccionar texto en modo visualizacion</h2>
-          <p>
-            Cuando se encuentra en modo normal se presiona la tecla 'v' y se
-            puede seleccionar el texto.
-          </p>
-            <h2>Viajar a la primera linea</h2>
-            <p>Para viajar a la primera linea en el modo de edicion se presionan la tecla 'I' mayuscula.</p>
-        </div>
-        <div class="img-card">
-          <a href=""><img src="./img/city.jpg" alt="" /></a>
-        </div>
-      </div>
-    </main>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Practice with Vim</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><p class="nav-li">Home</p></li>
+                    <li><p class="nav-li">Blog</p></li>
+                    <li><p class="nav-li">Skills</p></li>
+                    <li><p class="nav-li">Quit</p></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="card">
+                <div class="header-card">Clases de Vim</div>
+                <div class="text-card">
+                    <h2 class="t2">Saltos de Linea</h2>
+                    <p>
+                    Importante algo que no me acordaba, para saltar hacia adelante
+                    existen dos formas:
+                    </p>
+                    <ol>
+                        <li>
+                            La primera es usando la letra 'E' y te lleva al final de cada
+                            palabra.
+                        </li>
+                        <li>
+                            La segunda es con la letra 'W' esta te lleva al principio de cada
+                            palabra.
+                        </li>
+                    </ol>
+                    <h2>Insertar Texto</h2>
+                    <p>
+                    Para agregar texto ademas de las teclas 'a' y 'i' existe una letra
+                    que agrega texto al final de la palabra si te encuentras por ejemplo
+                    en medio de ella, esta es la 'A' mayuscula y parece muy interesante
+                    de usar.
+                    </p>
+                    <h2>Eliminar Texto</h2>
+                    <p>
+                    Para eliminar texto se puede presionar la tecla 'x' en el modo de
+                    visualizacion. Tambien tengo entendido que se puede borrar una linea
+                    completa con la letra 'd' dos veces, en el modo de visualizacion.
+                    </p>
+                    <h2>Guardar Cambios</h2>
+                    <p>
+                    Aunque esto ya la sabia para poder guardar un cambio es necesario
+                    presionar la tecla de los dos puntos ':' y despues la 'w' si despues
+                    deseas guardar y salir puedes presionar 'wq' esto es para guardar y
+                    salir.
+                    </p>
+                    <h2>Moverse entre Archivos</h2>
+                    <p>
+                    Si deseas llegar a la definicion de cualquier objeto puedes combinar
+                    las teclas 'g' y 'd' Pero si se desea ir directamente al archivo
+                    puedes presionar las teclas 'g' y 'f' por ejemplo desde este archivo
+                    HTML hasta el archivo style.css Importante: Una vez se guarde este
+                    archivo podras navegar hacia otros archivos.
+                    </p>
+                    <h3>Nota:</h3>
+                    <p>
+                    Existe una serie de historial cuando se navega entre definiciones o
+                    archivos, por lo tanto puedes volver hacia atras con las teclas
+                    'Control'+ 'O'
+                    </p>
+                    <h3>Eliminar, undo y redo</h3>
+                    <p>
+                    Para eliminar una palabra dentro del modo de visualizacion se puede
+                    hacer presionando la tecla 'd' y la tecla 'w' de 'palabra'
+                    </p>
+                    <h3>Rehacer</h3>
+                    <p>
+                    Para rehacer cambios se puede presionar las teclas 'control' y 'r'
+                    </p>
+                    <h3>Eliminar texto de una Linea completa sin borrar la linea</h3>
+                    <p>Se debe presionar las teclas 'd' y '$'</p>
+                    <h2>Cortar y pegar</h2>
+                    <p>
+                    En realidad cuando se elimina una linea con la tecla 'd' dos veces,
+                    tecla 'p' esto lo hara despues de la linea donde se encuentra el
+                    cursor. Para pegarlo antes se realiza con la 'P' mayuscula.
+                    </p>
+                    <h2>Remplazar</h2>
+                    <p>
+                    Este comando la verdad es una porqueria porque solo remplazas una
+                    sola letra, pero bueno esto se realiza con la letra 'r'.
+                    </p>
+                    <h2>Remplazar una palabra</h2>
+                    <p>
+                    Este comando es mas util porque puedes remplazar una cadena de
+                    caracteres. Esto se realiza con la letra 'c' + 'w' esto significa
+                    change word aunque remplazara el texto desde la posicion del cursor
+                    en adelante.
+                    </p>
+                    <h2>Remplazar una palabra sin importar la posicion del mouse</h2>
+                    <p>
+                    Tal como su nombre lo indica puedo remplazar una palabra sin
+                    importar la posicion del mouse. Esto se realiza con la combinacion
+                    de teclas 'c'+'i'+'w'
+                    </p>
+                    <h2>Saltos de linea</h2>
+                    <p>
+                    Para viajar a la primera linea del documento se presiona dos veces
+                    la letra 'g' y para ir al final del documento presiona la letra 'G'
+                    mayuscula. Tambien para viajar hacia una linea en especifico cuando
+                    te encuentres en modo normal, escribe el numero de la linea y
+                    presiona la tecla 'G' mayuscula.
+                    </p>
+                    <h2>Busqueda de palabras</h2>
+                    <p>
+                    El siguiente comando solo sirve para realizar busquedas despues de
+                    la posicion del cursor. Se realiza con las teclas '/'+ La palabra
+                    que se desea buscar. Tambien para buscar desde la posicion del
+                    cursor hacia atras se realiza desde el modo normal con la tecla '?'
+                    + La palabra que estamos buscando. IMPORTANTE: Si tienes muchos
+                    resultados puedes navegar entre ellos con la tecla 'n'. Si por
+                    alguna razon te pasaste al momento de buscar puedes volver con la
+                    tecla 'N' mayuscula.
+                    </p>
+                    <h2>Viajar entre los parentecis</h2>
+                    <p>
+                    Se posiciona el mouse en el parentecis o llaves y se presiona el
+                    simbolo de porcentaje (%)
+                    </p>
+                    <h2>Viajar a la primera linea de codigo</h2>
+                    <p>Esto se realiza con el numero '0'</p>
+                    <h2>Viajar a la ultima linea de codigo</h2>
+                    <p>Esto se realiza con el simbolo de '$'</p>
+                    <h2>Copiar una linea de codigo</h2>
+                    <p>
+                    Esto se realiza con la letra 'y' dos veces y si deseas copiar desde
+                    la posicion del cursor hasta la ultima linea se realiza con las
+                    teclas 'y'+'$'. Para copiar desde la posicion del raton hacia atras
+                    se realiza con las teclas 'y'+'0'
+                    </p>
+                    <h2>Remplazar palabras</h2>
+                    <p>
+                    Esto se realiza en el modo normal con el comando ':s' seguido de
+                    ello escribe la palabra que queremos remplazar con un slash '/the' y
+                    despues se escribe la palabra del remplazo '/de'. Al final el
+                    resultado es el siguiente: ':s/the/de'. Sin embargo esto solo
+                    remplazara la primera ocurrencia, para remplazarlas todas en esa
+                    linea donde se encuentra el cursor es necesario al final del comando
+                    agregar una '/g'. De esta manera ':s/the/de/g'
+                    </p>
+                    <h2>Remplazar palabras en todo el Documento</h2>
+                    <p>
+                    Esto se realiza desde el modo de VISTA con el siguiente comando:
+                    '%s/palabra/palabra-remplazo/g' Lo que hace esto es pregutar cada
+                    vez que va a remplazar la letra.
+                    </p>
+                    <h2>Insertar una nueva linea</h2>
+                    <p>
+                    Esto agregara la nueva linea debajo de donde se encuentra el cursor,
+                    se realiza con la tecla 'o' y para agregar texto en la parte
+                    superior de donde se encuentra el cursor se realiza con la 'O'
+                    mayuscula.
+                    </p>
+                    <h2>Remplazar con el comando inutil</h2>
+                    <p>
+                    Si se presiona la letra 'R' mayuscula se remplazara el texto desde
+                    donde se encuentra el cursor.
+                    </p>
+                    <h2>Seleccionar texto en modo visualizacion</h2>
+                    <p>
+                    Cuando se encuentra en modo normal se presiona la tecla 'v' y se
+                    puede seleccionar el texto.
+                    </p>
+                    <h2>Viajar a la primera linea</h2>
+                    <p>Para viajar a la primera linea en el modo de edicion se presionan la tecla 'I' mayuscula.</p>
+                    <h2>Volvel al navegador de archivos</h2>
+                    <p>Se ha creado un nuevo comando para ejecutar el creo que es :exit y es con la combinacion de teclas <leader> 'p'+'v'<p>
+                </div>
+                <div class="img-card">
+                    <a href=""><img src="./img/city.jpg" alt="" /></a>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
