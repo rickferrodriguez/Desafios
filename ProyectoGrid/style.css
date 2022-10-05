@@ -3,6 +3,43 @@
 }
 
 main {
-    max-width: 120px;
-    margin: 0 auto
+    max-width: 1200px;
+}
+
+body {
+    margin: 60px;
+}
+
+
+img {
+    width: 100%;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.titleLeft{
+    align-self: center;
+}
+.titleLeft * {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+section {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.ourt1 {
+    grid-column: span 2;
+}
+.contentRight{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+.contentRight *{
+    margin: 0px;
 }
