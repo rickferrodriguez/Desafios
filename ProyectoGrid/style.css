@@ -45,3 +45,23 @@ section {
 .contentRight *{
     margin: 0px;
 }
+.video {
+    width: 400px;
+    height: 400px;
+}
+.arribaIzq{
+    width: 200px;
+    height: 200px;
+}
+.arribaDer{
+    width: 200px;
+    height: 200px;
+}
+.abajoIzq{
+    width: 200px;
+    height: 200px;
+}
+.abajoDer{
+    width: 200px;
+    height: 200px;
+}
