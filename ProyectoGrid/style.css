@@ -2,17 +2,20 @@
     font-family: 'Roboto', sans-serif;
 }
 
-main {
-    max-width: 1200px;
-}
 
 body {
     margin: 60px;
+    max-width: 1200px;
 }
 
+figure {
+    margin: 0px;
+}
 
 img {
     width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 header {
@@ -22,10 +25,6 @@ header {
 
 .titleLeft{
     align-self: center;
-}
-.titleLeft * {
-    margin-top: 60px;
-    margin-bottom: 40px;
 }
 
 section {
@@ -39,29 +38,52 @@ section {
 .contentRight{
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
-    width: 520px;
-    height: 420px;
+    justify-self: center;
+    margin: 10px;
 }
 .contentRight *{
-    margin: 0px;
+    margin-right: 10px;
 }
+
+.contentLeft {
+    justify-self: center;
+}
+
 .video {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 100%;
 }
+
+
 .arribaIzq{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .arribaDer{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .abajoIzq{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .abajoDer{
-    width: 200px;
+    width: 250px;
+    height: 250px;
+}
+
+.bottom {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.ourt2 {
+    grid-column: span 5;
+    justify-self:center;
+    margin: 20px;
+}
+[class*="bot"]{
+    width: 100%;
     height: 200px;
 }
