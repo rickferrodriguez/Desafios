@@ -22,7 +22,10 @@
                     placeholder="Escribe Operando B">
                 </div>
             </form>
-            <button class="btn btn-primary" onclick="sumar()">sumar</button>
+            <button value="+" id='elSuma' class="btn btn-primary" onclick="operacion(this.value)">sumar</button>
+            <button value="-" id='elResta' class="btn btn-primary" onclick="operacion(this.value)">restar</button>
+            <button value="*" id='elMulti' class="btn btn-primary" onclick="operacion(this.value)">multiplicar</button>
+            <button value="/" id='elDivi' class="btn btn-primary" onclick="operacion(this.value)">dividir</button>
             <br/><br/>
             <h3>Resultado:</h3>
             <div class="alert alert-primary" id='resultado' role="alert"></div>

@@ -1,14 +1,25 @@
 // console.log('Aplicación calculadora');
-function sumar(){
+function operacion(vari){
     const forma = document.forms['forma'];
     let operandoA =forma['operandoA'], operandoB =forma['operandoB'];
     let result = document.getElementById('resultado');
-    let total = parseInt(operandoA.value) +parseInt(operandoB.value); 
-    if(isNaN(total) ){
-        total = result.innerHTML = 'por favor agregar un valor';
-    }
-    else{
+    let total = 0;
+    if(vari == '+'){
+        total = parseInt(operandoA.value) +parseInt(operandoB.value); 
         total =result.innerHTML= `El total es: ${total}`;
     }
+    else if(vari == '-'){
+        total = parseInt(operandoA.value) -parseInt(operandoB.value); 
+        total =result.innerHTML= `El total es: ${total}`;
+    }
+    else if(vari == '*'){
+        total = parseInt(operandoA.value) * parseInt(operandoB.value); 
+        total =result.innerHTML= `El total es: ${total}`;
+    }
+    else{
+        total = parseInt(operandoA.value) / parseInt(operandoB.value); 
+        total =result.innerHTML= `El total es: ${total}`;
+    }
+    // fabricar un catch para cuando se mande en valor en blanco dentro del input text
     console.log(total);
 }
