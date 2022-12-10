@@ -20,6 +20,12 @@ function operacion(vari){
         total = parseInt(operandoA.value) / parseInt(operandoB.value); 
         total =result.innerHTML= `El total es: ${total}`;
     }
-    // fabricar un catch para cuando se mande en valor en blanco dentro del input text
+    
+    try{
+        if (operandoA.value == '') throw 'El campo "valor A" se encuentra vacio';
+        if (operandoB.value == '') throw 'El campo "valor B" se encuentra vacio';
+    }catch(err){
+        total = result.innerHTML = err;
+    }
     console.log(total);
 }
