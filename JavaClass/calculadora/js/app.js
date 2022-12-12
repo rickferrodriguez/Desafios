@@ -15,11 +15,16 @@ function operacion(vari){
     const forma = document.forms['forma'];
     let operandoB =forma['operando-b'];
     let texto = document.getElementById('input-texto');
+    const suma = [];
+    const resta = [];
+    const multiplicacion = [];
+    const division = [];
     let result = document.getElementById('resultado');
     let total = 0;
     if(vari == '+'){
-        total = parseInt(texto.value) +parseInt(operandoB.value); 
-        total =result.innerHTML= `El total es: ${total}`;
+        suma.push(texto);
+        // total = parseInt(texto.value) +parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
     }
     else if(vari == '-'){
         total = parseInt(texto.value) -parseInt(operandoB.value); 
@@ -28,6 +33,11 @@ function operacion(vari){
     else if(vari == '*'){
         total = parseInt(texto.value) * parseInt(operandoB.value); 
         total =result.innerHTML= `El total es: ${total}`;
+    }
+    else if(vari == '='){
+        for(let i=0, )
+        // total = parseInt(texto.value) * parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
     }
     else{
         total = parseInt(texto.value) / parseInt(operandoB.value); 
