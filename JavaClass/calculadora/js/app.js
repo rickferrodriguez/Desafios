@@ -1,33 +1,41 @@
 // console.log('Aplicación calculadora');
 function numerosText(numero){
     let texto = document.getElementById('elTexto');
-    if(numero == 1){
-        texto.value = texto.value + (numero);
+    const numerosBot = [1,2,3,4,5,6,7,8,9,0];
+    for (let i = 0; i < numerosBot.length; i++) {
+        let elNumero = numerosBot[i];
+        if(numero == elNumero){
+
+            texto.value = texto.value + (numero);
+        }
     }
-    else if(numero == 2){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 3){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 4){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 5){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 6){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 7){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 8){
-        texto.value = texto.value + (numero);
-    }
-    else if(numero == 9){
-        texto.value = texto.value + (numero);
-    }
+    // if(numero == 1){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 2){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 3){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 4){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 5){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 6){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 7){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 8){
+    //     texto.value = texto.value + (numero);
+    // }
+    // else if(numero == 9){
+    //     texto.value = texto.value + (numero);
+    // }
     console.log(texto);
 }
 function operacion(vari){
