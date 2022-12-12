@@ -13,36 +13,38 @@
             <h1>Aplicación Calculadora</h1>
             <div class='mb-3'>
                 <label for="operandoA">Valor</label>
-                <input type="text" class="form-control" id="elTexto" 
+                <input type="text" class="form-control" id="input-texto" 
                 placeholder="Escribe Operando">
             </div>
-            <div class="numeros" id="numeros">
-                <button value="1" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">1</button>
-                <button value="2" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">2</button>
-                <button value="3" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">3</button>
-                <button value="4" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">4</button>
-                <button value="5" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">5</button>
-                <button value="6" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">6</button>
-                <button value="7" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">7</button>
-                <button value="8" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">8</button>
-                <button value="9" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">9</button>
+            <div class="opciones">
+                <div class="numeros" id="numeros">
+                    <button value="1" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">1</button>
+                    <button value="2" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">2</button>
+                    <button value="3" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">3</button>
+                    <button value="4" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">4</button>
+                    <button value="5" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">5</button>
+                    <button value="6" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">6</button>
+                    <button value="7" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">7</button>
+                    <button value="8" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">8</button>
+                    <button value="9" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">9</button>
+                    <button value="0" onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">0</button>
+                    <button value="." onclick="numerosText(this.value)" type="button"  class="btn btn-secondary">.</button>
+                    <button value="=" onclick="operacion(this.value)" type="button"  class="btn btn-success">=</button>
+                </div>
+                <div class="operaciones">
+                    <button value="+" id='cont-suma' class="btn btn-primary" onclick="operacion(this.value)">sumar</button>
+                    <button value="-" id='cont-resta' class="btn btn-primary" onclick="operacion(this.value)">restar</button>
+                    <button value="*" id='cont-multi' class="btn btn-primary" onclick="operacion(this.value)">multiplicar</button>
+                    <button value="/" id='cont-divi' class="btn btn-primary" onclick="operacion(this.value)">dividir</button>
+                </div>
             </div>
             <form id="forma">
                 <div class='mb-3'>
-                    <label for="operandoA">Valor A:</label>
-                    <input type="number" class="form-control" id="operandoA" 
-                    placeholder="Escribe Operando A">
-                </div>
-                <div class='mb-3'>
                     <label for="operandoB">Valor B:</label>
-                    <input type="number" class="form-control" id="operandoB" 
+                    <input type="number" class="form-control" id="operando-b" 
                     placeholder="Escribe Operando B">
                 </div>
             </form>
-            <button value="+" id='elSuma' class="btn btn-primary" onclick="operacion(this.value)">sumar</button>
-            <button value="-" id='elResta' class="btn btn-primary" onclick="operacion(this.value)">restar</button>
-            <button value="*" id='elMulti' class="btn btn-primary" onclick="operacion(this.value)">multiplicar</button>
-            <button value="/" id='elDivi' class="btn btn-primary" onclick="operacion(this.value)">dividir</button>
             <br/><br/>
             <h3>Resultado:</h3>
             <div class="alert alert-primary" id='resultado' role="alert"></div>

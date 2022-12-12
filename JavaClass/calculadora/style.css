@@ -1,5 +1,16 @@
+.opciones {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
 .numeros{
     display: grid;
-    grid-template: repeat(3 , 1fr)/ repeat(3 , 1fr);
+    grid-template: repeat(4 , 1fr)/ repeat(3 , 1fr);
     gap: 5px;
+}
+
+.operaciones{
+    display: grid;
+    justify-content: column;
+    gap: 5px;
+    margin-left: 5px;
 }
