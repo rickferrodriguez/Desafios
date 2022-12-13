@@ -26,10 +26,9 @@ function operacion(vari){
     else if(sumado.length > 0){
         for(let i = 0; i < sumado.length; i++){
             let valor = sumado[i];
-            if (!vari == '')
+            if (vari == '+')
             {
-                // total = parseInt(valor) + parseInt(texto.value); 
-                total = eval(`${parseInt(valor)}${vari}${parseInt(texto.value)}`);
+                total = parseInt(valor) + parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
                 orden.push(vari);
