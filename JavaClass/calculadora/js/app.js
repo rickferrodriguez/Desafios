@@ -1,14 +1,14 @@
 // console.log('Aplicación calculadora');
 
 const sumado = [];
-// sirve para saber si voy a sumar algo mas o no
+// porque necesito saber si voy a continuar con la operación o no
 const orden = [];
 let total = 0;
 function numerosText(numero){
     let texto = document.getElementById('input-texto');
     if(sumado.length > 0 && texto.value != '' && orden.length > 0){
         texto.value = numero;
-        // significa que estoy esperando una suma y necesito remplazar el texto con el total para realizar una operación nuevamente
+        // necesito cambiar su estado para continuar escribiendo nuevos numeros
         orden.splice(0,1);
         console.log(orden);
     }
@@ -58,12 +58,12 @@ function operacion(vari){
                 orden.push(vari);
                 console.log(sumado);
             }
+            else if(vari == '='){
+                total;
+                texto.value = total;
+                sumado.splice(0)
+            }
         }
-    }
-    else if(vari == '='){
-            total;
-            texto.value = total;
-            sumado.splice(0)
     }
     else{
         // total = parseInt(texto.value) / parseInt(operandoB.value); 
