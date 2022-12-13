@@ -1,31 +1,39 @@
 // console.log('Aplicación calculadora');
+
+const sumado = [];
+let total = 0;
 function numerosText(numero){
     let texto = document.getElementById('input-texto');
     return texto.value = texto.value + (numero);
     // console.log(texto);
 }
 function operacion(vari){
-    const forma = document.forms['forma'];
-    let operandoB =forma['operandoB'];
     let texto = document.getElementById('input-texto');
-    let result = document.getElementById('resultado');
-    const sumado = [];
-    let total = 0;
     if(vari == '+'){
-        total = parseInt(texto.value) +parseInt(operandoB.value); 
-        total =result.innerHTML= `El total es: ${total}`;
+        sumado.push(texto.value)
+        texto.value = '';
+        console.log(sumado)
     }
     else if(vari == '-'){
-        total = parseInt(texto.value) -parseInt(operandoB.value); 
-        total =result.innerHTML= `El total es: ${total}`;
+        // total = parseInt(texto.value) -parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
     }
     else if(vari == '*'){
-        total = parseInt(texto.value) * parseInt(operandoB.value); 
-        total =result.innerHTML= `El total es: ${total}`;
+        // total = parseInt(texto.value) * parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
+    }
+    else if(vari == '='){
+        for(let i = 0; i < sumado.length; i++){
+            let valor = sumado[i];
+            total = parseInt(total)+ parseInt(valor) ;
+            texto.value = total;
+        }
+        // total = parseInt(texto.value) * parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
     }
     else{
-        total = parseInt(texto.value) / parseInt(operandoB.value); 
-        total =result.innerHTML= `El total es: ${total}`;
+        // total = parseInt(texto.value) / parseInt(operandoB.value); 
+        // total =result.innerHTML= `El total es: ${total}`;
     }
     
     // try{
@@ -34,5 +42,4 @@ function operacion(vari){
     // }catch(err){
     //     total = result.innerHTML = err;
     // }
-    console.log(total);
 }
