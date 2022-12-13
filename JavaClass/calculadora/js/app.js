@@ -67,7 +67,6 @@ function operacion(vari){
                         total = parseInt(valor) + parseInt(texto.value); 
                         texto.value = total;
                         sumado.splice(0,1, total);
-                        orden.push(vari);
                         console.log(sumado);
                     }
                     else if (orden == '-')
@@ -75,7 +74,6 @@ function operacion(vari){
                         total = parseInt(valor) - parseInt(texto.value); 
                         texto.value = total;
                         sumado.splice(0,1, total);
-                        orden.push(vari);
                         console.log(sumado);
                     }
                     else if (orden == '*')
@@ -83,7 +81,6 @@ function operacion(vari){
                         total = parseInt(valor) * parseInt(texto.value); 
                         texto.value = total;
                         sumado.splice(0,1, total);
-                        orden.push(vari);
                         console.log(sumado);
                     }
                     else if (orden == '/')
@@ -91,7 +88,6 @@ function operacion(vari){
                         total = parseInt(valor) / parseInt(texto.value); 
                         texto.value = total;
                         sumado.splice(0,1, total);
-                        orden.push(vari);
                         console.log(sumado);
                     }
                 }
