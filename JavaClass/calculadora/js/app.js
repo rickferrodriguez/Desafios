@@ -58,23 +58,56 @@ function operacion(vari){
                 orden.push(vari);
                 console.log(sumado);
             }
+            else if(vari == '='){
+                console.log(orden)
+                for(let i = 0; i < sumado.length; i++){
+                    let valor = sumado[i];
+                    if (orden == '+')
+                    {
+                        total = parseInt(valor) + parseInt(texto.value); 
+                        texto.value = total;
+                        sumado.splice(0,1, total);
+                        orden.push(vari);
+                        console.log(sumado);
+                    }
+                    else if (orden == '-')
+                    {
+                        total = parseInt(valor) - parseInt(texto.value); 
+                        texto.value = total;
+                        sumado.splice(0,1, total);
+                        orden.push(vari);
+                        console.log(sumado);
+                    }
+                    else if (orden == '*')
+                    {
+                        total = parseInt(valor) * parseInt(texto.value); 
+                        texto.value = total;
+                        sumado.splice(0,1, total);
+                        orden.push(vari);
+                        console.log(sumado);
+                    }
+                    else if (orden == '/')
+                    {
+                        total = parseInt(valor) / parseInt(texto.value); 
+                        texto.value = total;
+                        sumado.splice(0,1, total);
+                        orden.push(vari);
+                        console.log(sumado);
+                    }
+                }
+            }
         }
     }
-    else if(vari == '='){
-        texto.value = sumado;
-        sumado.splice(0)
-        console.log(sumado);
-        console.log(orden);
-    }
+
     else{
         // total = parseInt(texto.value) / parseInt(operandoB.value); 
         // total =result.innerHTML= `El total es: ${total}`;
     }
-    
+
     // try{
-    //     if (operandoA.value == '') throw 'El campo "valor A" se encuentra vacio';
-    //     if (operandoB.value == '') throw 'El campo "valor B" se encuentra vacio';
-    // }catch(err){
-    //     total = result.innerHTML = err;
-    // }
+        //     if (operandoA.value == '') throw 'El campo "valor A" se encuentra vacio';
+        //     if (operandoB.value == '') throw 'El campo "valor B" se encuentra vacio';
+        // }catch(err){
+            //     total = result.innerHTML = err;
+            // }
 }
