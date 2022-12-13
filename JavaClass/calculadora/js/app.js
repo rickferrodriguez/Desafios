@@ -26,9 +26,10 @@ function operacion(vari){
     else if(sumado.length > 0){
         for(let i = 0; i < sumado.length; i++){
             let valor = sumado[i];
-            if (vari == '+')
+            if (!vari == '')
             {
-                total = parseInt(valor) + parseInt(texto.value); 
+                // total = parseInt(valor) + parseInt(texto.value); 
+                total = eval(`${parseInt(valor)}${vari}${parseInt(texto.value)}`);
                 texto.value = total;
                 sumado.splice(0,1, total);
                 orden.push(vari);
@@ -58,12 +59,13 @@ function operacion(vari){
                 orden.push(vari);
                 console.log(sumado);
             }
-            else if(vari == '='){
-                total;
-                texto.value = total;
-                sumado.splice(0)
-            }
         }
+    }
+    else if(vari == '='){
+        texto.value = sumado;
+        sumado.splice(0)
+        console.log(sumado);
+        console.log(orden);
     }
     else{
         // total = parseInt(texto.value) / parseInt(operandoB.value); 
