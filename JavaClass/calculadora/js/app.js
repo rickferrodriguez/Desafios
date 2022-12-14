@@ -28,10 +28,10 @@ function operacion(vari){
             let valor = sumado[i];
             if (vari == '+')
             {
+                orden.push(vari);
                 total = parseInt(valor) + parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
-                orden.push(vari);
                 console.log(sumado);
             }
             else if (vari == '-')
@@ -66,7 +66,7 @@ function operacion(vari){
                     {
                         total = parseInt(valor) + parseInt(texto.value); 
                         texto.value = total;
-                        sumado.splice(0,1, total);
+                        sumado.splice(0,1, 0);
                         console.log(sumado);
                     }
                     else if (orden == '-')
