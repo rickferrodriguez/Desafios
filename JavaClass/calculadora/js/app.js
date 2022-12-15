@@ -25,7 +25,7 @@ function operacion(vari){
     let texto = document.getElementById('input-texto');
     console.log(`este es el valor 1: ${valor1.length}`);
     if(valor1 == 0){
-        valor1.push(parseInt(texto.value))
+        valor1.splice(0,1,parseInt(texto.value))
         texto.value = '';
         console.log(`este es mi valor 1: ${valor1}`);
     }
