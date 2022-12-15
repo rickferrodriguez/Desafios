@@ -63,38 +63,34 @@ function operacion(vari){
         }
         else if(vari == '='){
             console.log(orden)
-            for(let i = 0; i < sumado.length; i++){
-                let valor = sumado[i];
-                if (orden == '+')
-                {
-                    total = parseInt(valor) + parseInt(texto.value); 
-                    texto.value = total;
-                    sumado.splice(0,1, 0);
-                    console.log(sumado);
-                }
-                else if (orden == '-')
-                {
-                    total = parseInt(valor) - parseInt(texto.value); 
-                    texto.value = total;
-                    sumado.splice(0,1, total);
-                    console.log(sumado);
-                }
-                else if (orden == '*')
-                {
-                    total = parseInt(valor) * parseInt(texto.value); 
-                    texto.value = total;
-                    sumado.splice(0,1, total);
-                    console.log(sumado);
-                }
-                else if (orden == '/')
-                {
-                    total = parseInt(valor) / parseInt(texto.value); 
-                    texto.value = total;
-                    sumado.splice(0,1, total);
-                    console.log(sumado);
-                }
+            if (orden == '+')
+            {
+                total = parseInt(valor1) + parseInt(texto.value); 
+                texto.value = total;
+                valor1.splice(0,1, 0);
+                console.log(sumado);
             }
-            console.log(elValor);
+            else if (orden == '-')
+            {
+                total = parseInt(valor1) - parseInt(texto.value); 
+                texto.value = total;
+                valor1.splice(0,1, 0);
+                console.log(sumado);
+            }
+            else if (orden == '*')
+            {
+                total = parseInt(valor1) * parseInt(texto.value); 
+                texto.value = total;
+                valor1.splice(0,1, 0);
+                console.log(sumado);
+            }
+            else if (orden == '/')
+            {
+                total = parseInt(valor1) / parseInt(texto.value); 
+                texto.value = total;
+                valor1.splice(0,1, 0);
+                console.log(sumado);
+            }
         }
     }
 
