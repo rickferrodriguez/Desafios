@@ -31,32 +31,28 @@ function operacion(vari){
     }
     else if(sumado.valor2 == 0){
         let elValor = sumado.map(function(valor){
-            if (vari == '+')
-            {
+            if (vari == '+'){
                 orden.push(vari);
                 total = parseInt(valor) + parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
                 console.log(sumado);
             }
-            else if (vari == '-')
-            {
+            else if (vari == '-'){
                 total = parseInt(valor) - parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
                 orden.push(vari);
                 console.log(sumado);
             }
-            else if (vari == '*')
-            {
+            else if (vari == '*'){
                 total = parseInt(valor) * parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
                 orden.push(vari);
                 console.log(sumado);
             }
-            else if (vari == '/')
-            {
+            else if (vari == '/'){
                 total = parseInt(valor) / parseInt(texto.value); 
                 texto.value = total;
                 sumado.splice(0,1, total);
