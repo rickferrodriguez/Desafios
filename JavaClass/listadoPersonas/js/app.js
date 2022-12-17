@@ -5,6 +5,6 @@ const content = [
 function anadir(){
     let nombre =document.forms["form"]["nombre"];
     let apellido =document.forms["form"]["apellido"];
-    console.log(nombre.value);
-    console.log(apellido.value);
+    content.push(nombre.value);
+    console.log(content);
 }
