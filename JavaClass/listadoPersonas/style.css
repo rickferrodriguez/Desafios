@@ -1,3 +1,18 @@
-body {
-    background-image: image('images/fondo.png');
+html {
+    background: url("images/fondo.png"), #3c3836;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenedor{
+    display:flex;
+    flex-direction:column;
+}
+.divisiones {
+    display:flex;
+    margin-top:10px;
+    background-color: #458588;
+    justify-content: center;
+    align-items: center;
+    border-radius:7px;
+    width: 100%;
 }

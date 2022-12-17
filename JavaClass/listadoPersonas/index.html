@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-      <h1>Listado de Personas!</h1>
-      <div>
-        resultados
+      <div class="container">
+      <h1 class="divisiones">Listado de Personas!</h1>
+      <div class="divisiones">
+          resultados
       </div>
-      <div>
-        <form>
-            Nombre: <input type="text" name="nombre" value="">
-            <br>
-            Apellido: <input type="text" name="apellido" value="">
-        </form>
+      <div class="divisiones">
+          <form id="form" action="">
+              Nombre: <input type="text" name="nombre" id="nombre" value="">
+              <br>
+              Apellido: <input type="text" name="apellido" id="apellido" value="">
+          </form>
+          <button>Añadir</button>
+      </div>
       </div>
     <script src="js/app.js"></script>
   </body>
