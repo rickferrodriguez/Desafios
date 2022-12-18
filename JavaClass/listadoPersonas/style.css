@@ -12,6 +12,7 @@ label{
     flex-direction:column;
 }
 .divisiones {
+    font-size:large;
     padding: 15px;
     display:flex;
     flex-direction: column;
