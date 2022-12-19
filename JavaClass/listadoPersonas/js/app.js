@@ -17,7 +17,7 @@ function anadir(){
     let nombre = document.forms['form']['nombre'].value;
     let apellido = document.forms['form']['apellido'].value;
     if(nombre != '' && apellido != ''){
-    personas.push(new Persona(nombre,apellido));
+    personas.push(new Pefalsersona(nombre,apellido));
     console.log(personas)
     mostrarPersonas();
     }
