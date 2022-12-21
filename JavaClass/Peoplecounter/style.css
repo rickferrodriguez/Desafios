@@ -19,7 +19,7 @@ h1 {
     justify-content:center;
 }
 
-.buttons {
+.cont-buttons {
     gap: 10px;
     justify-content: center;
     border: none;
@@ -30,4 +30,8 @@ h1 {
     width: 200px;
     margin-bottom: 5px;
     border-radius: 5px;
+}
+
+.increment-btn{
+    background: darkred;
 }

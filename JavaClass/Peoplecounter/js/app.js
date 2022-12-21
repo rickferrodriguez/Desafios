@@ -1,18 +1,18 @@
 const saved = [];
-let contador = 0;
-let result = document.getElementById('result');
+let count = 0;
+let countEl = document.getElementById('count-el');
 let previous = document.getElementById('previous');
 
 
 function increment(){
-    contador += 1
-    result.innerHTML = contador;
+    count += 1
+    countEl.innerHTML = count;
 }
 
 function save(){
-    saved.push(parseInt(contador));
-    result.innerHTML = 0;
-    contador = 0;
+    saved.push(parseInt(count));
+    countEl.innerHTML = 0;
+    count = 0;
     const mapsaved = saved.map(persone => {
         return persone;
     })
