@@ -22,6 +22,9 @@ h1 {
 .cont-buttons {
     gap: 10px;
     justify-content: center;
+}
+
+button{
     border: none;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -34,4 +37,8 @@ h1 {
 
 .increment-btn{
     background: darkred;
+}
+
+.save-btn{
+    background: darkgreen;
 }

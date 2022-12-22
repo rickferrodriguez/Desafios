@@ -9,12 +9,18 @@ function increment(){
     countEl.innerHTML = count;
 }
 
+//another way to do this stuff
 function save(){
-    saved.push(parseInt(count));
-    countEl.innerHTML = 0;
-    count = 0;
-    const mapsaved = saved.map(persone => {
-        return persone;
-    })
-    previous.innerHTML =mapsaved;
+    let both = `${count} -`;
+    previous.innerText += both;
 }
+
+// function save(){
+//     saved.push(parseInt(count));
+//     countEl.innerHTML = 0;
+//     count = 0;
+//     const mapsaved = saved.map(persone => {
+//         return persone;
+//     })
+//     previous.innerHTML =mapsaved;
+// }
