@@ -11,8 +11,10 @@ function increment(){
 
 //another way to do this stuff
 function save(){
-    let both = `${count} -`;
-    previous.innerText += both;
+    let both = `${count} - `;
+    previous.textContent += both;
+    count = 0;
+    countEl.textContent = 0;
 }
 
 // function save(){
