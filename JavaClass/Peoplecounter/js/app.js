@@ -1,4 +1,4 @@
-const saved = [];
+// const saved = [];
 let count = 0;
 let countEl = document.getElementById('count-el');
 let previous = document.getElementById('previous');
