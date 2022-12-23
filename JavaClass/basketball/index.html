@@ -7,6 +7,33 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-    
+        <div class="table">
+            <div class="home">
+                <h3>Home</h3>
+                <div class="score">
+                    <span id="scoreh">0</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="add1()">+1</button>
+                    <button onclick="add2()">+2</button>
+                    <button onclick="add3()">+3</button>
+                </div>
+            </div>
+            <div class="guess">
+                <h3>Guess</h3>
+                <div class="score">
+                    <span id="scoreg">0</span>
+                </div>
+                <div class="buttons">
+                    <button onclick="add1g()">+1</button>
+                    <button onclick="add2g()">+2</button>
+                    <button onclick="add3g()">+3</button>
+                </div>
+            </div>
+            <div class="newgame">
+                <button class="btn-newgame" onclick="newGame()">Start New Game</button>
+            </div>
+        </div>
+        <script src="js/app.js"></script>
     </body>
 </html>

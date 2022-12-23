@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+.table {
+    display: grid;
+    grid-template: repeat(4, 1fr)/ repeat(2,1fr);
+}
+
+.home {
+    justify-self: center;
+}
+
+.guess {
+    justify-self:center;
+}
+
+.newgame {
+    grid-column: span 2;
+    justify-self:center;
+}
+
+.score {
+    justify-items: center; 
+    width: 50%;
+}
