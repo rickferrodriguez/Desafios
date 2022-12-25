@@ -1,4 +1,12 @@
+:root{
+    --background: rgba(27, 36, 74, 1);
+    --primary: rgba(154, 171, 216, 1);
+    --heading: rgba(238, 238, 238, 1);
+    --text: rgba(249, 79, 109, 1);
+    --scoreboard: rgba(8, 0, 1, 1);
+}
 body {
+    background-color: var(--background);
     margin: 0;
 }
 .table {
@@ -6,17 +14,41 @@ body {
     grid-template: repeat(4, 1fr)/ repeat(2,1fr);
 }
 
-.home {
+.heading {
+    font-family: "Verdana", sans-serif;
+    color: var(--heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     justify-self: center;
 }
 
-.guess {
-    justify-self:center;
+.div-score {
+    font-family: "Cursed Timer ULiL", sans-serif;
+    font-size: 5.625rem;
+    color: var(--text);
+    padding: 12px;
+    margin-bottom: 20px;
+    justify-self: center;
+    border: 3px solid black;
+}
+
+.contenders {
+    display: grid;
+    justify-self: center;
 }
 
 .newgame {
     grid-column: span 2;
     justify-self:center;
+    padding: 20px;
+}
+
+.btn-newgame {
+    color: white;
+    background-color: lightgreen;
+    border-style: none;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .score {
