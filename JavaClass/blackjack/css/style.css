@@ -1,20 +1,40 @@
 body {
-    background: url(/images/table.png);
+    font-family: 'Trebuchet MS','Lucida Sans Unicode','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(/images/table.png);
+    background-size: cover;
 }
 
 .container{
+    text-align: center;
     display: flex;
     flex-direction: column;
-    color: white;
+}
+
+.cuestion {
+    font-style: italic;
 }
 
 p {
-    align-self: center;
+    color: white;
+    font-size:18px;
+    font-weight:bold;
 }
 
 h1 {
     color: goldenrod;
-    align-self: center;
 }
 
-
+.start {
+    background-color:goldenrod;
+    border: none;
+    font-size:larger; 
+    width: 250px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #016F32;
+    border-radius: 2px;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
