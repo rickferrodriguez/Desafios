@@ -1,6 +1,5 @@
-let firstCard = 10;
-let secondCard = 1;
-let sum = firstCard + secondCard;
+const cards = [10, 1];
+// let sum = firstCard + secondCard;
 let isAlive = true;
 let hasBlackJack = false;
 let message = "";
@@ -10,12 +9,20 @@ let $message = document.getElementById("message-el");
 let $sum = document.querySelector("#sum-el");
 let $cards = document.querySelector("#cards-el");
 
-function startGame(myCard){
-    $sum.textContent = `Sum: ${sum}`;
-    $cards.textContent = `Cards: ${firstCard} - ${secondCard} - N: ${myCard}`;
-    if (sum <= 20) {
+function startGame(){
+    renderGame();
+}
+
+function renderGame(){
+    let sumado = parseInt(sumo());
+    $sum.textContent = `Sum: ${sumado}`;
+    for(let card of cards){
+        $cards.textContent += ` ${card}`;
+    }
+    // $cards.textContent = `Cards: ${firstCard} - ${secondCard} - N: ${myCard}`;
+    if (sumado <= 20) {
         message = "Do you want to draw a new card? 🙂";
-    } else if (sum === 21) {
+    } else if (sumado === 21) {
         message = "Wohoo! You've got BlackJack! 🥳"
         hasBlackJack = true;
     } else {
@@ -27,8 +34,14 @@ function startGame(myCard){
 
 function newCard() {
     console.log("Drawing a new card from the deck");
-    let newCard = 2;
-    sum += newCard;
+    cards.push(2);
     startGame(newCard);
 }
 
+function sumo(){
+    let sum = 0;
+    for(let card of cards){
+        sum += card;
+    }
+    return sum;
+}
