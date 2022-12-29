@@ -1,8 +1,6 @@
-let firstCard = getRandomNumber();
-let secondCard = getRandomNumber();
-const cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
-let isAlive = true;
+let cards = [];
+let sum = 0;
+let isAlive = false;
 let hasBlackJack = false;
 let message = "";
 let $message = document.getElementById("message-el");
@@ -12,6 +10,12 @@ let $sum = document.querySelector("#sum-el");
 let $cards = document.querySelector("#cards-el");
 
 function startGame(){
+    isAlive = true;
+    // iniciar las variables de las dos cartas dentro de esta función para que el juego no venga con cartas por defecto al iniciar
+    let firstCard = getRandomNumber();
+    let secondCard = getRandomNumber();
+    cards = [firstCard, secondCard];
+    sum = firstCard + secondCard;
     renderGame();
 }
 
@@ -38,7 +42,7 @@ function newCard() {
     let theCard = getRandomNumber();
     sum += theCard;
     cards.push(theCard);
-    startGame(newCard);
+    renderGame();
 }
 
 function getRandomNumber() {
