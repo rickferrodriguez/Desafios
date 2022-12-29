@@ -1,5 +1,5 @@
-let firstCard = 10;
-let secondCard = 4;
+let firstCard = getRandomNumber();
+let secondCard = getRandomNumber();
 const cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let isAlive = true;
@@ -18,7 +18,6 @@ function startGame(){
 function renderGame(){
     // necesito este texto por defecto al momento de llamar al juego
     $cards.textContent = "Cards: ";
-    // la llamo a esta función porque necesito renderizarla aquí
     $sum.textContent = `Sum: ${sum}`;
     for (let i = 0; i < cards.length; i++) {
         $cards.textContent += `${cards[i]} `;
@@ -36,9 +35,15 @@ function renderGame(){
 }
 
 function newCard() {
-    let theCard = 6;
+    let theCard = getRandomNumber();
     sum += theCard;
     cards.push(theCard);
     startGame(newCard);
 }
 
+function getRandomNumber() {
+    // Math.floor : removes the decimals
+    // Math.random : returns random number between 0 and 12, not included the 12
+    let randomNumber = Math.floor(Math.random() * 12);
+    return randomNumber;
+}
