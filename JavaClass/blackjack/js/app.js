@@ -15,13 +15,17 @@ function startGame(){
 }
 
 function renderGame(){
+    // necesito este texto por defecto al momento de llamar al juego
+    $cards.textContent = "Cards: ";
     // la llamo a esta función porque necesito renderizarla aquí
     let sumado = parseInt(sumo());
     $sum.textContent = `Sum: ${sumado}`;
-    $cards.textContent = `Cards: ${cards[0]} - ${cards[1]}`;
+    for (let i = 0; i < cards.length; i++) {
+        $cards.textContent += `${cards[i]} `;
+    }
     if (sumado <= 20) {
         message = "Do you want to draw a new card? 🙂";
-    } else if (sumo === 21) {
+    } else if (sumado === 21) {
         message = "Wohoo! You've got BlackJack! 🥳"
         hasBlackJack = true;
     } else {
@@ -32,8 +36,8 @@ function renderGame(){
 }
 
 function newCard() {
-    console.log("Drawing a new card from the deck");
-    cards.push(2);
+    let theCard = 6;
+    cards.push(theCard);
     startGame(newCard);
 }
 
