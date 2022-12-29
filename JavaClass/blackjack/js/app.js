@@ -1,5 +1,6 @@
-const cards = [10, 1];
-// let sum = firstCard + secondCard;
+let firstCard = 10;
+let secondCard = 4;
+const cards = [firstCard, secondCard];
 let isAlive = true;
 let hasBlackJack = false;
 let message = "";
@@ -14,15 +15,13 @@ function startGame(){
 }
 
 function renderGame(){
+    // la llamo a esta función porque necesito renderizarla aquí
     let sumado = parseInt(sumo());
     $sum.textContent = `Sum: ${sumado}`;
-    for(let card of cards){
-        $cards.textContent += ` ${card}`;
-    }
-    // $cards.textContent = `Cards: ${firstCard} - ${secondCard} - N: ${myCard}`;
+    $cards.textContent = `Cards: ${cards[0]} - ${cards[1]}`;
     if (sumado <= 20) {
         message = "Do you want to draw a new card? 🙂";
-    } else if (sumado === 21) {
+    } else if (sumo === 21) {
         message = "Wohoo! You've got BlackJack! 🥳"
         hasBlackJack = true;
     } else {
