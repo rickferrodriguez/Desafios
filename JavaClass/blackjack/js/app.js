@@ -43,7 +43,14 @@ function newCard() {
 
 function getRandomNumber() {
     // Math.floor : removes the decimals
-    // Math.random : returns random number between 0 and 12, not included the 12
-    let randomNumber = Math.floor(Math.random() * 12);
-    return randomNumber;
+    // Math.random : returns random number between 0 and 13
+    let random =Math.floor(Math.random() * 13)+ 1;
+    if (random > 10) {
+        return 10
+    } else if (random === 1) {
+        return 11
+    } else {
+        return random
+    }
+    // con el '+1' se le indica que va a empezar desde el uno, pero en realidad se le está sumando un valor al generador de numeros
 }
