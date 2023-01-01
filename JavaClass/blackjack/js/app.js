@@ -10,12 +10,12 @@ let $sum = document.querySelector("#sum-el");
 let $cards = document.querySelector("#cards-el");
 
 // creating objects
-let players = {
+let player = {
     name : "Rich",
     chips : 145
 }
 let $playerEl = document.querySelector("#player-el");
-$playerEl.textContent = `${playerName}: $${playerChips}`
+$playerEl.textContent = `${player.name}: $${player.chips}`
 
 function startGame(){
     isAlive = true;
