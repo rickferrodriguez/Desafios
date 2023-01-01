@@ -9,8 +9,17 @@ let $message = document.getElementById("message-el");
 let $sum = document.querySelector("#sum-el");
 let $cards = document.querySelector("#cards-el");
 
+// creating objects
+let players = {
+    name : "Rich",
+    chips : 145
+}
+let $playerEl = document.querySelector("#player-el");
+$playerEl.textContent = `${playerName}: $${playerChips}`
+
 function startGame(){
     isAlive = true;
+    hasBlackJack = false;
     // iniciar las variables de las dos cartas dentro de esta función para que el juego no venga con cartas por defecto al iniciar
     let firstCard = getRandomNumber();
     let secondCard = getRandomNumber();
@@ -39,10 +48,12 @@ function renderGame(){
 }
 
 function newCard() {
-    let theCard = getRandomNumber();
-    sum += theCard;
-    cards.push(theCard);
-    renderGame();
+    if (isAlive === true && hasBlackJack === false) {
+        let theCard = getRandomNumber();
+        sum += theCard;
+        cards.push(theCard);
+        renderGame();
+    } 
 }
 
 function getRandomNumber() {
