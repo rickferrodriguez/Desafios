@@ -1,4 +1,19 @@
 let cards = [];
+let cartas = [
+    { number: 1, imageUrl: 'images/cards1'},
+    { number: 2, imageUrl: 'images/cards1'},
+    { number: 3, imageUrl: 'images/cards1'},
+    { number: 4, imageUrl: 'images/cards1'},
+    { number: 5, imageUrl: 'images/cards1'},
+    { number: 6, imageUrl: 'images/cards1'},
+    { number: 7, imageUrl: 'images/cards1'},
+    { number: 8, imageUrl: 'images/cards1'},
+    { number: 9, imageUrl: 'images/cards1'},
+    { number: 10, imageUrl: 'images/cards1'},
+    { number: 11, imageUrl: 'images/cards1'},
+    { number: 12, imageUrl: 'images/cards1'},
+    { number: 13, imageUrl: 'images/cards1'}
+]
 let sum = 0;
 let isAlive = false;
 let hasBlackJack = false;
@@ -8,6 +23,7 @@ let $message = document.getElementById("message-el");
 // Esta es otra forma de traer elementos del DOM
 let $sum = document.querySelector("#sum-el");
 let $cards = document.querySelector("#cards-el");
+let $contcards = document.querySelector("#cont-cartas")
 
 // creating objects
 let player = {
@@ -32,6 +48,7 @@ function renderGame(){
     // necesito este texto por defecto al momento de llamar al juego
     $cards.textContent = "Cards: ";
     $sum.textContent = `Sum: ${sum}`;
+    $contcards.textContent = `cont de cartas: ${cartas.number}`
     for (let i = 0; i < cards.length; i++) {
         $cards.textContent += `${cards[i]} `;
     }
