@@ -34,14 +34,19 @@ let $playerEl = document.querySelector("#player-el");
 $playerEl.textContent = `${player.name}: $${player.chips}`
 
 function startGame(){
-    isAlive = true;
-    hasBlackJack = false;
-    // iniciar las variables de las dos cartas dentro de esta función para que el juego no venga con cartas por defecto al iniciar
-    let firstCard = getRandomCard();
-    let secondCard = getRandomCard();
-    cards = [firstCard, secondCard];
-    sum = firstCard.number + secondCard.number;
-    renderGame();
+    if(player.chips === 0){
+        $message.textContent = "You Don't have chips to play!"
+    } else {
+        isAlive = true;
+        hasBlackJack = false;
+        // iniciar las variables de las dos cartas dentro de esta función para que el juego no venga con cartas por defecto al iniciar
+        let firstCard = getRandomCard();
+        let secondCard = getRandomCard();
+        cards = [firstCard, secondCard];
+        sum = firstCard.number + secondCard.number;
+        console.log(player.chips)
+        renderGame();
+    }
 }
 
 function renderGame(){
@@ -49,6 +54,7 @@ function renderGame(){
     $cards.textContent = "Cards: ";
     $sum.textContent = `Sum: ${sum}`;
     $contcards.textContent = ``
+    $playerEl.textContent = `${player.name}: $${player.chips}`
     for (let i = 0; i < cards.length; i++) {
         $cards.textContent += `${cards[i].number} `;
         let cont = document.getElementById("cont-cartas");
@@ -62,9 +68,13 @@ function renderGame(){
     } else if (sum === 21) {
         message = "Wohoo! You've got BlackJack! 🥳"
         hasBlackJack = true;
+        player.chips += 5;
+        $playerEl.textContent = `${player.name}: $${player.chips}`
     } else {
         message = "You're out of the game! 😭"
         isAlive = false;
+        player.chips -= 5;
+        $playerEl.textContent = `${player.name}: $${player.chips}`
     }
     $message.textContent = message;
 }
