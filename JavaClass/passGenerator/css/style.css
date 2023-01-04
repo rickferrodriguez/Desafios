@@ -1,0 +1,52 @@
+:root {
+    --primarycolor:#10B981;
+    --secondarycolor:#273549;
+    --background-color: #1C1C1C;
+    --card-background-color: #1F2937;
+}
+body {
+    font-family: 'Trebuchet MS','Lucida Sans Unicode','Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--background-color);
+}
+
+.card {
+    background-color:var(--card-background-color);
+    padding: 20px;
+    border-radius: 5px
+}
+
+.t1-white {
+    color: white;
+}
+
+.t2-green {
+    margin-top: -22px;
+    color: var(--primarycolor)
+}
+
+.par {
+    color: #D5D4D8
+}
+
+.btn-primary {
+    background-color: var(--primarycolor);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.pass {
+    background-color:var(--secondarycolor);
+    width: 90%;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.p-container {
+    display: flex;
+    flex-direction: row;
+}
