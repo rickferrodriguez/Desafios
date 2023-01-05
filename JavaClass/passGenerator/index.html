@@ -16,7 +16,17 @@
                 <input id="pass-len" class="pass-len" type="number" placeholder="0">
             </tag>
             <br>
-            <button onclick="randomCharacters()" class="btn-primary" type="button">Generate Password</button><br>
+            <div class="op-container">
+                <button onclick="randomCharacters()" class="btn-primary" type="button">Generate Password</button><br>
+                <div class="check-el">
+                    <input type="checkbox" id="ch-number">
+                    <label class="label" for="">no numbers</label> 
+                </div>
+                <div class="check-el">
+                    <input type="checkbox" id="ch-symbols">
+                    <label class="label" for="">no symbols</label> 
+                </div>
+            </div>
             <hr class="divider"></hr>
             <div class="p-container">
                 <p id="pass1" class="pass">1</p>

@@ -38,7 +38,8 @@ body {
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 20px
+    margin-top: 20px;
+    margin-right: 20px
 }
 
 .pass-len {
@@ -66,3 +67,15 @@ body {
 .divider {
     margin-top: 30px;
 }
+
+.op-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.label {
+    margin-right: 20px;
+    color: var(--primarycolor);
+}
+
