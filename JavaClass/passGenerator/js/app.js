@@ -3,11 +3,12 @@ const characters =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","
 
 let $pass1 = document.getElementById('pass1');
 let $pass2 = document.getElementById('pass2');
+let $pass_len = document.getElementById('pass-len');
 
 function randomCharacters() {
     let thecharacter1 = ""
     let thecharacter2 = ""
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < $pass_len.value; i++) {
         let random1 = Math.floor(Math.random() * characters.length)
         let random2 = Math.floor(Math.random() * characters.length)
         thecharacter1 += characters[random1];
@@ -16,5 +17,16 @@ function randomCharacters() {
     $pass1.textContent = thecharacter1
     $pass2.textContent = thecharacter2
 }
+
+function onlyString(){
+    const strings = characters.map( x => typeof x === 'string')
+    console.log("mystrings: " + strings)
+    console.log(characters.length)
+}
+
+onlyString()
+console.log("5" === 5)
+let micinco = "5"
+console.log(typeof micinco === 'string')
 
 
