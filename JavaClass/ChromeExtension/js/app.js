@@ -10,5 +10,5 @@ $input_btn.addEventListener("click", function (){
 })
 
 for (let i = 0; i < myLeads.length; i++) {
-    $ul_el.textContent += `${myLeads[i]} `;
+    $ul_el.innerHTML += `<li>${myLeads[i]}</li>`;
 }
