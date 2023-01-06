@@ -6,14 +6,18 @@ const $ul_el = document.getElementById('ul-el');
 
 $input_btn.addEventListener("click", function (){
     myLeads.push($input_el.value);
-    console.log(myLeads);
+    $input_el.value = ""
     renderLeads()
 })
 
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
-        listItems += `<li>${myLeads[i]}</li>`;
+        listItems += `
+        <li class="li-el">
+            <a class="a-el" href="${myLeads}" target="_blank">${myLeads[i]}<a>
+        </li>
+    `
     }
     $ul_el.innerHTML = listItems;
 }
