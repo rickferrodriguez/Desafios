@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #5f9341;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column
+}
+
+.input-el {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.input-btn {
+    border: none;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: fit-content;
+    font-weight: bold;
+}
