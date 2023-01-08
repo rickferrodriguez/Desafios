@@ -4,10 +4,16 @@ const $input_el = document.getElementById('input-el');
 const $input_btn = document.getElementById('input-btn');
 const $ul_el = document.getElementById('ul-el');
 
+// localStorage.setItem('myKey','myvalue.com')
+// console.log(localStorage.getItem('myKey'))
+// localStorage.clear()
+
 $input_btn.addEventListener("click", function (){
     myLeads.push($input_el.value);
     $input_el.value = ""
+    localStorage.setItem('myLeads', JSON.stringify(myLeads))
     renderLeads()
+    console.log (localStorage.getItem('myLeads'))
 })
 
 function renderLeads() {
