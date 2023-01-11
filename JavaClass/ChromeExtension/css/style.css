@@ -9,10 +9,10 @@ body {
     min-width: 400px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column
-}
+/* .container { */
+/*     display: flex; */
+/*     flex-direction: column */
+/* } */
 
 .input-el {
     width: 100%;
@@ -22,15 +22,17 @@ body {
     border-radius: 3px;
     box-sizing: border-box;
 }
-
-.input-btn {
-    border: none;
-    color: white;
-    background-color: var(--primary-color);
+.btn {
     border-radius: 3px;
     padding: 10px 20px;
     width: fit-content;
     font-weight: bold;
+    border: 2px solid var(--primary-color);
+}
+
+.input-btn {
+    color: white;
+    background-color: var(--primary-color);
 }
 
 .ul-el {
@@ -45,4 +47,9 @@ body {
 
 .a-el {
     color: var(--primary-color);
+}
+
+.del-btn {
+    color: var(--primary-color);
+    background-color: white;
 }
