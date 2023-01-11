@@ -15,14 +15,28 @@ console.log("my leads from local storge: " + leadsFromLocalStorage)
 // verifico gracios a truthy or falsy values if i have something in my local storage and then i call the render method to see the value
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
+}
+
+function render(leads) {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li class="li-el">
+                <a class="a-el" target="_blank" href='${leads[i]}'>
+                    ${leads[i]}
+                <a>
+            </li>
+        `
+    }
+    $ul_el.innerHTML = listItems;
 }
 
 $delete_btn.addEventListener("dblclick", function clearLocalStorage() {
     localStorage.clear()
     // clearing the array that contains all that we save 
     myLeads = []
-    renderLeads()
+    render(myLeads)
     console.log(myLeads)
 })
 
@@ -30,18 +44,7 @@ $input_btn.addEventListener("click", function (){
     myLeads.push($input_el.value);
     $input_el.value = ""
     localStorage.setItem('myLeads', JSON.stringify(myLeads))
-    renderLeads()
+    render(myLeads)
 })
 
-function renderLeads() {
-    let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
-        listItems += `
-        <li class="li-el">
-            <a class="a-el" href="${myLeads}" target="_blank">${myLeads[i]}<a>
-        </li>
-    `
-    }
-    $ul_el.innerHTML = listItems;
-}
 
