@@ -31,15 +31,15 @@ $tab_btn.addEventListener('click', () => {
 
 function render(leads) {
     let listItems = ""
-    for (let i = 0; i < leads.length; i++) {
+    leads.map(lead => {
         listItems += `
             <li class="li-el">
-                <a class="a-el" target="_blank" href='${leads[i]}'>
-                    ${leads[i]}
+                <a class="a-el" target="_blank" href='${lead}'>
+                    ${lead}
                 <a>
             </li>
         `
-    }
+    })
     $ul_el.innerHTML = listItems;
 }
 
