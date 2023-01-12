@@ -20,7 +20,6 @@ if(leadsFromLocalStorage){
 
 
 $tab_btn.addEventListener('click', () => {
-
     //the "chrome.tabs" is a function that only works when we deploy the extension, this is why we geet an error message
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         myLeads.push(tabs[0].url)
