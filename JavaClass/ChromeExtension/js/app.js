@@ -1,9 +1,9 @@
-
 let myLeads = [];
 const $input_el = document.getElementById('input-el');
 const $input_btn = document.getElementById('input-btn');
 const $ul_el = document.getElementById('ul-el');
 const $delete_btn = document.getElementById('delete-btn');
+const $tab_btn = document.getElementById('tab-btn');
 
 // localStorage.setItem('myKey','myvalue.com')
 // console.log(localStorage.getItem('myKey'))
@@ -17,6 +17,18 @@ if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+
+
+$tab_btn.addEventListener('click', () => {
+
+    //the "chrome.tabs" is a function that only works when we deploy the extension, this is why we geet an error message
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify( myLeads ))
+        render(myLeads)
+    })
+
+})
 
 function render(leads) {
     let listItems = ""
