@@ -1,27 +1,28 @@
+const $btn_add = document.getElementById("btn-add")
 const personas = [
     new Persona('Juan', 'Perez'),
-    new Persona('karlas', 'Lara')
-];
+    new Persona('karla', 'Lara')
+]
 
 function mostrarPersonas(){
-    console.log('Mostrar personas...');
-    let texto = '';
+    console.log('Mostrar personas...')
+    let texto = ''
     for (let persona of personas){
-        console.log(persona);
-        texto += `<li>${persona.nombre} ${persona.apellido}</li>`;
+        console.log(persona)
+        texto += `<li class="collection-item">${persona.nombre} ${persona.apellido}</li>`
     }
-    document.getElementById('personas').innerHTML = texto;
+    document.getElementById('personas').innerHTML = texto
 }
 
-function anadir(){
-    let nombre = document.forms['form']['nombre'].value;
-    let apellido = document.forms['form']['apellido'].value;
-    if(nombre != '' && apellido != ''){
-    personas.push(new Persona(nombre,apellido));
+$btn_add.addEventListener('click', () => {
+    let $nombre = document.forms['form']['nombre'].value
+    let $apellido = document.forms['form']['apellido'].value
+    if($nombre != '' && $apellido != ''){
+    personas.push(new Persona($nombre,$apellido))
     console.log(personas)
-    mostrarPersonas();
+    mostrarPersonas()
     }
     else {
-        alert("No hay información que agregar");
+        alert("No hay información que agregar")
     }
-}
+}) 
