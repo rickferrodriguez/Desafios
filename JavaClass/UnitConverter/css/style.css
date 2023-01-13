@@ -1,0 +1,75 @@
+:root {
+    --top-section: #6943FF;
+    --background-bottom: #F4F4F4;
+    --background-div: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: Inter;
+}
+
+.card {
+    border: 1px solid #000000;
+    margin: 10%;
+    border-radius: 5px
+}
+
+section {
+    margin: 0;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--top-section);
+    align-items: center;
+}
+
+.bottom-section {
+    background-color: var(--background-bottom);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #5A537B;
+}
+
+.input-number {
+    border: 1px solid #B295FF;
+    font-size: 28px;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    color: var(--background-div);
+    background-color: var(--top-section);
+    margin-bottom: 10px;
+}
+
+.btn-convert {
+    background-color: var(--background-div);
+    border: none;
+    border-radius: 3px;
+    padding: 7px 18px;
+    margin-bottom: 10px;
+}
+
+.result {
+    text-align: center;
+    width: 98%;
+    border: 1px solid gray;
+    background-color: var(--background-div);
+    margin-bottom: 10px;
+}
+
+.convesion {
+    color: #353535;
+}
