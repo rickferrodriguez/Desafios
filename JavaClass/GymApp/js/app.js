@@ -15,7 +15,7 @@ const weekDay = () => {
     const dias = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     
     for (let i = 0; i < dias.length; i++) {
-        const dia = dias[i];
+        const dia = dias[i % 7];
         if(date.getDay() == i){
             daysText += `
                 <div class='day-cont'>
@@ -27,7 +27,7 @@ const weekDay = () => {
             daysText += `
                 <div class='day-cont'>
                     <a class='day'>${dia}</a>
-                    <p>${numDay - 1}</p>
+                    <p>${numDay}</p>
                 </div>
                 `
     }
