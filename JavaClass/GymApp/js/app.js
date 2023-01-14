@@ -5,8 +5,38 @@ const exercises = [
 ];
 
 const $container = document.getElementById('container')
+const $week = document.getElementById('week')
+const $mostrar = document.getElementById('mostrar')
+
+const weekDay = () => {
+    let daysText = ''
+    let date = new Date();
+    let numDay = date.getDate()
+    const dias = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    
+    for (let i = 0; i < dias.length; i++) {
+        const dia = dias[i];
+        if(date.getDay() == i){
+            daysText += `
+                <div class='day-cont'>
+                    <a class='day special'>${dia}</a>
+                    <p>${numDay}</p>
+                </div>
+                `
+        } else
+            daysText += `
+                <div class='day-cont'>
+                    <a class='day'>${dia}</a>
+                    <p>${numDay - 1}</p>
+                </div>
+                `
+    }
+    $week.innerHTML = daysText
+}
+
 
 function showExercises(){
+    weekDay()
     let theExercises = ""
     exercises.map(exercise => {
         theExercises += `
