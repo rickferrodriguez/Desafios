@@ -1,10 +1,11 @@
 class Exercise{
-    constructor(nombre, image, description, calories, time){
+    constructor(nombre, image, description, calories, time, type){
         this._nombre = nombre;
         this._image = image;
         this._description = description;
         this._calories = calories;
         this._time = time;
+        this._type = type;
     }
 
     get nombre(){return this._nombre;}
@@ -21,4 +22,7 @@ class Exercise{
 
     get time(){return this._time}
     set time(time){this._time = time}
+
+    get type(){return this._type}
+    set type(type){this._type = type}
 }

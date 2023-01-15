@@ -1,7 +1,7 @@
 const exercises = [
-    new Exercise('Legs Extensions','images/squat.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps'),
-    new Exercise('Bench Press','images/deadlift.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps'),
-    new Exercise('Pull ups','images/benchpress.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps'),
+    new Exercise('Squat','images/squat.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps', 'legs'),
+    new Exercise('Dead Lift','images/deadlift.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps', 'legs'),
+    new Exercise('Bench Press','images/benchpress.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps', 'chest'),
 ];
 
 const $container = document.getElementById('container')
@@ -32,14 +32,18 @@ const weekDay = () => {
                 `
     }
     $week.innerHTML = daysText
+    return date.getDay()
 }
 
 
 function showExercises(){
     weekDay()
     let theExercises = ""
-    exercises.map(exercise => {
-        theExercises += `
+    if(weekDay() == 0){
+        const legs = exercises.filter(exercise => exercise.type == 'legs')
+        legs.map(exercise => {
+            theExercises += 
+            `
                 <div class="col s12 m7">
                     <div class="card">
                         <div class="card-image">
@@ -55,8 +59,9 @@ function showExercises(){
                         </div>
                     </div>
                 </div>
-        `
-    })
+            `
+        })
+    }
     $container.innerHTML = theExercises
 }
 
