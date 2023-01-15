@@ -13,7 +13,7 @@ const weekDay = () => {
     let date = new Date();
     let numDay = date.getDate()
     const dias = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    
+
     for (let i = 0; i < dias.length; i++) {
         const dia = dias[i % 7];
         if(date.getDay() == i){
