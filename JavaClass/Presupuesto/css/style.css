@@ -1,0 +1,47 @@
+
+body {
+    font-family: roboto, arial, helvetica
+}
+
+.top-section {
+    margin-bottom: 20px
+}
+
+.pre-val {
+    font-size: 40px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.egre-el {
+    padding-left: 10px;
+    padding-right: 0
+}
+
+.inferior {
+    margin-top: 40px
+}
+
+.ing-egre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.sect-mid {
+    margin-bottom: 0
+}
+
+.row ,.middle-el{
+    margin-bottom: 0 !important
+}
+
+.selector {
+    width: 80px
+}
+
+.btn-new {
+    margin-top: 20px
+}

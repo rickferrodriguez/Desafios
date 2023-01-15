@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Presupuesto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <section class=" center-align top-section">
+            <div class="container">
+                <h1 class="title">Presupuesto disponible</h1>
+                <p class="pre-val" id="pre-val"></p>
+                <div class="z-depth-2 ingre-el ing-egre teal lighten-2">
+                    <p>INGRESOS</p>
+                    <p id="ingre-val">$valor</p>
+                </div>
+                <div class="z-depth-2 egre-el row red lighten-1">
+                    <div class="col s1">
+                        <p>EGRESOS</p>
+                    </div>
+                    <div class="col s4 offset-s6">
+                        <p id="egre-val">$valor</p>
+                    </div>
+                    <div class="col s1">
+                        <p id="percent-val"> %</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider grey darken-4"></div>
+        <section class="grey lighten-2 sect-mid">
+            <div class="container middle-el row middle">
+                <div class="input-field col s1">
+                    <select id="selector" class="selector browser-default center-align" name="accion">
+                        <option value="1">+</option>
+                        <option value="2">-</option>
+                    </select>
+                </div>
+                <div class="input-field col s5 offset-s1">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input class="show-on-medium" id="desc-el" type="text" >
+                    <label for="">Agregar Descripción</label>
+                </div>
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input class="show-on-medium" id="valor-el" type="text" placeholder="Valor">
+                    <label for="">Valor</label>
+                </div>
+                <div class="col s1">
+                      <a id="add-btn" class="btn-new btn-floating btn-small waves-effect waves-light teal lighten-2"><i class="material-icons">check</i></a>
+                </div>
+            </div>
+        </section>
+        <div class="divider grey darken-4"></div>
+        <section class="inferior container">
+            <div class="row">
+                <div class="show show-ing col s6 ">
+                    <h3 class="teal-text text-lighten-2">INGRESOS</h3>
+                    <div id="inner-ing">
+                        <p>salario</p>
+                        <p>Valor</p>
+                    </div>
+                </div>
+                <div class="show show-egr col s6 ">
+                    <h3 class="red-text text-lighten-1">EGRESOS</h3>
+                    <div id="inner-egre">
+                        <p>salario</p>
+                        <p>Valor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/app.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
