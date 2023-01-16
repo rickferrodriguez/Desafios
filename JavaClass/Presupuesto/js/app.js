@@ -7,6 +7,7 @@ const $inner_ing = document.getElementById('inner-ing')
 const $inner_egre = document.getElementById('inner-egre')
 const ingre_colors = 'teal-text text-lighten-2'
 const egre_colors = 'red-text text-lighten-1'
+const rmv_colors = 'red lighten-1'
 
 let presupuesto = 0
 let ingreso = 0
@@ -40,7 +41,21 @@ const render = (arr, h3, inner, color) => {
     let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
     arr.map( value  =>{
         text += `
-        <li class="collection-item"><div>${value.desc}<a href="#!" class="secondary-content">${(parseInt(value.valor)).toFixed(2)}</a></div></li>
+        <li class="collection-item row valign-wrapper">
+            <div class="col s5">${value.desc}
+            </div>
+            <div class="col s4">
+                <a href="#!" class="secondary-content">
+                    ${formatoNumero(value.valor)}
+                </a>
+            </div>
+            <div class="col s1">
+                <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+            <div class="col s1"></div>
+        </li>
     `
     })
     inner.innerHTML = text
@@ -55,10 +70,14 @@ const calcularPresupuesto = (arrI, arrE, innerIng, innerEgre) => {
     arrE.map( egreso => {
         sumEgresos += parseInt(egreso.valor)
     })
-    innerIng.innerHTML = sumIngresos.toFixed(2)
-    innerEgre.innerHTML = sumEgresos.toFixed(2)
+    innerIng.innerHTML = formatoNumero(sumIngresos)
+    innerEgre.innerHTML = formatoNumero(sumEgresos)
     let sumPresupuesto = sumIngresos - sumEgresos
-    $pre_val.innerHTML = `$ ${(sumPresupuesto).toFixed(2)}`
+    $pre_val.innerHTML = `$ ${formatoNumero(sumPresupuesto)}`
     console.log(sumIngresos- sumEgresos)
+}
+
+const formatoNumero = (num) => {
+    return parseFloat(num).toFixed(2)
 }
 
