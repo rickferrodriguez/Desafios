@@ -8,7 +8,7 @@ const $inner_egre = document.getElementById('inner-egre')
 const ingre_colors = 'teal-text text-lighten-2'
 const egre_colors = 'red-text text-lighten-1'
 
-let presupuesto = 2300
+let presupuesto = 0
 let ingreso = 0
 let egreso = 0
 $pre_val.innerHTML = `$ ${presupuesto.toFixed(2)}`
@@ -26,32 +26,39 @@ $add_btn.addEventListener('click', () => {
         let ing_val = { desc: $input_desc, valor: $input_valor }
         ingresos.push(ing_val)
         render(ingresos, "INGRESOS", $inner_ing, ingre_colors)
-        calcularPresupuesto(ingresos, $ingre_val)
     } else if ($input_selector === 1 && $input_desc != '' && $input_valor != '') {
         let egre_val = { desc: $input_desc, valor: $input_valor}
         egresos.push(egre_val)
         render(egresos, "EGRESOS",$inner_egre, egre_colors)
-        calcularPresupuesto(egresos, $egre_val)
     } else {
     alert('Por favor diligencie los campos')
     }
+    calcularPresupuesto(ingresos, egresos, $ingre_val, $egre_val)
 })
 
 const render = (arr, h3, inner, color) => {
     let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
     arr.map( value  =>{
         text += `
-        <li class="collection-item"><div>${value.desc}<a href="#!" class="secondary-content">${value.valor}</a></div></li>
+        <li class="collection-item"><div>${value.desc}<a href="#!" class="secondary-content">${(parseInt(value.valor)).toFixed(2)}</a></div></li>
     `
     })
     inner.innerHTML = text
 }
 
-const calcularPresupuesto = (arr, inner) => {
-    let text_ing = 0
-    arr.map(item => {
-        text_ing += parseInt(item.valor)
+const calcularPresupuesto = (arrI, arrE, innerIng, innerEgre) => {
+    let sumIngresos = 0
+    let sumEgresos = 0
+    arrI.map( ingreso =>{
+        sumIngresos += parseInt(ingreso.valor
+)    })
+    arrE.map( egreso => {
+        sumEgresos += parseInt(egreso.valor)
     })
-    inner.innerHTML = text_ing.toFixed(2)
+    innerIng.innerHTML = sumIngresos.toFixed(2)
+    innerEgre.innerHTML = sumEgresos.toFixed(2)
+    let sumPresupuesto = sumIngresos - sumEgresos
+    $pre_val.innerHTML = `$ ${(sumPresupuesto).toFixed(2)}`
+    console.log(sumIngresos- sumEgresos)
 }
 
