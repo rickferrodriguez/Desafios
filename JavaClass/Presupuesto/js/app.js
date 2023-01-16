@@ -92,10 +92,4 @@ const render = (arr, h3, inner, color) => {
     inner.innerHTML = text
 }
 
-// $remove_btn.addEventListener('click', () =>{
-//     let valor = this.value
-//     console.log(`has presionado eliminar ${valor}`)
-// })
-
-
 
