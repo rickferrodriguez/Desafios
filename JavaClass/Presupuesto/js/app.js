@@ -5,6 +5,7 @@ let $percent_val = document.getElementById('percent-val')
 const $add_btn = document.getElementById('add-btn')
 const $inner_ing = document.getElementById('inner-ing')
 const $inner_egre = document.getElementById('inner-egre')
+
 const ingre_colors = 'teal-text text-lighten-2'
 const egre_colors = 'red-text text-lighten-1'
 const rmv_colors = 'red lighten-1'
@@ -19,30 +20,9 @@ $egre_val.innerHTML = egreso
 const ingresos = []
 const egresos = []
 
-const render = (arr, h3, inner, color) => {
-    let counter = -1
-    let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
-    arr.map( value  =>{
-        counter ++
-        text += `
-        <li class="collection-item row valign-wrapper">
-            <div class="col s5">${value.desc}
-            </div>
-            <div class="col s4">
-                <a href="#!" class="secondary-content">
-                    ${formatoNumero(value.valor)}
-                </a>
-            </div>
-            <div class="col s1">
-                <a id="remove-btn" value="${counter}" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
-                    <i class="material-icons">close</i>
-                </a>
-            </div>
-            <div class="col s1"></div>
-        </li>
-    `
-    })
-    inner.innerHTML = text
+
+const formatoNumero = (num) => {
+    return parseFloat(num).toFixed(2)
 }
 
 $add_btn.addEventListener('click', () => {
@@ -63,7 +43,6 @@ $add_btn.addEventListener('click', () => {
     calcularPresupuesto(ingresos, egresos, $ingre_val, $egre_val)
 })
 
-
 const calcularPresupuesto = (arrI, arrE, innerIng, innerEgre) => {
     let sumIngresos = 0
     let sumEgresos = 0
@@ -80,7 +59,37 @@ const calcularPresupuesto = (arrI, arrE, innerIng, innerEgre) => {
     console.log(sumIngresos- sumEgresos)
 }
 
-const formatoNumero = (num) => {
-    return parseFloat(num).toFixed(2)
+
+const render = (arr, h3, inner, color) => {
+    let counter = -1
+    let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
+    arr.map( value  =>{
+        counter ++
+        text += `
+        <li class="collection-item row valign-wrapper">
+            <div class="col s5">${value.desc}
+            </div>
+            <div class="col s4">
+                <a href="#!" class="secondary-content">
+                    ${formatoNumero(value.valor)}
+                </a>
+            </div>
+            <div class="col s1">
+                <a id="remove-btn" value="${parseInt(counter)}" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+            <div class="col s1"></div>
+        </li>
+    `
+    })
+    inner.innerHTML = text
 }
+
+// $remove_btn.addEventListener('click', () =>{
+//     let valor = this.value
+//     console.log(`has presionado eliminar ${valor}`)
+// })
+
+
 
