@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-    <body>
+    <body onload="render()">
         <section class=" center-align top-section">
             <div class="container">
                 <h1 class="title">Presupuesto disponible</h1>
@@ -57,11 +57,8 @@
         <section class="inferior container">
             <div class="row">
                 <div class="show show-ing col s6 ">
-                    <h3 class="teal-text text-lighten-2">INGRESOS</h3>
-                    <div id="inner-ing">
-                        <p>salario</p>
-                        <p>Valor</p>
-                    </div>
+                    <ul class="collection with-header " id="inner-ing">
+                    </ul>
                 </div>
                 <div class="show show-egr col s6 ">
                     <h3 class="red-text text-lighten-1">EGRESOS</h3>

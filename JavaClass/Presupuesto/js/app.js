@@ -12,14 +12,31 @@ const egresos = []
 
 $add_btn.addEventListener('click', () => {
     const $input_selector = document.getElementById('selector').selectedIndex
-    const $input_desc = document.getElementById('desc-el').getValue()
-    const $input_valor = document.getElementById('valor-el').getValue()
+    const $input_desc = document.getElementById('desc-el').value
+    const $input_valor = document.getElementById('valor-el').value
     if($input_selector === 0 && $input_desc != '' && $input_valor != ''){
         let ing_val = { desc: $input_desc, valor: $input_valor}
         ingresos.push(ing_val)
-        alert($input_selector.selectedIndex)
+        console.log(ingresos)
+        render(ingresos)
+    } else if ($input_selector === 1 && $input_desc != '' && $input_valor != '') {
+        let egre_val = { desc: $input_desc, valor: $input_valor}
+        egresos.push(egre_val)
+        console.log(egresos)
+    } else {
+    alert('Por favor ingrese los campos')
     }
 })
+
+const render = (arr) => {
+    let text = '<li class="collection-header"><h3 class="teal-text text-lighten-2">INGRESOS</h3></li>'
+    arr.map( ingreso  =>{
+        text += `
+        <li class="collection-item"><div>${ingreso.desc}<a href="#!" class="secondary-content">${ingreso.valor}</a></div></li>
+    `
+    })
+    $inner_ing.innerHTML = text
+}
 
 $pre_val.innerHTML = `$ ${presupuesto.toFixed(2)}`
 
