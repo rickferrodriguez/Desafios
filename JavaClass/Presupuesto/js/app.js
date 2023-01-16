@@ -19,6 +19,32 @@ $egre_val.innerHTML = egreso
 const ingresos = []
 const egresos = []
 
+const render = (arr, h3, inner, color) => {
+    let counter = -1
+    let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
+    arr.map( value  =>{
+        counter ++
+        text += `
+        <li class="collection-item row valign-wrapper">
+            <div class="col s5">${value.desc}
+            </div>
+            <div class="col s4">
+                <a href="#!" class="secondary-content">
+                    ${formatoNumero(value.valor)}
+                </a>
+            </div>
+            <div class="col s1">
+                <a id="remove-btn" value="${counter}" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+            <div class="col s1"></div>
+        </li>
+    `
+    })
+    inner.innerHTML = text
+}
+
 $add_btn.addEventListener('click', () => {
     const $input_selector = document.getElementById('selector').selectedIndex
     const $input_desc = document.getElementById('desc-el').value
@@ -37,29 +63,6 @@ $add_btn.addEventListener('click', () => {
     calcularPresupuesto(ingresos, egresos, $ingre_val, $egre_val)
 })
 
-const render = (arr, h3, inner, color) => {
-    let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
-    arr.map( value  =>{
-        text += `
-        <li class="collection-item row valign-wrapper">
-            <div class="col s5">${value.desc}
-            </div>
-            <div class="col s4">
-                <a href="#!" class="secondary-content">
-                    ${formatoNumero(value.valor)}
-                </a>
-            </div>
-            <div class="col s1">
-                <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
-                    <i class="material-icons">close</i>
-                </a>
-            </div>
-            <div class="col s1"></div>
-        </li>
-    `
-    })
-    inner.innerHTML = text
-}
 
 const calcularPresupuesto = (arrI, arrE, innerIng, innerEgre) => {
     let sumIngresos = 0
