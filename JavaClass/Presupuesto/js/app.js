@@ -28,8 +28,10 @@ const cargarCabezero = () => {
     $egre_val.innerHTML = formatoNumero(totalEgresos())
     $pre_val.innerHTML = formatoNumero(presupuesto)
     $percent_val.innerHTML = formatoPorcentaje(porcentajeEgreso)
-    render(ingresos, "INGRESOS", $inner_ing, ingre_colors)
-    render(egresos, "EGRESOS",$inner_egre, egre_colors)
+    // render(ingresos, "INGRESOS", $inner_ing, ingre_colors)
+    // render(egresos, "EGRESOS",$inner_egre, egre_colors)
+    cargarIngreso()
+    cargarEgreso()
 }
 
 const ingresos = []
@@ -72,17 +74,48 @@ const totalEgresos = () => {
 }
 
 
-const render = (arr, h3, inner, color) => {
-    let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
-    arr.map( value  =>{
-        text += `
+// const render = (arr, h3, inner, color) => {
+//     let text = `<li class="collection-header"><h3 class="${color}">${h3}</h3></li>`
+//     arr.map( value  =>{
+//         text += `
+//         <li class="collection-item row valign-wrapper">
+//             <div class="col s5">${value.desc}
+//             </div>
+//             <div class="col s4">
+//                 <a href="#!" class="secondary-content">
+//                     ${formatoNumero(value.valor)}
+//                 </a>
+//             </div>
+//             <div class="col s1">
+//                 <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+//                     <i class="material-icons">close</i>
+//                 </a>
+//             </div>
+//             <div class="col s1"></div>
+//         </li>
+//     `
+//     })
+//     inner.innerHTML = text
+// }
+
+const cargarIngreso = () => { 
+    let ingresosHTML = '<li class="collection-header"><h3 class="teal-text text-lighten-2">INGRESOS</h3></li>' 
+    for(let ingreso of ingresos){
+        ingresosHTML += crearIngresoHTML(ingreso)
+    }
+    $inner_ing.innerHTML = ingresosHTML
+    console.log(ingresosHTML)
+}
+
+const crearIngresoHTML =(valor) => {
+    let ingresoHTML = `
         <li class="collection-item row valign-wrapper">
-            <div class="col s5">${value.desc}
+            <div class="col s5">${valor.desc}
             </div>
             <div class="col s4">
-                <a href="#!" class="secondary-content">
-                    ${formatoNumero(value.valor)}
-                </a>
+                <p class="secondary-content">
+                    ${formatoNumero(valor.valor)}
+                </p>
             </div>
             <div class="col s1">
                 <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
@@ -92,8 +125,40 @@ const render = (arr, h3, inner, color) => {
             <div class="col s1"></div>
         </li>
     `
-    })
-    inner.innerHTML = text
+    return ingresoHTML
 }
 
 
+const cargarEgreso = () => { 
+    let egresoHTML = '<li class="collection-header"><h3 class="red-text text-lighten-2">INGRESOS</h3></li>' 
+    for(let egreso of egresos){
+        egresoHTML += crearEgresoHTML(egreso)
+    }
+    $inner_egre.innerHTML = egresoHTML
+}
+
+const crearEgresoHTML =(valor) => {
+    let ingresoHTML = `
+        <li class="collection-item row valign-wrapper">
+            <div class="col s5">${valor.desc}
+            </div>
+            <div class="col s3">
+                <p class="">
+                    ${formatoNumero(valor.valor)}
+                </p>
+            </div>
+            <div class="col s1">
+                <p class="">
+                    ${formatoPorcentaje(valor.valor / totalEgresos())}
+                </p>
+            </div>
+            <div class="col s1 offset-s1">
+                <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+            <div class="col s1"></div>
+        </li>
+    `
+    return ingresoHTML
+}
