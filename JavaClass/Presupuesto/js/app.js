@@ -6,8 +6,6 @@ const $add_btn = document.getElementById("add-btn");
 const $inner_ing = document.getElementById("inner-ing");
 const $inner_egre = document.getElementById("inner-egre");
 
-const ingre_colors = "teal-text text-lighten-2";
-const egre_colors = "red-text text-lighten-1";
 const rmv_colors = "red lighten-1";
 
 let contadori = -1;
