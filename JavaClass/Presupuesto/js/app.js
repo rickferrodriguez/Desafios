@@ -48,18 +48,14 @@ $add_btn.addEventListener("click", () => {
     const $input_valor = document.getElementById("valor-el").value;
     if ($input_selector === 0 && $input_desc != "" && $input_valor != "") {
         contadori++;
-        let ing_val = { id: contadori, desc: $input_desc, valor: $input_valor };
+        let ing_val = { id: contadori, desc: $input_desc, valor: +$input_valor };
         ingresos.push(ing_val);
-    } else if (
-        $input_selector === 1 &&
-        $input_desc != "" &&
-        $input_valor != ""
-    ) {
+    } else if ( $input_selector === 1 && $input_desc != "" && $input_valor != "") {
         contadore++;
         let egre_val = {
             id: contadore,
             desc: $input_desc,
-            valor: $input_valor,
+            valor: +$input_valor,
         };
         egresos.push(egre_val);
     } else {
@@ -164,16 +160,16 @@ const crearEgresoHTML = (valor) => {
             <div class="col s5">${valor.desc}
             </div>
             <div class="col s3">
-                <p class="">
+                <p class="teal-text text-lighten-1">
                     ${formatoNumero(valor.valor)}
                 </p>
             </div>
-            <div class="col s1">
-                <p class="">
+            <div class=" col s1 offset-s1 red lighten-5">
+                <p class="percent-val">
                     ${formatoPorcentaje(valor.valor / totalEgresos())}
                 </p>
             </div>
-            <div class="col s1 offset-s1">
+            <div class="col s1 offset-s2">
                 <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
                     <i class="material-icons" onclick="eliminarEgreso(${
                         valor.id

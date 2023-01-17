@@ -41,3 +41,7 @@ body {
 .btn-new {
     margin-top: 20px
 }
+
+.percent-val {
+    width: fit-content;
+}
