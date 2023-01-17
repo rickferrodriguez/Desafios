@@ -10,8 +10,8 @@ const ingre_colors = 'teal-text text-lighten-2'
 const egre_colors = 'red-text text-lighten-1'
 const rmv_colors = 'red lighten-1'
 
-let contadori = 0
-let contadore = 0
+let contadori = -1
+let contadore = -1
 
 const formatoNumero = (num) => {
     return num.toLocaleString('en-US', {style:'currency', currency:'USD', minimumFractionDigits: 2})
@@ -22,7 +22,7 @@ const formatoPorcentaje = (valor) => {
 }
 
 const cargarCabezero = () => {
-    let presupuesto = totalIngresos() + totalEgresos()
+    let presupuesto = totalIngresos() - totalEgresos()
     let porcentajeEgreso = totalEgresos() / totalIngresos()
     $ingre_val.innerHTML = formatoNumero(totalIngresos())
     $egre_val.innerHTML = formatoNumero(totalEgresos())
@@ -104,7 +104,6 @@ const cargarIngreso = () => {
         ingresosHTML += crearIngresoHTML(ingreso)
     }
     $inner_ing.innerHTML = ingresosHTML
-    console.log(ingresosHTML)
 }
 
 const crearIngresoHTML =(valor) => {
@@ -118,8 +117,8 @@ const crearIngresoHTML =(valor) => {
                 </p>
             </div>
             <div class="col s1">
-                <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
-                    <i class="material-icons">close</i>
+                <a  class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
+                    <i class="material-icons id="remove-ing-btn" onclick="eliminarIngreso(${valor.id})">close</i>
                 </a>
             </div>
             <div class="col s1"></div>
@@ -128,9 +127,17 @@ const crearIngresoHTML =(valor) => {
     return ingresoHTML
 }
 
+const eliminarIngreso = (valor) =>{
+    let indiceEliminar = ingresos.findIndex( ingreso => ingreso.id === valor)
+    ingresos.splice(indiceEliminar, 1)
+    while (contadori > -1) {
+        contadori --
+    }
+    cargarCabezero()
+}
 
 const cargarEgreso = () => { 
-    let egresoHTML = '<li class="collection-header"><h3 class="red-text text-lighten-2">INGRESOS</h3></li>' 
+    let egresoHTML = '<li class="collection-header"><h3 class="red-text text-lighten-2">EGRESOS</h3></li>' 
     for(let egreso of egresos){
         egresoHTML += crearEgresoHTML(egreso)
     }
@@ -154,11 +161,21 @@ const crearEgresoHTML =(valor) => {
             </div>
             <div class="col s1 offset-s1">
                 <a id="remove-btn" class="btn-remove btn-floating btn-small waves-effect waves-light ${rmv_colors}">
-                    <i class="material-icons">close</i>
+                    <i class="material-icons" onclick="eliminarEgreso(${valor.id})">close</i>
                 </a>
             </div>
             <div class="col s1"></div>
         </li>
     `
     return ingresoHTML
+}
+
+
+const eliminarEgreso = (valor) =>{
+    let indiceEliminar = egresos.findIndex( egreso => egreso.id === valor)
+    egresos.splice(indiceEliminar, 1)
+    while (contadore > -1) {
+        contadore --
+    }
+    cargarCabezero()
 }
