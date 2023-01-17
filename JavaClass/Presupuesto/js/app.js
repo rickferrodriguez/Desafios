@@ -160,7 +160,7 @@ const crearEgresoHTML = (valor) => {
             <div class="col s5">${valor.desc}
             </div>
             <div class="col s3">
-                <p class="teal-text text-lighten-1">
+                <p class="red-text text-lighten-1">
                     ${formatoNumero(valor.valor)}
                 </p>
             </div>
