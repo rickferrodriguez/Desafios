@@ -14,7 +14,11 @@ let contadori = 0
 let contadore = 0
 
 const formatoNumero = (num) => {
-    return parseFloat(num).toFixed(2)
+    return num.toLocaleString('en-US', {style:'currency', currency:'USD', minimumFractionDigits: 2})
+}
+
+const formatoPorcentaje = (valor) => {
+    return valor.toLocaleString('en-US', {style:'percent', minimumFractionDigits:2});
 }
 
 const cargarCabezero = () => {
@@ -23,7 +27,7 @@ const cargarCabezero = () => {
     $ingre_val.innerHTML = formatoNumero(totalIngresos())
     $egre_val.innerHTML = formatoNumero(totalEgresos())
     $pre_val.innerHTML = formatoNumero(presupuesto)
-    $percent_val.innerHTML = formatoNumero(porcentajeEgreso)
+    $percent_val.innerHTML = formatoPorcentaje(porcentajeEgreso)
     render(ingresos, "INGRESOS", $inner_ing, ingre_colors)
     render(egresos, "EGRESOS",$inner_egre, egre_colors)
 }
