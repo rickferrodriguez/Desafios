@@ -4,9 +4,34 @@ const exercises = [
     new Exercise('Bench Press','images/benchpress.jpg','The exercise works mainly the quadriceps muscles of the front of the thigh—the rectus femoris and the vastusmuscles.','400','4reps', 'chest'),
 ];
 
+const exercises2 = {
+    pierna : [ {nombre: 'Squat', desc: 'Squad Desc'},
+            {nombre: 'Racks', desc: 'Racks Desc'}],
+    chest : [ {nombre: 'press', desc: 'press Desc'},
+            {nombre: 'press2', desc: 'press2 Desc'}]
+}
+
+const recorrerEjercicios = (ejer) =>{
+    let eje = (exercises2[ejer]) ? 
+        exercises2[ejer].map( exer =>{
+        return exer.nombre
+        })
+        :
+        eje ="no existe"
+
+    return eje
+    // exercises2[ejer].map( exercise => {
+    //     console.log(exercise.nombre)
+    // })
+}
+
 const $container = document.getElementById('container')
 const $week = document.getElementById('week')
-const $mostrar = document.getElementById('mostrar')
+const $pierna = document.getElementById('pierna')
+
+$pierna.addEventListener('click', () =>{
+    console.log(recorrerEjercicios($pierna.value))
+})
 
 const weekDay = () => {
     let daysText = ''
