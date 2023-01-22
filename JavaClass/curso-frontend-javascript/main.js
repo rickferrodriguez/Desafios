@@ -1,13 +1,16 @@
 const $navbar_email = document.querySelector('.navbar-email')
 const $menu_ham = document.querySelector('.menu')
-const $desktop_menu = document.querySelector('.desktop-menu')
-const $mobile_menu = document.querySelector('.mobile-menu')
 const $shopping_button = document.querySelector('.navbar-shopping-cart')
-const $product_detail = document.querySelector('.product-detail')
 const $cards_container = document.querySelector('.cards-container')
 const $clothes_el = document.querySelector('#clothes-el')
 const $toys_el = document.querySelector('#toys-el')
+// ventanas activables
 const $product_detail_onc = document.querySelector('.product-detail-onc')
+const $product_detail = document.querySelector('.product-detail')
+const $desktop_menu = document.querySelector('.desktop-menu')
+const $mobile_menu = document.querySelector('.mobile-menu')
+
+const activables = [ $product_detail,$product_detail_onc, $desktop_menu, $mobile_menu]
 
 const products = {
     toys : [
@@ -79,7 +82,9 @@ const products = {
     ],
 }
 
-$navbar_email.addEventListener('click', () => {
+$navbar_email.addEventListener('click', (event) => {
+    const value = event.target.getAttribute('activa')
+    console.log(value)
     $desktop_menu.classList.toggle('inactive')
     $product_detail.classList.add('inactive')
     $mobile_menu.classList.add('inactive')
