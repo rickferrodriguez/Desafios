@@ -2,8 +2,9 @@
     width: 360px;
     padding-bottom: 24px;
     position: absolute;
-    top: 61px;
+    top: 60px;
     right: 0;
+    border: 1px solid var(--very-light-pink);
 }
 .product-detail-onc-close {
     background: var(--white);
