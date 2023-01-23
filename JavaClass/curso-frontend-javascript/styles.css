@@ -130,9 +130,12 @@ a{
 .mobile-menu {
     background-color: var(--white);
     position: absolute;
-    top: 61px;
+    top: 60px;
     left: 0;
     padding: 0 24px 24px 24px;
+    width: 50%;
+    border: 1px solid var(--very-light-pink);
+    border-bottom-right-radius: 20px;
 }
 .mobile-menu a {
     text-decoration: none;
