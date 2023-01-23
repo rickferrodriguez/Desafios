@@ -98,6 +98,16 @@ const mostrarEsconder = (ele) => {
     }
 }
 
+const esconderDetalleProduto = () => {
+    if($product_detail_onc.classList.contains('inactive')){
+        esconderEmergentes()
+        $product_detail_onc.classList.remove('inactive')
+        return
+    } else{
+    $product_detail_onc.classList.add('inactive')
+    }
+}
+
 $navbar_email.addEventListener('click', (event) => {
     mostrarEsconder($desktop_menu)
 })
@@ -157,7 +167,7 @@ const cardClick = (valor) => {
     mostrarEsconder($product_detail_onc)
     $product_detail_onc.innerHTML = `
             <div class="product-detail-onc-close">
-                <img src="./icons/icon_close.png" alt="close">
+                <img src="./icons/icon_close.png" alt="close" onclick="esconderDetalleProduto()" >
             </div>
             <img src="${productArray[indice].image}" alt="bike">
             <div class="product-info-onc">
