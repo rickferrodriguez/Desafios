@@ -21,6 +21,7 @@
 }
 .product-detail-onc-close:hover {
     cursor: pointer;
+    filter: drop-shadow(1px 1px 1px black)
 }
 .product-detail-onc > img:nth-child(2) {
     width: 100%;
