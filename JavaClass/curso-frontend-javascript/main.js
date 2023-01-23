@@ -10,7 +10,7 @@ const $product_detail = document.querySelector('.product-detail')
 const $desktop_menu = document.querySelector('.desktop-menu')
 const $mobile_menu = document.querySelector('.mobile-menu')
 
-const activables = [ $product_detail,$product_detail_onc, $desktop_menu, $mobile_menu]
+const activables = document.querySelectorAll('.flotante')
 
 const products = {
     toys : [
@@ -82,13 +82,27 @@ const products = {
     ],
 }
 
+const esconderEmergentes = () => {
+    activables.forEach(activable => {
+        activable.classList.add('inactive')
+    }) 
+}
+
 $navbar_email.addEventListener('click', (event) => {
-    const value = event.target.getAttribute('activa')
-    console.log(value)
-    $desktop_menu.classList.toggle('inactive')
-    $product_detail.classList.add('inactive')
-    $mobile_menu.classList.add('inactive')
+
+    if($desktop_menu.classList.contains('inactive')){
+        esconderEmergentes()
+        $desktop_menu.classList.remove('inactive')
+        console.log('tiene la clase')
+        return
+    } else{
+    $desktop_menu.classList.add('inactive')
+    console.log('no la tiene')
+    }
+    // $product_detail.classList.add('inactive')
+    // $mobile_menu.classList.add('inactive')
 })
+
 
 $menu_ham.addEventListener('click', () => {
     $mobile_menu.classList.toggle('inactive')
@@ -97,9 +111,17 @@ $menu_ham.addEventListener('click', () => {
 })
 
 $shopping_button.addEventListener('click', () => {
-    $product_detail.classList.toggle('inactive')
-    $mobile_menu.classList.add('inactive')
-    $desktop_menu.classList.add('inactive')
+    if($product_detail.classList.contains('inactive')){
+        esconderEmergentes()
+        $product_detail.classList.remove('inactive')
+        console.log('tiene la clase')
+        return
+    } else{
+    $product_detail.classList.add('inactive')
+    console.log('no la tiene')
+    }
+    // $mobile_menu.classList.add('inactive')
+    // $desktop_menu.classList.add('inactive')
 })
 
 const renderProduct = (arra) => {
