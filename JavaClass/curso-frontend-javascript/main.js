@@ -136,7 +136,7 @@ const renderProduct = (arra) => {
                             <p>${ele.precio}</p>
                             <p>${ele.nombre}</p>
                         </div>
-                        <figure>
+                        <figure >
                             <img src="./icons/bt_add_to_cart.svg" alt="">
                         </figure>
                     </div>

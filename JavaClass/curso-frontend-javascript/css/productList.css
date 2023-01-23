@@ -9,7 +9,6 @@
     width: 240px;
     border: 1px solid var(--very-light-pink);
     border-radius:20px;
-    cursor: pointer;
 }
 .product-card img {
     width: 240px;
@@ -17,6 +16,7 @@
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
 .product-info {
     display: flex;
