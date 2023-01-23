@@ -4,6 +4,7 @@
     position: absolute;
     top: 60px;
     right: 0;
+    background: var(--white);
     border: 1px solid var(--very-light-pink);
     border-bottom-left-radius: 20px;
 }

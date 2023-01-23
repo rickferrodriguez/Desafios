@@ -4,6 +4,10 @@ const $shopping_button = document.querySelector('.navbar-shopping-cart')
 const $cards_container = document.querySelector('.cards-container')
 const $clothes_el = document.querySelector('#clothes-el')
 const $toys_el = document.querySelector('#toys-el')
+
+// etiqueta <a> menú amburguesa mobile
+const $clothes_mobile = document.querySelector('#clothes-mobile')
+const $toys_mobile = document.querySelector('#toys-mobile')
 // ventanas activables
 const $product_detail_onc = document.querySelector('.product-detail-onc')
 const $product_detail = document.querySelector('.product-detail')
@@ -108,7 +112,7 @@ const esconderDetalleProduto = () => {
     }
 }
 
-$navbar_email.addEventListener('click', (event) => {
+$navbar_email.addEventListener('click', () => {
     mostrarEsconder($desktop_menu)
 })
 
@@ -146,6 +150,7 @@ const renderProduct = (arra) => {
 // creado para saber en que ventana de productos me encuentro
 let presionando = ''
 
+// Opciones menú Desktop
 // retorna el nombre de la ventana en la que me encuentro
 $clothes_el.addEventListener('click', (event) =>{
     const value = event.target.getAttribute('data-value')
@@ -160,14 +165,30 @@ $toys_el.addEventListener('click', (event) =>{
     renderProduct(value)
 })
 
+// Opciones menú mobile
+$clothes_mobile.addEventListener('click', (event) =>{
+    const value = event.target.getAttribute('data-value')
+    presionando = value
+    renderProduct(value)
+    mostrarEsconder($mobile_menu)
+})
+
+$toys_mobile.addEventListener('click', (event) =>{
+    const value = event.target.getAttribute('data-value')
+    presionando = value
+    renderProduct(value)
+    mostrarEsconder($mobile_menu)
+})
+
+
 const cardClick = (valor) => {
     // un array del objeto presionado
     let productArray = products[renderProduct(presionando)]
     let indice = productArray.findIndex((product) => product.id === valor);
     mostrarEsconder($product_detail_onc)
     $product_detail_onc.innerHTML = `
-            <div class="product-detail-onc-close">
-                <img src="./icons/icon_close.png" alt="close" onclick="esconderDetalleProduto()" >
+            <div class="product-detail-onc-close" onclick="esconderDetalleProduto()">
+                <img src="./icons/icon_close.png" alt="close"  >
             </div>
             <img src="${productArray[indice].image}" alt="bike">
             <div class="product-info-onc">
@@ -181,5 +202,4 @@ const cardClick = (valor) => {
             </div>
     `
 }
-
 
