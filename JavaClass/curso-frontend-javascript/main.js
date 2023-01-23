@@ -88,40 +88,27 @@ const esconderEmergentes = () => {
     }) 
 }
 
-$navbar_email.addEventListener('click', (event) => {
-
-    if($desktop_menu.classList.contains('inactive')){
+const mostrarEsconder = (ele) => {
+    if(ele.classList.contains('inactive')){
         esconderEmergentes()
-        $desktop_menu.classList.remove('inactive')
-        console.log('tiene la clase')
+        ele.classList.remove('inactive')
         return
     } else{
-    $desktop_menu.classList.add('inactive')
-    console.log('no la tiene')
+    ele.classList.add('inactive')
     }
-    // $product_detail.classList.add('inactive')
-    // $mobile_menu.classList.add('inactive')
+}
+
+$navbar_email.addEventListener('click', (event) => {
+    mostrarEsconder($desktop_menu)
 })
 
 
 $menu_ham.addEventListener('click', () => {
-    $mobile_menu.classList.toggle('inactive')
-    $product_detail.classList.add('inactive')
-    $desktop_menu.classList.add('inactive')
+    mostrarEsconder($mobile_menu)
 })
 
 $shopping_button.addEventListener('click', () => {
-    if($product_detail.classList.contains('inactive')){
-        esconderEmergentes()
-        $product_detail.classList.remove('inactive')
-        console.log('tiene la clase')
-        return
-    } else{
-    $product_detail.classList.add('inactive')
-    console.log('no la tiene')
-    }
-    // $mobile_menu.classList.add('inactive')
-    // $desktop_menu.classList.add('inactive')
+    mostrarEsconder($product_detail)
 })
 
 const renderProduct = (arra) => {
@@ -167,6 +154,7 @@ const cardClick = (valor) => {
     // un array del objeto presionado
     let productArray = products[renderProduct(presionando)]
     let indice = productArray.findIndex((product) => product.id === valor);
+    mostrarEsconder($product_detail_onc)
     $product_detail_onc.innerHTML = `
             <div class="product-detail-onc-close">
                 <img src="./icons/icon_close.png" alt="close">
