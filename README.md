@@ -7,3 +7,6 @@ https://rickferrodriguez.github.io/Desafios/JavaClass/curso-frontend-javascript/
 - Demo Presupuestos con JavaScript - HTML - Materialize CSS
 https://rickferrodriguez.github.io/Desafios/JavaClass/Presupuesto/index.html
 
+- Demo Simple BlackJack
+https://rickferrodriguez.github.io/Desafios/JavaClass/blackjack/index.html
+
