@@ -86,6 +86,14 @@ const products = {
     ],
 }
 
+const formatoPrecio = (num) => {
+    return num.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+    })
+}
+
 const esconderEmergentes = () => {
     activables.forEach(activable => {
         activable.classList.add('inactive')
@@ -133,7 +141,7 @@ const renderProduct = (arra) => {
                     <img src="${ele.image}" alt="">
                     <div class="product-info">
                         <div>
-                            <p>${ele.precio}</p>
+                            <p>${formatoPrecio(ele.precio)}</p>
                             <p>${ele.nombre}</p>
                         </div>
                         <figure class="figure-add-to-cart" >
@@ -192,7 +200,7 @@ const cardClick = (valor) => {
             </div>
             <img src="${productArray[indice].image}" alt="bike">
             <div class="product-info-onc">
-                <p>${productArray[indice].precio}</p>
+                <p>${formatoPrecio(productArray[indice].precio)}</p>
                 <p>${productArray[indice].nombre}</p>
                 <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
                 <button class="primary-button add-to-cart-button">
