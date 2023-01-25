@@ -6,7 +6,7 @@ const $cards_container = document.querySelector('.cards-container')
 // etiqueta <a> menú superior desktop
 const $clothes_el = document.querySelector('#clothes-el')
 const $toys_el = document.querySelector('#toys-el')
-const $all_el  = document.querySelector('#all-el')
+const $all_el = document.querySelector('#all-el')
 
 // etiqueta <a> menú amburguesa mobile
 const $clothes_mobile = document.querySelector('#clothes-mobile')
@@ -27,7 +27,7 @@ const products = [
         "precio": 120,
         "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "toys"
+        "categoria": "toys"
     },
     {
         "id": 1,
@@ -35,7 +35,7 @@ const products = [
         "precio": 120,
         "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "toys"
+        "categoria": "toys"
     },
     {
         "id": 2,
@@ -43,7 +43,7 @@ const products = [
         "precio": 120,
         "image": "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "toys"
+        "categoria": "toys"
     },
     {
         "id": 3,
@@ -51,7 +51,7 @@ const products = [
         "precio": 220,
         "image": "https://images.pexels.com/photos/957157/pexels-photo-957157.jpeg?auto=compress&cs=tinysrgb&w=650&h=940&dpr=1",
         "cantidad": 2,
-        "categoria" : "toys"
+        "categoria": "toys"
     },
     {
         "id": 4,
@@ -59,7 +59,7 @@ const products = [
         "precio": 20,
         "image": "https://images.pexels.com/photos/991509/pexels-photo-991509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "clothes"
+        "categoria": "clothes"
     },
     {
         "id": 5,
@@ -67,7 +67,7 @@ const products = [
         "precio": 20,
         "image": "https://images.pexels.com/photos/991509/pexels-photo-991509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "clothes"
+        "categoria": "clothes"
     },
     {
         "id": 6,
@@ -75,7 +75,7 @@ const products = [
         "precio": 20,
         "image": "https://images.pexels.com/photos/991509/pexels-photo-991509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "clothes"
+        "categoria": "clothes"
     },
     {
         "id": 7,
@@ -83,7 +83,7 @@ const products = [
         "precio": 20,
         "image": "https://images.pexels.com/photos/991509/pexels-photo-991509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "cantidad": 4,
-        "categoria" : "clothes"
+        "categoria": "clothes"
     },
     {
         "id": 9,
@@ -91,7 +91,7 @@ const products = [
         "precio": 22,
         "image": "https://images.pexels.com/photos/957157/pexels-photo-957157.jpeg?auto=compress&cs=tinysrgb&w=650&h=940&dpr=1",
         "cantidad": 2,
-        "categoria" : "toys"
+        "categoria": "toys"
     },
 ]
 
@@ -106,26 +106,26 @@ const formatoPrecio = (num) => {
 const esconderEmergentes = () => {
     activables.forEach(activable => {
         activable.classList.add('inactive')
-    }) 
+    })
 }
 
 const mostrarEsconder = (ele) => {
-    if(ele.classList.contains('inactive')){
+    if (ele.classList.contains('inactive')) {
         esconderEmergentes()
         ele.classList.remove('inactive')
         return
-    } else{
-    ele.classList.add('inactive')
+    } else {
+        ele.classList.add('inactive')
     }
 }
 
 const esconderDetalleProduto = () => {
-    if($product_detail_onc.classList.contains('inactive')){
+    if ($product_detail_onc.classList.contains('inactive')) {
         esconderEmergentes()
         $product_detail_onc.classList.remove('inactive')
         return
-    } else{
-    $product_detail_onc.classList.add('inactive')
+    } else {
+        $product_detail_onc.classList.add('inactive')
     }
 }
 
@@ -147,24 +147,24 @@ $all_el.addEventListener('click', (event) => {
     const value = event.target.getAttribute('data-value')
     mappedProducts(value)
 })
-$clothes_el.addEventListener('click', (event) =>{
+$clothes_el.addEventListener('click', (event) => {
     const value = event.target.getAttribute('data-value')
     mappedProducts(value)
 })
 
-$toys_el.addEventListener('click', (event) =>{
+$toys_el.addEventListener('click', (event) => {
     const value = event.target.getAttribute('data-value')
     mappedProducts(value)
 })
 
 // Opciones menú mobile
-$clothes_mobile.addEventListener('click', (event) =>{
+$clothes_mobile.addEventListener('click', (event) => {
     const value = event.target.getAttribute('data-value')
     mappedProducts(value)
     mostrarEsconder($mobile_menu)
 })
 
-$toys_mobile.addEventListener('click', (event) =>{
+$toys_mobile.addEventListener('click', (event) => {
     const value = event.target.getAttribute('data-value')
     mappedProducts(value)
     mostrarEsconder($mobile_menu)
@@ -192,14 +192,14 @@ const cardClick = (valor) => {
     `
 }
 
-const mappedProducts = (value) =>{
+const mappedProducts = (value) => {
     // const elProducto = products.filter(producto => producto.nombre === value)
     const elProducto = []
     products.forEach(producto => {
         if (value === 'all') {
             renderProduct(products)
         }
-        else if(producto.categoria === value){
+        else if (producto.categoria === value) {
             elProducto.push(producto)
             renderProduct(elProducto)
         }
@@ -208,8 +208,8 @@ const mappedProducts = (value) =>{
 
 const renderProduct = (arra) => {
     let textInner = ''
-    arra.map( ele => {
-            textInner += `
+    arra.map(ele => {
+        textInner += `
                 <div class="product-card" onclick="cardClick(${ele.id})">
                     <img src="${ele.image}" alt="">
                     <div class="product-info">
