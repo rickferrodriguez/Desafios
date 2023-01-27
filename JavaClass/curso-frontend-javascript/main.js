@@ -172,7 +172,6 @@ $toys_mobile.addEventListener('click', (event) => {
 
 
 const cardClick = (valor) => {
-    // un array del objeto presionado
     let indice = products.findIndex((product) => product.id === valor);
     mostrarEsconder($product_detail_onc)
     $product_detail_onc.innerHTML = `
