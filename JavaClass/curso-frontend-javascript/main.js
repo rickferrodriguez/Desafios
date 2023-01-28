@@ -171,38 +171,15 @@ $toys_mobile.addEventListener('click', (event) => {
 })
 
 
-const cardClick = (valor) => {
-    let indice = products.findIndex((product) => product.id === valor);
-    mostrarEsconder($product_detail_onc)
-    $product_detail_onc.innerHTML = `
-            <div class="product-detail-onc-close" onclick="esconderDetalleProduto()">
-                <img src="./icons/icon_close.png" alt="close"  >
-            </div>
-            <img src="${products[indice].image}" alt="bike">
-            <div class="product-info-onc">
-                <p>${formatoPrecio(products[indice].precio)}</p>
-                <p>${products[indice].nombre}</p>
-                <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-                <button class="primary-button add-to-cart-button">
-                    <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-                        Add to cart
-                </button>
-            </div>
-    `
-}
-
 const mappedProducts = (value) => {
     // const elProducto = products.filter(producto => producto.nombre === value)
-    const elProducto = []
-    products.forEach(producto => {
-        if (value === 'all') {
-            renderProduct(products)
-        }
-        else if (producto.categoria === value) {
-            elProducto.push(producto)
-            renderProduct(elProducto)
-        }
-    })
+    const elProducto = products.filter(product => product.categoria === value)
+    if (value === 'all') {
+        renderProduct(products)
+        return
+    }
+
+    renderProduct(elProducto)
 }
 
 const renderProduct = (arra) => {
@@ -224,5 +201,25 @@ const renderProduct = (arra) => {
             `
     })
     $cards_container.innerHTML = textInner
+}
+
+const cardClick = (valor) => {
+    let indice = products.findIndex((product) => product.id === valor);
+    mostrarEsconder($product_detail_onc)
+    $product_detail_onc.innerHTML = `
+            <div class="product-detail-onc-close" onclick="esconderDetalleProduto()">
+                <img src="./icons/icon_close.png" alt="close"  >
+            </div>
+            <img src="${products[indice].image}" alt="bike">
+            <div class="product-info-onc">
+                <p>${formatoPrecio(products[indice].precio)}</p>
+                <p>${products[indice].nombre}</p>
+                <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+                <button class="primary-button add-to-cart-button">
+                    <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+                        Add to cart
+                </button>
+            </div>
+    `
 }
 
