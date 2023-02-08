@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body onload="mostrarBuscador(persona='')">
         <div class="carta">
             <section class="buscador">
                 <form>
@@ -16,9 +16,9 @@
                     <button type="button" id="mostrar">Mostrar</button>
                 </form>
                 <div class="seleccionador">
-                    <button class="btn"><</button>
+                    <button class="btn" type="button" id="btn-before"><</button>
                     <p id="nombre-person">Nombre persona</p>
-                    <button class="btn">></button>
+                    <button class="btn" type="button" id="btn-after">></button>
                 </div>
             </section>
             <section class="lista">

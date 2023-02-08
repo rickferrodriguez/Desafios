@@ -4,6 +4,8 @@ const $ul_list = document.querySelector('#ul-list')
 const $mostrar = document.querySelector('#mostrar')
 const $inp_nombre_persona = document.querySelector('#inp-nombre-persona')
 const $nombre_person = document.querySelector('#nombre-person')
+const $btn_before = document.querySelector('#btn-before')
+const $btn_after = document.querySelector('#btn-after')
 
 //
 
@@ -24,20 +26,34 @@ const personasSalarios = () => {
         const pSalarios = arraySalarios(nom)
         return { nombre: nom, salario: pSalarios}
     })
-    console.log(arrSalPersona)
     return arrSalPersona
 }
 
-const mostrarBuscador = (persona) => {
+let contador = 0
+const mostrarBuscador = ({persona, next, before }) => {
     let salario 
     let nombre = ''
     let texto = ''
-    personasSalarios().forEach(per => {
-        if(per.nombre === persona){
-            nombre = per.nombre
-            salario = per.salario
-        }
-    })
+    if(persona) {
+        personasSalarios().forEach((per, index) => {
+            if(per.nombre === persona){
+                nombre = per.nombre
+                salario = per.salario
+                contador = index
+            }
+        })
+    } else if(next == 'aft' && contador < (personasSalarios().length - 1)){
+        contador ++
+        nombre = personasSalarios()[contador].nombre
+        salario = personasSalarios()[contador].salario
+    } else if(before == 'bef' && contador > 0){
+        contador --
+        nombre = personasSalarios()[contador].nombre
+        salario = personasSalarios()[contador].salario
+    } 
+
+    nombre = personasSalarios()[contador].nombre
+    salario = personasSalarios()[contador].salario
     salario.forEach(sal => {
         texto += `<li>${sal}</li>`
     })
@@ -45,9 +61,20 @@ const mostrarBuscador = (persona) => {
     $nombre_person.textContent = nombre
 }
 
+
+
+
 $mostrar.addEventListener('click', () => {
     const valor =$inp_nombre_persona.value
-    mostrarBuscador(valor)
+    mostrarBuscador({persona:valor})
 })
 
-personasSalarios()
+$btn_before.addEventListener('click', () => {
+    let texto = 'bef'
+    mostrarBuscador({persona:undefined,before:texto})
+})
+
+$btn_after.addEventListener('click', () => {
+    let texto = 'aft'
+    mostrarBuscador({persona:undefined,next:texto})
+})
