@@ -1,0 +1,7 @@
+.lista{
+    display: grid;
+    height:120px;
+    justify-content: center;
+    align-content: center;
+}
+
