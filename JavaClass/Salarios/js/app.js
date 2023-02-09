@@ -29,52 +29,57 @@ const personasSalarios = () => {
     return arrSalPersona
 }
 
-let contador = 0
-const mostrarBuscador = ({persona, next, before }) => {
-    let salario 
+const buscadorPersonas = () => {
+    let contador = 0
     let nombre = ''
-    let texto = ''
-    if(persona) {
-        personasSalarios().forEach((per, index) => {
-            if(per.nombre === persona){
-                nombre = per.nombre
-                salario = per.salario
-                contador = index
-            }
-        })
-    } else if(next == 'aft' && contador < (personasSalarios().length - 1)){
-        contador ++
-        nombre = personasSalarios()[contador].nombre
-        salario = personasSalarios()[contador].salario
-    } else if(before == 'bef' && contador > 0){
-        contador --
-        nombre = personasSalarios()[contador].nombre
-        salario = personasSalarios()[contador].salario
-    } 
+    let salario 
+    const mostradorPersonas = ({persona, next, before }) => {
+        let texto = ''
+        if(persona) {
+            personasSalarios().forEach((per, index) => {
+                if(per.nombre === persona){
+                    nombre = per.nombre
+                    salario = per.salario
+                    contador = index
+                }
+            })
+        } else if(next == 'aft' && contador < (personasSalarios().length - 1)){
+            contador ++
+            nombre = personasSalarios()[contador].nombre
+            salario = personasSalarios()[contador].salario
+        } else if(before == 'bef' && contador > 0){
+            contador --
+            nombre = personasSalarios()[contador].nombre
+            salario = personasSalarios()[contador].salario
+        } 
 
-    nombre = personasSalarios()[contador].nombre
-    salario = personasSalarios()[contador].salario
-    salario.forEach(sal => {
-        texto += `<li>${sal}</li>`
-    })
-    $ul_list.innerHTML = texto
-    $nombre_person.textContent = nombre
+
+        nombre = personasSalarios()[contador].nombre
+        salario = personasSalarios()[contador].salario
+        salario.forEach(sal => {
+            texto += `<li>${sal}</li>`
+        })
+        $ul_list.innerHTML = texto
+        $nombre_person.textContent = nombre
+    }
+    return mostradorPersonas
 }
 
+const mostrador = buscadorPersonas()
 
 
 
 $mostrar.addEventListener('click', () => {
     const valor =$inp_nombre_persona.value
-    mostrarBuscador({persona:valor})
+    mostrador({persona:valor})
 })
 
 $btn_before.addEventListener('click', () => {
     let texto = 'bef'
-    mostrarBuscador({persona:undefined,before:texto})
+    mostrador({persona:undefined,before:texto})
 })
 
 $btn_after.addEventListener('click', () => {
     let texto = 'aft'
-    mostrarBuscador({persona:undefined,next:texto})
+    mostrador({persona:undefined,next:texto})
 })
