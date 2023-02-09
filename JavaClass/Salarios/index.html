@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body onload="mostrador(persona='Juanita')">
+    <body onload="buscadorPersonas()(persona='Juanita')">
         <div class="carta">
             <section class="buscador">
                 <form>
@@ -30,12 +30,13 @@
                 </ul>
             </section>
             <section class="resultados-parrafos">
-                <p>media</p>
+                <p id="media-el">media</p>
                 <p>mediana</p>
                 <p>moda</p>
             </section>
         </div>
         <script src="js/salarios.js"></script>
+        <script src="js/formulas.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

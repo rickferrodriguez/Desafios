@@ -6,7 +6,7 @@ const $inp_nombre_persona = document.querySelector('#inp-nombre-persona')
 const $nombre_person = document.querySelector('#nombre-person')
 const $btn_before = document.querySelector('#btn-before')
 const $btn_after = document.querySelector('#btn-after')
-
+const $media_el = document.querySelector('#media-el')
 //
 
 const buscarPersona = (persona) => {
@@ -36,6 +36,7 @@ const buscadorPersonas = () => {
     const mostradorPersonas = ({persona, next, before }) => {
         let texto = ''
         if(persona) {
+            console.log('hay nombre')
             personasSalarios().forEach((per, index) => {
                 if(per.nombre === persona){
                     nombre = per.nombre
@@ -53,7 +54,6 @@ const buscadorPersonas = () => {
             salario = personasSalarios()[contador].salario
         } 
 
-
         nombre = personasSalarios()[contador].nombre
         salario = personasSalarios()[contador].salario
         salario.forEach(sal => {
@@ -61,6 +61,9 @@ const buscadorPersonas = () => {
         })
         $ul_list.innerHTML = texto
         $nombre_person.textContent = nombre
+
+
+        return salario
     }
     return mostradorPersonas
 }
@@ -71,15 +74,24 @@ const mostrador = buscadorPersonas()
 
 $mostrar.addEventListener('click', () => {
     const valor =$inp_nombre_persona.value
-    mostrador({persona:valor})
+    buscadorPersonas({persona:valor})
+    // mostrador({persona:valor})
+    $media_el.textContent = `La media de ${valor} es: ${Formulas.calcularMediana(mostrador({persona:valor}))}`
 })
 
 $btn_before.addEventListener('click', () => {
     let texto = 'bef'
-    mostrador({persona:undefined,before:texto})
+    const valores = {persona:undefined,before:texto}
+    buscadorPersonas(valores)
+    // mostrador(valores)
+    $media_el.textContent = `La media es: ${Formulas.calcularMediana(mostrador(valores))}`
 })
 
 $btn_after.addEventListener('click', () => {
     let texto = 'aft'
-    mostrador({persona:undefined,next:texto})
+    const valores = {persona:undefined,next:texto}
+    // mostrador(valores)
+    buscadorPersonas(valores)
+    $media_el.textContent = `La media es: ${Formulas.calcularMediana(mostrador(valores))}`
 })
+
