@@ -7,6 +7,8 @@ const $nombre_person = document.querySelector('#nombre-person')
 const $btn_before = document.querySelector('#btn-before')
 const $btn_after = document.querySelector('#btn-after')
 const $media_el = document.querySelector('#media-el')
+const $mediana_el = document.querySelector('#mediana-el')
+const $moda_el = document.querySelector('#moda-el')
 //
 
 const buscarPersona = (persona) => {
@@ -35,6 +37,7 @@ const buscadorPersonas = () => {
     let texto = ''
     let nombre = ''
     const mostradorPersonas = ({persona, next, before }) => {
+        let sumado = ''
         if(persona) {
             console.log('hay nombre')
             personasSalarios().forEach((per, index) => {
@@ -51,28 +54,35 @@ const buscadorPersonas = () => {
             console.log(contador)
             nombre = personasSalarios()[contador].nombre
             salario = personasSalarios()[contador].salario
+            salario.forEach(sal => {
+                sumado += `<li>${sal}</li>`
+            })
+            texto = sumado
         } 
 
         if(before == 'bef' && contador > 0){
             contador --
             nombre = personasSalarios()[contador].nombre
             salario = personasSalarios()[contador].salario
+            salario.forEach(sal => {
+                sumado += `<li>${sal}</li>`
+            })
+            texto = sumado
         } 
 
-        console.log(nombre)
         $nombre_person.textContent = nombre
         $ul_list.innerHTML = texto
 
         return salario
     }
     // $nombre_person.textContent = nombre
-    console.log(contador)
 
     nombre = personasSalarios()[contador].nombre
     salario = personasSalarios()[contador].salario
     salario.forEach(sal => {
         texto += `<li>${sal}</li>`
     })
+        $ul_list.innerHTML = texto
     return mostradorPersonas
 }
 
@@ -83,20 +93,24 @@ const mostrador = buscadorPersonas()
 $mostrar.addEventListener('click', () => {
     const valor =$inp_nombre_persona.value
     let listado =mostrador({persona:valor})
-    $media_el.textContent = `La media de ${valor} es: ${Formulas.calcularMediana(listado)}`
+    $mediana_el.textContent = `La mediana de ${valor} es: ${Formulas.calcularMediana(listado)}`
+    $moda_el.textContent = `La moda ejecutando ${Formulas.calcularModa(listado)}`
 })
 
 $btn_before.addEventListener('click', () => {
     let texto = 'bef'
     const valores = {persona:undefined,before:texto}
     let listado = mostrador(valores)
-    $media_el.textContent = `La media es: ${Formulas.calcularMediana(listado)}`
+    $mediana_el.textContent = `La mediana es: ${Formulas.calcularMediana(listado)}`
+    $moda_el.textContent = `La moda ejecutando ${Formulas.calcularModa(listado)}`
 })
 
 $btn_after.addEventListener('click', () => {
     let texto = 'aft'
     const valores = {persona:undefined,next:texto}
     let listado = mostrador(valores)
-    $media_el.textContent = `La media es: ${Formulas.calcularMediana(listado)}`
+    $mediana_el.textContent = `La mediana es: ${Formulas.calcularMediana(listado)}`
+    $media_el.textContent = `La media es: ${Formulas.calcularMedia(listado)}`
+    $moda_el.textContent = `La moda ejecutando ${Formulas.calcularModa(listado)}`
 })
 
