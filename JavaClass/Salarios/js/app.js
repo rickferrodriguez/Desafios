@@ -11,21 +11,35 @@ const $mediana_el = document.querySelector('#mediana-el')
 const $moda_el = document.querySelector('#moda-el')
 //
 
-const buscarPersona = (persona) => {
-    return salarios.find(sal => sal.name === persona)
+// const buscarPersona = (persona) => {
+//     return salarios.find(sal => sal.name === persona)
+// }
+const buscarNombre = (arr, nombre) => {
+    return arr.find(e => e.name === nombre)
 }
 
-const arraySalarios = (persona) => {
-    const salario = buscarPersona(persona).trabajos.map(per => {
+const arraySalarios = (arr,persona) => {
+    // const salario = buscarPersona(persona).trabajos.map(per => {
+    //     return per.salario
+    // })
+    const salario = buscarNombre(arr,persona).trabajos.map(per => {
         return per.salario
     })
     return salario
 }
 
-const personasSalarios = () => {
-    const nombres = salarios.map(sal => sal.name)
+// const personasSalarios = () => {
+//     const nombres = salarios.map(sal => sal.name)
+//     const arrSalPersona = nombres.map( nom => {
+//         const pSalarios = arraySalarios(salarios,nom)
+//         return { nombre: nom, salario: pSalarios}
+//     })
+//     return arrSalPersona
+// }
+const personasSalarios = (arr) => {
+    const nombres = arr.map(sal => sal.name)
     const arrSalPersona = nombres.map( nom => {
-        const pSalarios = arraySalarios(nom)
+        const pSalarios = arraySalarios(arr,nom)
         return { nombre: nom, salario: pSalarios}
     })
     return arrSalPersona
@@ -36,11 +50,12 @@ const buscadorPersonas = () => {
     let salario 
     let texto = ''
     let nombre = ''
+    let arrSalarios = personasSalarios(salarios)
     const mostradorPersonas = ({persona, next, before }) => {
         let sumado = ''
-        if(persona) {
+        if(persona != undefined) {
             console.log('hay nombre')
-            personasSalarios().forEach((per, index) => {
+            arrSalarios.forEach((per, index) => {
                 if(per.nombre === persona){
                     nombre = per.nombre
                     salario = per.salario
@@ -49,11 +64,11 @@ const buscadorPersonas = () => {
             })
         } 
 
-        if(next == 'aft' && contador < (personasSalarios().length - 1)){
+        if(next == 'aft' && contador < (arrSalarios.length - 1)){
             contador ++
             console.log(contador)
-            nombre = personasSalarios()[contador].nombre
-            salario = personasSalarios()[contador].salario
+            nombre = arrSalarios[contador].nombre
+            salario = arrSalarios[contador].salario
             salario.forEach(sal => {
                 sumado += `<li>${sal}</li>`
             })
@@ -62,8 +77,8 @@ const buscadorPersonas = () => {
 
         if(before == 'bef' && contador > 0){
             contador --
-            nombre = personasSalarios()[contador].nombre
-            salario = personasSalarios()[contador].salario
+            nombre = arrSalarios[contador].nombre
+            salario = arrSalarios[contador].salario
             salario.forEach(sal => {
                 sumado += `<li>${sal}</li>`
             })
@@ -77,8 +92,8 @@ const buscadorPersonas = () => {
     }
     // $nombre_person.textContent = nombre
 
-    nombre = personasSalarios()[contador].nombre
-    salario = personasSalarios()[contador].salario
+    nombre = arrSalarios[contador].nombre
+    salario = arrSalarios[contador].salario
     salario.forEach(sal => {
         texto += `<li>${sal}</li>`
     })
@@ -88,6 +103,26 @@ const buscadorPersonas = () => {
 
 const mostrador = buscadorPersonas()
 
+const nuevoArray = () => {
+    let empresas = {}
+    for (const persona of salarios) {
+        let miTrabajo = persona.trabajos
+        for (const trabajo of miTrabajo) {
+            const {year, empresa, salario} = trabajo
+            if(!empresas[empresa]){
+                empresas[empresa] = {}
+            }
+            if(!empresas[empresa][year]){
+                empresas[empresa][year] = []
+            }
+            empresas[empresa][year].push(salario) 
+        }
+    }
+    console.log(empresas)
+    return empresas
+}
+
+nuevoArray()
 
 
 $mostrar.addEventListener('click', () => {
