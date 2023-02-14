@@ -28,21 +28,32 @@ const arraySalarios = (arr,persona) => {
     return salario
 }
 
-// const personasSalarios = () => {
-//     const nombres = salarios.map(sal => sal.name)
-//     const arrSalPersona = nombres.map( nom => {
-//         const pSalarios = arraySalarios(salarios,nom)
-//         return { nombre: nom, salario: pSalarios}
-//     })
-//     return arrSalPersona
-// }
+
 const personasSalarios = (arr) => {
-    const nombres = arr.map(sal => sal.name)
-    const arrSalPersona = nombres.map( nom => {
-        const pSalarios = arraySalarios(arr,nom)
-        return { nombre: nom, salario: pSalarios}
-    })
-    return arrSalPersona
+        const nombres = arr.map(sal => sal.name)
+        const arrSalPersona = nombres.map( nom => {
+            const pSalarios = arraySalarios(arr,nom)
+            return { nombre: nom, salario: pSalarios}
+        })
+        return arrSalPersona
+}
+
+const nuevoArray = () => {
+    let empresas = {}
+    for (const persona of salarios) {
+        let miTrabajo = persona.trabajos
+        for (const trabajo of miTrabajo) {
+            const {year, empresa, salario} = trabajo
+            if(!empresas[empresa]){
+                empresas[empresa] = {}
+            }
+            if(!empresas[empresa][year]){
+                empresas[empresa][year] = []
+            }
+            empresas[empresa][year].push(salario) 
+        }
+    }
+    return empresas
 }
 
 const buscadorPersonas = () => {
@@ -51,7 +62,7 @@ const buscadorPersonas = () => {
     let texto = ''
     let nombre = ''
     let arrSalarios = personasSalarios(salarios)
-    const mostradorPersonas = ({persona, next, before }) => {
+    const mostradorPersonas = ({persona, next, before, year }) => {
         let sumado = ''
         if(persona != undefined) {
             console.log('hay nombre')
@@ -103,26 +114,6 @@ const buscadorPersonas = () => {
 
 const mostrador = buscadorPersonas()
 
-const nuevoArray = () => {
-    let empresas = {}
-    for (const persona of salarios) {
-        let miTrabajo = persona.trabajos
-        for (const trabajo of miTrabajo) {
-            const {year, empresa, salario} = trabajo
-            if(!empresas[empresa]){
-                empresas[empresa] = {}
-            }
-            if(!empresas[empresa][year]){
-                empresas[empresa][year] = []
-            }
-            empresas[empresa][year].push(salario) 
-        }
-    }
-    console.log(empresas)
-    return empresas
-}
-
-nuevoArray()
 
 
 $mostrar.addEventListener('click', () => {
