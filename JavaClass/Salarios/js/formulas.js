@@ -32,13 +32,14 @@ Formulas.calcularMedia = function calculateMedia(arr) {
 Formulas.calcularModa = function calculateModa(arr) {
     let contador = {}
     arr.forEach(a => {
-        if(!contador[a]){
-            contador[a] = 1
-        } else {
-            contador[a] ++
-        }
+        // if(!contador[a]){
+        //     contador[a] = 1
+        // } else {
+        //     contador[a] ++
+        // }
+        contador[a] ??= 1
+        contador[a] += 1
     })
-
     const mappedArray = Object.entries(contador).map(entry => {
         const [key,value] = entry
         return {key,value}
