@@ -44,12 +44,8 @@ const nuevoArray = () => {
         let miTrabajo = persona.trabajos
         for (const trabajo of miTrabajo) {
             const {year, empresa, salario} = trabajo
-            if(!empresas[empresa]){
-                empresas[empresa] = {}
-            }
-            if(!empresas[empresa][year]){
-                empresas[empresa][year] = []
-            }
+            empresas[empresa] ??= {}
+            empresas[empresa][year] ??= []
             empresas[empresa][year].push(salario) 
         }
     }
@@ -72,6 +68,7 @@ const empresasSalario = (nombre, year) => {
         }
     })
     console.log(salario)
+    console.log(arrGeneral)
     return salario
 }
 
