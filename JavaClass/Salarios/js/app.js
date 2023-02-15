@@ -61,18 +61,39 @@ const empresasSalario = (nombre, year) => {
             Object.entries(value).forEach(entry2 =>{
                 const [key, value] = entry2
                 if(key == year){
-                    console.log(value)
+                    salario.push(value)
                 }
             })
-            salario.push(value)
         }
     })
-    console.log(salario)
-    console.log(arrGeneral)
     return salario
 }
-
 empresasSalario('Freelance', 2018)
+
+const allEmpresasSalarios = () => {
+    const arrGeneral = nuevoArray()
+    const yearSalarios = Object.entries(arrGeneral).map(entry => {
+        const [_,value] = entry
+        return value
+    })
+    const years = {}
+    yearSalarios.forEach(year => {
+        Object.entries(year).map(entry => {
+            const [key, value] = entry
+            years[key] ??= []
+            years[key].push(value)
+        })
+    })
+    const mapped =Object.entries(years).map(entry => {
+        const [key, value] = entry
+        return {key:key, salario:[value.flat()]}
+    })
+    console.log(mapped)
+    return mapped
+
+}
+allEmpresasSalarios()
+
 
 const buscadorPersonas = () => {
     let contador = 0
