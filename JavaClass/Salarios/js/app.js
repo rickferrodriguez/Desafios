@@ -10,6 +10,13 @@ const $media_el = document.querySelector('#media-el')
 const $mediana_el = document.querySelector('#mediana-el')
 const $moda_el = document.querySelector('#moda-el')
 //
+//Formulario empresa
+const $inp_emp_name = document.querySelector('#inp-emp-name')
+const $inp_emp_year = document.querySelector('#inp-emp-year')
+const $btn_emp_buscar = document.querySelector('#btn-emp-buscar')
+const $media_el_emp = document.querySelector('#media-el-emp')
+const $mediana_el_emp = document.querySelector('#mediana-el-emp')
+const $moda_el_emp = document.querySelector('#moda-el-emp')
 
 // const buscarPersona = (persona) => {
 //     return salarios.find(sal => sal.name === persona)
@@ -57,21 +64,19 @@ const empresasSalario = ({nombre, year}) => {
     const salario = []
     Object.entries(arrGeneral).forEach(entry => {
         const [key, value] = entry
-        if(key == nombre && year != undefined){
+        if(key == nombre && year != ''){
             Object.entries(value).forEach(entry2 =>{
                 const [key, value] = entry2
                 if(key == year){
                     salario.push(value)
                 }
             })
-        } else if(key == nombre && year == undefined){
+        } else if(key == nombre && year == ''){
             salario.push(value)
         }
     })
-    console.log(salario)
     return salario
 }
-empresasSalario({nombre:'Freelance'})
 
 const allEmpresasSalarios = () => {
     const arrGeneral = nuevoArray()
@@ -91,7 +96,6 @@ const allEmpresasSalarios = () => {
         const [key, value] = entry
         return {key:key, salario:[value.flat()]}
     })
-    console.log(mapped)
     return mapped
 
 }
@@ -180,5 +184,15 @@ $btn_after.addEventListener('click', () => {
     $mediana_el.textContent = `La mediana es: ${Formulas.calcularMediana(listado)}`
     $media_el.textContent = `La media es: ${Formulas.calcularMedia(listado)}`
     $moda_el.textContent = `La moda ejecutando ${Formulas.calcularModa(listado)}`
+})
+
+$btn_emp_buscar.addEventListener('click', () => {
+    const nameEmpresa =$inp_emp_name.value
+    const yearEmpresa =$inp_emp_year.value
+    const arrayEmpresa = empresasSalario({nombre : nameEmpresa, year : yearEmpresa})
+    $media_el_emp.textContent = `La media de la empresa: ${nameEmpresa} es: ${Formulas.calcularMedia(arrayEmpresa[0])}`
+    $mediana_el_emp.textContent =  `La mediana de la empresa: ${nameEmpresa} es: ${Formulas.calcularMediana(arrayEmpresa[0])}`
+    $moda_el_emp.textContent = `${Formulas.calcularModa(arrayEmpresa[0])}`
+    console.log(arrayEmpresa)
 })
 

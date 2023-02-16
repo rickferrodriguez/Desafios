@@ -8,6 +8,7 @@
     </head>
     <body onload="buscadorPersonas()(persona='Juanita')">
         <div class="carta">
+            <h1>Personas</h1>
             <section class="buscador">
                 <form>
                     <label for="">Nombre Persona
@@ -38,11 +39,15 @@
         <div>
             <h1>Empresas</h1>
             <div class="empresas-form">
-                <form>
-                    <label> Nombre empresa: <input type="text">
-                        <label> Año: <input type="text">
-                </form>
+                    <label> Nombre empresa: <input id="inp-emp-name" type="text"></label>
+                    <label> Año: <input id="inp-emp-year" type="text"></label>
+                    <button id="btn-emp-buscar" type="button">Buscar</button>
             </div>
+            <section class="resultados-empresas">
+                <p id="media-el-emp">media:</p>
+                <p id="mediana-el-emp">mediana:</p>
+                <p id="moda-el-emp">moda:</p>
+            </section>
         </div>
         <script src="js/salarios.js"></script>
         <script src="js/formulas.js"></script>
