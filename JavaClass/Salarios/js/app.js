@@ -52,23 +52,26 @@ const nuevoArray = () => {
     return empresas
 }
 
-const empresasSalario = (nombre, year) => {
+const empresasSalario = ({nombre, year}) => {
     const arrGeneral = nuevoArray()
     const salario = []
     Object.entries(arrGeneral).forEach(entry => {
         const [key, value] = entry
-        if(key == nombre){
+        if(key == nombre && year != undefined){
             Object.entries(value).forEach(entry2 =>{
                 const [key, value] = entry2
                 if(key == year){
                     salario.push(value)
                 }
             })
+        } else if(key == nombre && year == undefined){
+            salario.push(value)
         }
     })
+    console.log(salario)
     return salario
 }
-empresasSalario('Freelance', 2018)
+empresasSalario({nombre:'Freelance'})
 
 const allEmpresasSalarios = () => {
     const arrGeneral = nuevoArray()
