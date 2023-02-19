@@ -18,30 +18,34 @@ async function fetchData(urlApi) {
 }
 
 const recorrido = async (url) => {
-    let data = await fetchData(url)
-    let items = data.items
-    let texto = ''
-    items.forEach((item) => {
-        Object.entries(item).map((entry, index, arr) => {
-            const [key, value] = entry
-            if(key === 'snippet') {
-                // texto += `<p>${value.description}</p>`
-                console.log(value)
-                texto += `
-                    <div class="card">
-                        <picture id="vid-thumbnail">
-                            <img src="${value.thumbnails.high.url}" alt="">
-                        </picture>
-                        <div class="card-content">
-                            <h3>${value.title}</h3>
-                            <p>${value.description}</p>
-                        </div>
-                    </div>
+    try {
+        let data = await fetchData(url)
+        let items = data.items
+        let texto = ''
+        items.forEach((item) => {
+            Object.entries(item).map((entry, index, arr) => {
+                const [key, value] = entry
+                if(key === 'snippet') {
+                    // texto += `<p>${value.description}</p>`
+                    console.log(value)
+                    texto += `
+<div class="card">
+<picture id="vid-thumbnail">
+<img src="${value.thumbnails.high.url}" alt="">
+</picture>
+<div class="card-content">
+<h3>${value.title}</h3>
+<p>${value.description}</p>
+</div>
+</div>
 `
-            }
+                }
+            })
         })
-    })
-    $vid_container.innerHTML = texto
+        $vid_container.innerHTML = texto
+    } catch (error) {
+        console.log(error)
+    }
     // $vid_thumbnail.innerHTML = texto
 }
 
