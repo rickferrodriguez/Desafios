@@ -54,3 +54,9 @@ p, h1, h2, h3, h4, h5, h6 {
 .card {
     border: 1px solid red;
 }
+
+.vid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
