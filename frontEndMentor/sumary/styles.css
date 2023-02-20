@@ -6,9 +6,49 @@
     --fc-visual: hsl(234, 85%, 45%);
 
     --ff-regular: 'Hanken Grotesk', sans-serif;
+    --fc-parrafo: #9189F7
 
     --fw-regular: 400;
-    --fw-bold: 700;
+    --fw-bold: 900;
+
+    --fs-small: 10px;
+    --fs-medium: 13px;
+    --fs-big: 20px;
+    --fs-giant: 42px;
+
+    --custom-light-slate-blue: hsla(252, 100%, 67%, 50%); /*(background)*/
+    --custom-light-royal-blue: hsla(241, 81%, 54%, 100%); /*(background)*/
+
+    --custom-gradient-background: linear-gradient(
+    180deg,
+    var(--custom-light-slate-blue) 20%,
+    var(--custom-light-royal-blue) 100%
+    );
+
+    --custom-violet-blue: hsla(256, 72%, 46%, 0.656); /*(circle)*/
+    --custom-persian-blue: hsla(241, 72%, 46%, 0.103); /*(circle)*/
+
+    --custom-gradient-circle: linear-gradient(
+    180deg,
+    var(--custom-violet-blue) 30%,
+    var(--custom-persian-blue) 100%
+    );
+
+    --custom-gradient-button: linear-gradient(
+    0deg,
+    hsl(241deg 72% 46%) 0%,
+    hsl(242deg 71% 45%) 1%,
+    hsl(244deg 70% 44%) 2%,
+    hsl(245deg 69% 43%) 4%,
+    hsl(246deg 68% 42%) 6%,
+    hsl(248deg 67% 41%) 9%,
+    hsl(249deg 66% 40%) 13%,
+    hsl(250deg 64% 40%) 18%,
+    hsl(252deg 63% 39%) 26%,
+    hsl(253deg 63% 38%) 36%,
+    hsl(254deg 62% 37%) 51%,
+    hsl(256deg 61% 36%) 99%
+    );
 }
 /*
   1. Use a more-intuitive box-sizing model.
@@ -68,18 +108,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:var(--ff-regular)
+    font-family:var(--ff-regular);
+    font-size:var(--fs-medium)
 }
 
 article {
     border: 1px solid red;
-    border-radius: 1.3rem;
+    --content-radius: 1.3rem;
+    border-radius: var(--content-radius);
     overflow: hidden;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     max-width: 32rem;
-    height: 21rem;
+    max-height: 21rem;
+    background-color: #EFF5FE;
 }
 
 .card-result {
@@ -87,23 +130,80 @@ article {
     flex-direction: column;
     align-items: center;
     background-color: #504CF4;
-    padding: 1rem;
+    border-radius: var(--content-radius);
+    padding: 2rem;
+    color: #fff;
+    gap: 0.5rem;
+    background-image:var(--custom-gradient-background)
 }
 
-.card-result * {
-    flex-grow: 1;
+h3 {
+    font-size: var(--fs-big);
 }
+
+p {
+    color: var(--fc-parrafo)
+}
+
+
+.result-circle {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    background-image: var(--custom-gradient-circle)
+}
+
+.title-number {
+    text-align: center;
+    padding-top: 1.3rem;
+    font-size: var(--fs-giant);
+    font-weight:var(--fw-bold);
+}
+
+.text-of {
+    font-size: var(--fw-regular);
+    text-align: center;
+}
+
+
 
 .score-detail {
-    flex-shrink: 0;
+    text-align: center;
+    flex-grow: 0;
 }
 
 .card-summary {
     display: flex;
     flex-direction: column;
+    padding: 2rem;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background-color: #EFF5FE;
-    padding: 1rem;
+}
+
+.card-summary *{
+    padding:0;
+    flex-grow: 1;
+}
+
+.summary-ul {
+    list-style: none;
+}
+
+.summary-li {
+    border: 1px solid red;
+    margin-top: 10px;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.summary-li:nth-last-child(1) {
+    margin-bottom: 5px;
+}
+
+.summary-btn {
+    flex-grow: 1;
+    border-radius: var(--content-radius);
+    background-image: var(--custom-gradient-button);
+    border: none;
+    color: white
 }
