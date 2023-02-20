@@ -6,7 +6,7 @@
     --fc-visual: hsl(234, 85%, 45%);
 
     --ff-regular: 'Hanken Grotesk', sans-serif;
-    --fc-parrafo: #9189F7
+    --fc-parrafo: #9189F7;
 
     --fw-regular: 400;
     --fw-bold: 900;
@@ -33,7 +33,7 @@
     var(--custom-violet-blue) 30%,
     var(--custom-persian-blue) 100%
     );
-
+    --custom-inactive-button: #303B59;
     --custom-gradient-button: linear-gradient(
     0deg,
     hsl(241deg 72% 46%) 0%,
@@ -113,7 +113,6 @@ body {
 }
 
 article {
-    border: 1px solid red;
     --content-radius: 1.3rem;
     border-radius: var(--content-radius);
     overflow: hidden;
@@ -121,7 +120,7 @@ article {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     max-width: 32rem;
-    max-height: 21rem;
+    max-height: 30rem;
     background-color: #EFF5FE;
 }
 
@@ -191,9 +190,52 @@ p {
 }
 
 .summary-li {
-    border: 1px solid red;
+    --content-borderwidth: 0.2px 0.2px 0.1px ;
+    --content-summary-radius: 10px;
     margin-top: 10px;
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    font-weight: var(--fw-bold);
+    border-width: var(--content-borderwidth);
+    border-radius: var(--content-summary-radius);
+}
+
+.summary-li > .cien {
+    margin-left: 20px;
+}
+
+.text-visual {
+    color: var(--fc-visual)
+}
+
+.text-verb {
+    color: var(--fc-verbal);
+}
+
+.text-memo {
+    color: var(--fc-memory);
+}
+
+.text-react {
+    color: var(--fc-reaction);
+}
+
+.reaction {
+    border: 1px solid var(--fc-reaction);
+}
+
+.memory {
+    border: 1px solid var(--fc-memory);
+}
+
+.verbal {
+    border: 1px solid var(--fc-verbal);
+}
+
+.visual {
+    border: 1px solid var(--fc-visual);
 }
 
 .summary-li:nth-last-child(1) {
@@ -202,8 +244,13 @@ p {
 
 .summary-btn {
     flex-grow: 1;
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
     border-radius: var(--content-radius);
-    background-image: var(--custom-gradient-button);
+    background-color: var(--custom-inactive-button);
     border: none;
     color: white
+}
+
+.summary-btn:hover {
+    background-image: var(--custom-gradient-button)
 }
