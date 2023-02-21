@@ -1,0 +1,106 @@
+:root {
+    --ff-regular:'Hanken Grotesk', sans-serif;
+
+    --fc-reaction: hsl(0, 100%, 67%);
+    --fc-memory: hsl(39, 100%, 56%);
+    --fc-verbal: hsl(166, 100%, 37%);
+    --fc-visual: hsl(234, 85%, 45%);
+
+    --fc-regular-contrast: hsl(0, 0%, 100%);
+    --fc-regular-normal: hsl(224, 30%, 27%);
+
+    --fs-normal: 12px;
+    --fs-medium: 14px;
+    --fs-large: 18px;
+    --fs-gigant: 27px;
+
+    --fw-regular: 500;
+    --fw-semibold: 700;
+    --fw-bold: 800;
+}
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    font-family: var(--ff-regular);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sumary-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.result-section {
+    --content-border: 2rem;
+    --content-padding: 3rem;
+    border: 1px solid blue;
+    border-radius: var(--content-border);
+    padding: var(--content-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.head-title {
+    font-size: var(--fs-large);
+}
+
+.circle-section {
+    flex-grow: 2;
+    border: 1px solid blue;
+    border-radius: 100%;
+}
