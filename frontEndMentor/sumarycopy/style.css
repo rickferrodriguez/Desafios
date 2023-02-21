@@ -221,6 +221,22 @@ p {
     border: 1px solid var(--fc-visual);
 }
 
+.reaction-text {
+    color: var(--fc-reaction);
+}
+
+.memory-text {
+    color: var(--fc-memory);
+}
+
+.verbal-text {
+    color: var(--fc-verbal);
+}
+
+.visual-text {
+    color: var(--fc-visual);
+}
+
 .name-sumary {
     display: flex;
     gap: 0.5rem;
