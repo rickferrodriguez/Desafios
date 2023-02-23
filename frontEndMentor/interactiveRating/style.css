@@ -1,0 +1,201 @@
+:root {
+    --ff-main: 'Hanken Grotesk', sans-serif;
+
+    --fw-700: 700;
+    --fw-400: 400;
+    --fs-paragraph: 15px;
+
+    --clr-primary: hsl(25, 97%, 53%);
+
+    --clr-neutral-10: hsl(0, 0%, 100%);
+    --clr-neutral-40: hsl(217, 12%, 63%);
+    --clr-neutral-50: hsl(216, 12%, 54%);
+    --clr-neutral-70: hsl(208, 20%, 22%);
+    --clr-neutral-80: hsl(213, 19%, 15%);
+    --clr-neutral-90: hsl(216, 12%, 8%);
+
+}
+/*
+1. Use a more-intuitive box-sizing model.
+ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+ */
+* {
+    margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+ */
+
+    html, body {
+        height: 100%;
+    }
+    /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+     */
+    body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+    }
+    /*
+    6. Improve media defaults
+     */
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+    }
+    /*
+    7. Remove built-in form typography styles
+     */
+    input, button, textarea, select {
+        font: inherit;
+    }
+    /*
+    8. Avoid text overflows
+     */
+    p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+    }
+    /*
+    9. Create a root stacking context
+     */
+    #root, #__next {
+        isolation: isolate;
+    }
+
+body {
+    font-family: var(--ff-main); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-neutral-90);
+}
+
+.feedback-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-neutral-80);
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+    max-width: 450px;
+    gap: 1.3rem;
+    color: var(--clr-neutral-10)
+}
+
+.star-card {
+    background-color: var(--clr-neutral-70);
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.text-feedback p {
+    font-size: var(--fs-paragraph);
+    color: var(--clr-neutral-40);
+}
+
+.question-title {
+    font-size: 28px;
+    font-weight: var(--fw-700);
+}
+
+.rating-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    background-color: var(--clr-neutral-70);
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--fw-700);
+}
+
+.rating:hover {
+    background-color: var(--clr-primary);
+}
+
+.btn {
+    color: var(--clr-primary);
+    padding: 0.7rem;
+    border-radius: 2rem;
+    letter-spacing: 0.2rem;
+    border: none;
+    font-weight: var(--fw-700);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color:var(--clr-primary);
+    color: var(--clr-neutral-10);
+}
+
+a[seleccion] {
+    background-color: var(--clr-neutral-40);
+}
+
+.submited {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-neutral-80);
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+    padding-top: 3rem;
+    max-width: 450px;
+    gap: 1.3rem;
+    color: var(--clr-neutral-10);
+    text-align: center;
+}
+
+.submited picture{
+    align-self: center;
+}
+
+.selection-submited {
+    background-color: var(--clr-neutral-70);
+    padding: 2px 1rem 2px 1rem;
+    align-self: center;
+    border-radius: 2rem;
+    color: var(--clr-primary);
+}
+
+.thanks-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.thanks-text p {
+    font-size: var(--fs-paragraph);
+    color: var(--clr-neutral-40);
+}
+
+article[oculto] {
+    display: none;
+}
+

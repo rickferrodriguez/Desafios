@@ -5,25 +5,40 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
             <article class="feedback-card">
                 <picture class="star-card">
-                    <img src="./images/icon-star.svg" alt="">
+                    <img class="star-icon" src="./images/icon-star.svg" alt="">
                 </picture>
-                <h3 class="question-title">How did we do?</h3>
-                <p>Please let us know how we did with your support request. All
-                feedback is appreciated to help us improve our offering!</p>
-                <div class="rating-group">
-                    <a class="rating number1">1</a>
-                    <a class="rating number1">2</a>
-                    <a class="rating number1">3</a>
-                    <a class="rating number1">4</a>
-                    <a class="rating number1">5</a>
+                <div class="text-feedback">
+                    <h3 class="question-title">How did we do?</h3>
+                    <p>Please let us know how we did with your support request. All
+                        feedback is appreciated to help us improve our offering!</p>
                 </div>
-                <button class="btn submit" type="button">SUBMIT</button>
+                <div class="rating-group">
+                </div>
+                <button id="submit" class="btn submit" type="button">SUBMIT</button>
+            </article>
+            <article class="submited" oculto>
+                <picture>
+                    <img src="images/illustration-thank-you.svg" alt="">
+                </picture>
+                <p class="selection-submited">You selected 4 aut of 5</p>
+                <div class="thanks-text">
+                    <h3>Thank you!</h3>
+                    <p>We appreciate you taking the time to give a rating
+                        if you ever need more support, don't hesitate to 
+                        get in touch!
+                    </p>
+                </div>
             </article>
         </main>
+        <script <source src="app.js" type="">>
+        </script>
     </body>
 </html>
