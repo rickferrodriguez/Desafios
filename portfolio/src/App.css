@@ -63,5 +63,30 @@
   font-size: 14px;
 }
 
+.home-main-content {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.emoji-header {
+  font-size: 64px
+}
+
+.home-principal-text{
+  margin-top: 4rem;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2 {
+  text-align: center;
+}
+
+.projects {
+  margin-top: 20rem;
+  font-size: 24px;
+}
+
 
 
