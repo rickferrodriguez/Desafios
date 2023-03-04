@@ -4,6 +4,7 @@
   --clr-primary-900: #000000;
   --clr-primary-600: #7f7f7f;
   --clr-primary-400: ##202425;
+  --clr-secondary-cream: #F7F5EB
 }
 
 #root {
@@ -26,8 +27,21 @@
 }
 
 .navbar {
+  position: relative;
   display: flex;
   justify-content: center
+}
+
+.social-header {
+  position: absolute;
+  border: 1px solid red;
+  right:0;
+  color: black;
+  list-style: none;
+}
+
+.social-header-icon {
+  width: 30px;
 }
 
 .nav-link-container {
@@ -77,6 +91,7 @@
   font-size: 26px;
   font-weight: 500;
   line-height: 1.2;
+  padding: 0 2rem 0 2rem;
 }
 
 h2 {
@@ -86,6 +101,41 @@ h2 {
 .projects {
   margin-top: 20rem;
   font-size: 24px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0 4rem 4rem 4rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  gap: 9px;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--clr-primary-200);
+}
+
+.project-card img {
+  width: 50%;
+  align-self: center;
+  object-fit:contain;
+}
+
+.project-card p {
+  margin: 0;
+  align-self: center;
+  font-weight: 500;
+  height: 30px;
+  width: 200px;
+  border-radius: 10% / 50%;
+  padding-top: 5px;
+  font-size: 16px;
+  background-color: var(--clr-primary-100);
 }
 
 

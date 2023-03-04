@@ -1,5 +1,6 @@
 import './App.css'
 import {Header} from './components/Header.jsx'
+import {PROJECTS} from './constants.js'
 
 function App() {
 
@@ -13,6 +14,16 @@ function App() {
         </section>
         <section className="projects">
           <h2>PROJECTS</h2>
+          <div className="projects-container">
+            {
+              PROJECTS.map((pr,index) => (
+                  <div key={index} className="project-card">
+                    <p>{pr.name}</p>
+                    <img src={pr.img} alt=""/>
+                  </div>
+              ))
+            }
+          </div>
         </section>
       </main>
     </>

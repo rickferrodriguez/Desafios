@@ -14,6 +14,30 @@ export const Header = () => {
           <Link text='Projects' ></Link>
         </div>
       </nav>
+      <ul>
+        <li><a href="#">
+          <img 
+            className="social-header-icon" 
+            alt="GitHub" 
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" >
+          </img>
+        </a></li>
+        <li><a href="#">
+          <img 
+            className="social-header-icon" 
+            alt="GitHub" 
+            src="https://www.svgrepo.com/show/103404/linkedin-logo.svg" >
+          </img>
+        </a></li>
+        <li><a href="#">
+          <img 
+            className="social-header-icon" 
+            alt="GitHub" 
+            src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" >
+          </img>
+        </a></li>
+      </ul>
+      
     </header>
   )
 }
