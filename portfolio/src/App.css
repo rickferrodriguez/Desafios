@@ -148,13 +148,12 @@ h2 {
 .project-card {
   display: flex;
   cursor: default;
-  height: 280px;
   flex-direction: column;
   border-radius: 1rem;
   gap: 9px;
   padding: 1rem;
   text-align: center;
-  background-color: var(--clr-primary-300);
+  background-color: var(--clr-primary-400);
 }
 
 .project-image{
@@ -162,8 +161,8 @@ h2 {
   aspect-ratio: 5/4;
   object-fit:contain;
   align-self: center;
-  background-color: var(--clr-primary-400);
   padding: 9px 1rem;
+  background-color: var(--clr-primary-300);
   border-radius: 1rem;
 }
 
@@ -173,7 +172,7 @@ h2 {
 }
 
 .project-card:hover .project-image {
-  background-color: var(--clr-primary-300);
+  background-color: var(--clr-primary-900);
 }
 
 .project-card:hover p {
@@ -200,7 +199,7 @@ h2 {
 }
 
 .social-project-icon {
-  background-color: var(--clr-secon-green-brown);
+  background-color: var(--clr-secon-green-light);
   border-radius:50%;
   width: 28px;
   padding:7px;
@@ -208,7 +207,7 @@ h2 {
 }
 
 .social-project-icon:hover {
-  background-color: var(--clr-secon-green-light);
+  background-color: var(--clr-secon-green-brown);
   border-radius: 50%;
 }
 
