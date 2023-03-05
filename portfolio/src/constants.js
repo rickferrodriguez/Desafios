@@ -32,41 +32,66 @@ export const PROJECTS = [
   },
 ]
 
-export const TECNOLOGIES = [
+export const KNOWLEDGE = [
   {
     id:1,
     nombre: "React JS",
     temas: "States, Events, Effects",
-    img: './react-js.png'
+    img: './react-js.png',
+    type: 'know'
   },
   {
     id:2,
     nombre: "JavaScript",
     temas: "Events, Math with JavaScript",
-    img: './js.png'
+    img: './js.png',
+    type: 'know'
   },
   {
     id:3,
     nombre: "CSS",
     temas: "Responsive development",
-    img: './css.png'
+    img: './css.png',
+    type: 'know'
   },
   {
     id:4,
     nombre: "HTML",
     temas: "Maintainability",
-    img: './html-5.png'
+    img: './html-5.png',
+    type: 'know'
   },
   {
     id:5,
     nombre: "SQL",
     temas: "Consulting",
-    img: './sql.png'
+    img: './sql.png',
+    type: 'know'
   },
   {
     id:6,
     nombre: "Magento",
     temas: "Web development",
-    img: './magento.png'
+    img: './magento.png',
+    type: 'know'
+  },
+  {
+    id:7,
+    nombre: "Git",
+    img: './git.png',
+    type: 'tool'
+  },
+  {
+    id:8,
+    nombre: "Neovim",
+    img: './neovim.png',
+    type: 'tool'
+  },
+  {
+    id:9,
+    nombre: "Linux",
+    img: './linux.png',
+    type: 'tool'
   },
 ]
+

@@ -1,6 +1,6 @@
 import './App.css'
 import {Header} from './components/Header.jsx'
-import {PROJECTS, TECNOLOGIES} from './constants.js'
+import {PROJECTS, KNOWLEDGE} from './constants.js'
 
 const Projects = () => {
   return (
@@ -21,10 +21,11 @@ const Projects = () => {
 }
 
 const BlockKnoledge = () => {
+  const filteredKnow = KNOWLEDGE.filter(t => t.type === 'know')
   return (
-    <div className="block-tec">
+    <div className="array-know">
       {
-        TECNOLOGIES.map((t) => (
+        filteredKnow.map((t) => (
           <div key={t.id} className="block-know-card">
             <picture className="know-img-container">
               <img className="know-img" src={t.img} alt=""/>
@@ -40,6 +41,22 @@ const BlockKnoledge = () => {
   )
 }
 
+const BlockTecnologies = () => {
+  return (
+    <div className="array-tec">
+      {
+        KNOWLEDGE.map(k => (
+          <picture key={k.id}>
+            <img className="tec-img" src={k.img} alt={k.nombre}/>
+          </picture>
+        ))
+      }
+    </div>
+    
+  )
+}
+
+
 const Tecnologies = () => {
   return (
     <>
@@ -47,8 +64,9 @@ const Tecnologies = () => {
         <h2>KNOWLEDGE</h2>
         <BlockKnoledge />
       </section>
-      <section>
+      <section className="block-tec">
         <h2>TECNOLOGIES</h2>
+        <BlockTecnologies/>
       </section>
     </>
   )
@@ -62,7 +80,7 @@ function App() {
       <main>
         <section className="home-main-content">
           <h1>Hi I'm <span className="myName">RickFeR</span> <span className="emoji-header">🏋🏼‍♂️</span></h1>
-          <p className="home-principal-text">Desarrollador Web que construye su propia versión de un mundo digital.</p>
+          <p className="home-principal-text">Web developer building their own version of a digital world.</p>
         </section>
         <section className="knowledge">
           <Tecnologies />
