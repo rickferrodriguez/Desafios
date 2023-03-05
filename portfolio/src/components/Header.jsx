@@ -5,19 +5,20 @@ const Link = ({text, id=''}) => {
   )
 }
 
-const List = ({ alt, src, href}) => {
+export const IconLink = ({alt, src, href, classN='social-header-icon'}) => {
   return (
-    <li className="social-header-container"><a href={href} target="_blank">
+    <a href={href} target="_blank">
       <picture>
         <img 
-          className="social-header-icon" 
+          className={classN} 
           alt={alt} 
           src={src} >
         </img>
       </picture>
-    </a></li>
+    </a>
   )
 }
+
 
 export const Header = () => {
   return (
@@ -29,21 +30,27 @@ export const Header = () => {
           <Link text='Projects' id='projects'></Link>
         </div>
         <ul className='social-header'>
-          <List 
-            alt='GitHub' 
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg'
-            href='https://github.com/rickferrodriguez'
-          />
-          <List
-            alt="GitHub" 
-            src="https://www.svgrepo.com/show/103404/linkedin-logo.svg" 
-            href="https://www.linkedin.com/in/richard-rodriguez-13a334267/"
-          />
-          <List
-            alt="GitHub" 
-            src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" 
-            href='mailto:richardfernandorodriguez@gmail.com'
-          />
+          <li className="social-header-container">
+            <IconLink 
+              alt='GitHub' 
+              src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg'
+              href='https://github.com/rickferrodriguez'
+            />
+          </li>
+          <li className="social-header-container">
+            <IconLink 
+              alt="GitHub" 
+              src="https://www.svgrepo.com/show/103404/linkedin-logo.svg" 
+              href="https://www.linkedin.com/in/richard-rodriguez-13a334267/"
+            />
+          </li>
+          <li className="social-header-container">
+            <IconLink 
+              alt="GitHub" 
+              src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" 
+              href='mailto:richardfernandorodriguez@gmail.com'
+            />
+          </li>
         </ul>
       </nav>
       

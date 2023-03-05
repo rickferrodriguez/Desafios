@@ -2,33 +2,39 @@ export const PROJECTS = [
   {
     id:1,
     name: 'Tic Tac Toe Game',
-    img: './tic-tac-toe.png'
+    img: './tic-tac-toe.png',
+    href: ''
   },
   {
     id:2,
     name: 'Twitter Card',
-    img: './twitter.png'
+    img: './twitter.png',
+    href: ''
   },
   {
     id:3,
     name: 'Password Generator',
-    img: './passwordgen.png'
+    img: './passwordgen.png',
+    href: 'https://rickferrodriguez.github.io/Desafios/JavaClass/passGenerator/index.html'
   },
   {
     id:4,
     name: 'Demo Presupuestos',
-    img: './presupuesto.png'
+    img: './presupuesto.png',
+    href: 'https://rickferrodriguez.github.io/Desafios/JavaClass/Presupuesto/index.html'
   },
 
   {
     id:5,
     name: 'Demo Simple BlackJack',
-    img: './simpleblack.png'
+    img: './simpleblack.png',
+    href: 'https://rickferrodriguez.github.io/Desafios/JavaClass/blackjack/index.html'
   },
   {
     id:6,
     name: 'FrontEndMentor',
-    img: './frontend.png'
+    img: './frontend.png',
+    href: 'https://rickferrodriguez.github.io/Desafios/frontEndMentor/product-preview/index.html'
   },
 ]
 

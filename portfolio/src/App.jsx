@@ -1,5 +1,5 @@
 import './App.css'
-import {Header} from './components/Header.jsx'
+import {Header, IconLink} from './components/Header.jsx'
 import {PROJECTS, KNOWLEDGE} from './constants.js'
 
 const Projects = () => {
@@ -10,8 +10,25 @@ const Projects = () => {
         {
           PROJECTS.map((pr) => (
             <div key={pr.id} className="project-card">
-              <p>{pr.name}</p>
-              <img src={pr.img} alt=""/>
+              <div className="project-card-name">
+                <p>{pr.name}</p>
+              </div>
+              <img className="project-image"
+                src={pr.img} alt=""/>
+              <div className="icon-project-container">
+                <IconLink 
+                  classN="social-project-icon" 
+                  alt='GitHub' 
+                  src='https://www.svgrepo.com/show/473620/github.svg' 
+                  href='https://github.com/rickferrodriguez'
+                />
+                <IconLink 
+                  classN="social-project-icon" 
+                  alt='GitHub' 
+                  src='https://www.svgrepo.com/show/412040/see.svg' 
+                  href='https://github.com/rickferrodriguez'
+                />
+              </div>
             </div>
           ))
         }

@@ -148,7 +148,7 @@ h2 {
 .project-card {
   display: flex;
   cursor: default;
-  height: 260px;
+  height: 280px;
   flex-direction: column;
   border-radius: 1rem;
   gap: 9px;
@@ -157,11 +157,11 @@ h2 {
   background-color: var(--clr-primary-300);
 }
 
-.project-card img {
+.project-image{
   width: 90%;
-  height: 190px;
-  align-self: center;
+  aspect-ratio: 5/4;
   object-fit:contain;
+  align-self: center;
   background-color: var(--clr-primary-400);
   padding: 9px 1rem;
   border-radius: 1rem;
@@ -172,29 +172,44 @@ h2 {
   padding: 1rem;
 }
 
-.project-card:hover img {
+.project-card:hover .project-image {
   background-color: var(--clr-primary-300);
-  padding: 1.1rem;
 }
 
 .project-card:hover p {
   color: var(--clr-secondary-red-l);
   font-weight: bold;
-  padding-bottom: 6px;
-  padding-top:4px
 }
 
-.project-card p {
-  margin: 0;
-  align-self: center;
+.project-card-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
   height: 30px;
   width: 100%;
   border-radius: 6% / 50%;
   font-weight: bold;
   border: 1px solid var(--clr-primary-100);
-  padding-top: 5px;
-  font-size: 16px;
+}
+
+.icon-project-container{
+  display: flex;
+  color:black;
+  justify-content: space-evenly;
+}
+
+.social-project-icon {
+  background-color: var(--clr-secon-green-brown);
+  border-radius:50%;
+  width: 28px;
+  padding:7px;
+  cursor:pointer;
+}
+
+.social-project-icon:hover {
+  background-color: var(--clr-secon-green-light);
+  border-radius: 50%;
 }
 
 .knowledge {
