@@ -1,6 +1,7 @@
-const Link = ({text}) => {
+const Link = ({text, id=''}) => {
   return (
-      <a className="link" href="#"><p>{text}</p></a>
+      <a onClick={() => window.location.replace(`/#${id}`)} 
+      className="link"><p>{text}</p></a>
   )
 }
 
@@ -24,8 +25,8 @@ export const Header = () => {
       <nav className="navbar">
         <div className="nav-link-container">
           <Link text='Home' ></Link>
-          <Link text='Tecnologies' ></Link>
-          <Link text='Projects' ></Link>
+          <Link text='Tecnologies' id='knowledge' ></Link>
+          <Link text='Projects' id='projects'></Link>
         </div>
         <ul className='social-header'>
           <List 

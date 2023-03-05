@@ -10,6 +10,11 @@
   --clr-secon-green-light: #B2B553;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 20px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -65,9 +70,10 @@
 }
 
 .nav-link-container {
-  border-radius: 10% / 50%;
+  border-radius: 6% / 50%;
   background-color:var(--clr-primary-900);
   border: 1px solid var(--clr-primary-100);
+  padding-top: 2px;
 
   display: flex;
   justify-content: center;
@@ -79,13 +85,14 @@
 
 .link {
   height: 42px;
+  cursor:pointer;
   align-self: center;
   text-align: center;
   display: flex;
   justify-content: center;
 
   color: var(--clr-primary-100);
-  border-radius: 25% / 50%;
+  border-radius: 20% / 50%;
   width: 100px
 }
 
@@ -140,6 +147,8 @@ h2 {
 
 .project-card {
   display: flex;
+  cursor: default;
+  height: 260px;
   flex-direction: column;
   border-radius: 1rem;
   gap: 9px;
@@ -149,9 +158,30 @@ h2 {
 }
 
 .project-card img {
-  width: 50%;
+  width: 90%;
+  height: 190px;
   align-self: center;
   object-fit:contain;
+  background-color: var(--clr-primary-400);
+  padding: 9px 1rem;
+  border-radius: 1rem;
+}
+
+.project-card:hover {
+  background-color: var(--clr-primary-400);
+  padding: 1rem;
+}
+
+.project-card:hover img {
+  background-color: var(--clr-primary-300);
+  padding: 1.1rem;
+}
+
+.project-card:hover p {
+  color: var(--clr-secondary-red-l);
+  font-weight: bold;
+  padding-bottom: 6px;
+  padding-top:4px
 }
 
 .project-card p {
@@ -159,8 +189,9 @@ h2 {
   align-self: center;
   font-weight: 500;
   height: 30px;
-  width: 200px;
-  border-radius: 10% / 50%;
+  width: 100%;
+  border-radius: 6% / 50%;
+  font-weight: bold;
   border: 1px solid var(--clr-primary-100);
   padding-top: 5px;
   font-size: 16px;
@@ -222,6 +253,10 @@ h2 {
 @media (max-width: 1000px) {
   .knowledge {
     gap: 1rem;
+  }
+
+  .projects-container {
+    padding: 0;
   }
 }
 

@@ -46,7 +46,7 @@ const BlockTecnologies = () => {
     <div className="array-tec">
       {
         KNOWLEDGE.map(k => (
-          <picture key={k.id}>
+          <picture key={k.id} className="tec-img-container">
             <img className="tec-img" src={k.img} alt={k.nombre}/>
           </picture>
         ))
@@ -82,10 +82,10 @@ function App() {
           <h1>Hi I'm <span className="myName">RickFeR</span> <span className="emoji-header">🏋🏼‍♂️</span></h1>
           <p className="home-principal-text">Web developer building their own version of a digital world.</p>
         </section>
-        <section className="knowledge">
+        <section className="knowledge" id="knowledge">
           <Tecnologies />
         </section>
-        <section className="projects">
+        <section className="projects" id="projects">
           <Projects/>
         </section>
       </main>

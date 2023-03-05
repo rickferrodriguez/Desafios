@@ -7,28 +7,28 @@ export const PROJECTS = [
   {
     id:2,
     name: 'Twitter Card',
-    img: './tic-tac-toe.png'
+    img: './twitter.png'
   },
   {
     id:3,
     name: 'Password Generator',
-    img: './tic-tac-toe.png'
+    img: './passwordgen.png'
   },
   {
     id:4,
     name: 'Demo Presupuestos',
-    img: './tic-tac-toe.png'
+    img: './presupuesto.png'
   },
 
   {
     id:5,
     name: 'Demo Simple BlackJack',
-    img: './tic-tac-toe.png'
+    img: './simpleblack.png'
   },
   {
     id:6,
     name: 'FrontEndMentor',
-    img: './tic-tac-toe.png'
+    img: './frontend.png'
   },
 ]
 
