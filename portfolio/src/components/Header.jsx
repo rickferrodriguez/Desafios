@@ -4,6 +4,18 @@ const Link = ({text}) => {
   )
 }
 
+const List = ({ alt, src, href}) => {
+  return (
+          <li className="social-header-icon"><a href={href}>
+            <img 
+              className="social-header-icon" 
+              alt={alt} 
+              src={src} >
+            </img>
+          </a></li>
+  )
+}
+
 export const Header = () => {
   return (
     <header>
@@ -13,30 +25,22 @@ export const Header = () => {
           <Link text='About' ></Link>
           <Link text='Projects' ></Link>
         </div>
+        <ul className='social-header'>
+          <List 
+            alt='GitHub' 
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg'
+            href='https://github.com/rickferrodriguez'
+          />
+          <List
+            alt="GitHub" 
+            src="https://www.svgrepo.com/show/103404/linkedin-logo.svg" 
+          />
+          <List
+            alt="GitHub" 
+            src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" 
+          />
+        </ul>
       </nav>
-      <ul>
-        <li><a href="#">
-          <img 
-            className="social-header-icon" 
-            alt="GitHub" 
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" >
-          </img>
-        </a></li>
-        <li><a href="#">
-          <img 
-            className="social-header-icon" 
-            alt="GitHub" 
-            src="https://www.svgrepo.com/show/103404/linkedin-logo.svg" >
-          </img>
-        </a></li>
-        <li><a href="#">
-          <img 
-            className="social-header-icon" 
-            alt="GitHub" 
-            src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" >
-          </img>
-        </a></li>
-      </ul>
       
     </header>
   )

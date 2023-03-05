@@ -29,15 +29,22 @@
 .navbar {
   position: relative;
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 .social-header {
+  display: flex;
   position: absolute;
-  border: 1px solid red;
-  right:0;
-  color: black;
+  justify-content: center;
+  background-color:var(--clr-primary-200);
+
+  border-radius: 10% / 50%;
   list-style: none;
+  right: 0;
+  height: 42px;
+  gap: 15px;
+  padding: 10px 2rem 0 2rem;
+  margin: 0;
 }
 
 .social-header-icon {
