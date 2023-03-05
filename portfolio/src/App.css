@@ -3,7 +3,7 @@
   --clr-primary-200: #F3F2F1;
   --clr-primary-900: #000000;
   --clr-primary-600: #7f7f7f;
-  --clr-primary-400: ##202425;
+  --clr-primary-400: #202425;
   --clr-secondary-cream: #F7F5EB
 }
 
@@ -108,7 +108,7 @@ h2 {
 }
 
 .projects {
-  margin-top: 20rem;
+  margin-top: 7rem;
 }
 
 .projects-container {
@@ -148,6 +148,57 @@ h2 {
 
 .tecnologies {
   margin-top: 12rem;
+  border-radius:1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 420px);
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.block-tec {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-primary-200);
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.block-tec-card {
+  display: flex;
+  background-color: var(--clr-primary-600);
+  height: 80px;
+  max-height: 80px;
+  align-content: center;
+  border-radius: 1rem;
+}
+
+.tec-img-container {
+  display: flex;
+  padding: 5px 0;
+}
+.tec-img {
+  width: 50px;
+  
+  margin-left: 1rem;
+  padding: 9px;
+  border-radius: 1rem;
+  background-color: var(--clr-primary-400)
+}
+
+.tec-title {
+  flex-grow: 1;
+  padding: 0 1rem 0 1rem;
+  color: var(--clr-primary-100)
+}
+
+.tittle-3 {
+  margin: 0;
+  padding: 10px 10px 0 0;
+}
+
+.p-themes {
+  margin: 0;
 }
 
 

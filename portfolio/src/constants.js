@@ -31,3 +31,42 @@ export const PROJECTS = [
     img: './tic-tac-toe.png'
   },
 ]
+
+export const TECNOLOGIES = [
+  {
+    id:1,
+    nombre: "React JS",
+    temas: "States, Events, Effects",
+    img: './react-js.png'
+  },
+  {
+    id:2,
+    nombre: "JavaScript",
+    temas: "Events, Math with JavaScript",
+    img: './js.png'
+  },
+  {
+    id:3,
+    nombre: "CSS",
+    temas: "Responsive development",
+    img: './css.png'
+  },
+  {
+    id:4,
+    nombre: "HTML",
+    temas: "Maintainability",
+    img: './html-5.png'
+  },
+  {
+    id:5,
+    nombre: "SQL",
+    temas: "Consulting",
+    img: './sql.png'
+  },
+  {
+    id:6,
+    nombre: "Magento",
+    temas: "Web development",
+    img: './magento.png'
+  },
+]

@@ -1,6 +1,6 @@
 import './App.css'
 import {Header} from './components/Header.jsx'
-import {PROJECTS} from './constants.js'
+import {PROJECTS, TECNOLOGIES} from './constants.js'
 
 const Projects = () => {
   return (
@@ -20,10 +20,36 @@ const Projects = () => {
   )
 }
 
+const BlockTecnologies = () => {
+  return (
+    <div className="block-tec">
+      {
+        TECNOLOGIES.map((t) => (
+          <div key={t.id} className="block-tec-card">
+            <picture className="tec-img-container">
+              <img className="tec-img" src={t.img} alt=""/>
+            </picture>
+            <div className="tec-title">
+              <h3 className="tittle-3">{t.nombre}</h3>
+              <p className="p-themes">{t.temas}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  )
+}
+
 const Tecnologies = () => {
   return (
     <>
-      <h2>TECNOLOGIES</h2>
+      <section className="block-tec">
+        <h2>KNOWLEDGE</h2>
+        <BlockTecnologies />
+      </section>
+      <section>
+        <h2>TECNOLOGIES</h2>
+      </section>
     </>
   )
 }
