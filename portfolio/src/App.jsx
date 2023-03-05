@@ -20,7 +20,7 @@ const Projects = () => {
   )
 }
 
-const BlockTecnologies = () => {
+const BlockKnoledge = () => {
   return (
     <div className="block-tec">
       {
@@ -45,7 +45,7 @@ const Tecnologies = () => {
     <>
       <section className="block-tec">
         <h2>KNOWLEDGE</h2>
-        <BlockTecnologies />
+        <BlockKnoledge />
       </section>
       <section>
         <h2>TECNOLOGIES</h2>
@@ -61,7 +61,7 @@ function App() {
       <Header></Header>
       <main>
         <section className="home-main-content">
-          <h1>Hi I'm RickFeR <span className="emoji-header">🏋🏼‍♂️</span></h1>
+          <h1>Hi I'm <span className="myName">RickFeR</span> <span className="emoji-header">🏋🏼‍♂️</span></h1>
           <p className="home-principal-text">Desarrollador Web que construye su propia versión de un mundo digital.</p>
         </section>
         <section className="tecnologies">

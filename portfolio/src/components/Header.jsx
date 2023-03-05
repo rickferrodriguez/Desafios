@@ -6,13 +6,15 @@ const Link = ({text}) => {
 
 const List = ({ alt, src, href}) => {
   return (
-          <li className="social-header-icon"><a href={href} target="_blank">
-            <img 
-              className="social-header-icon" 
-              alt={alt} 
-              src={src} >
-            </img>
-          </a></li>
+    <li className="social-header-container"><a href={href} target="_blank">
+      <picture>
+        <img 
+          className="social-header-icon" 
+          alt={alt} 
+          src={src} >
+        </img>
+      </picture>
+    </a></li>
   )
 }
 
