@@ -25,11 +25,11 @@ const BlockKnoledge = () => {
     <div className="block-tec">
       {
         TECNOLOGIES.map((t) => (
-          <div key={t.id} className="block-tec-card">
-            <picture className="tec-img-container">
-              <img className="tec-img" src={t.img} alt=""/>
+          <div key={t.id} className="block-know-card">
+            <picture className="know-img-container">
+              <img className="know-img" src={t.img} alt=""/>
             </picture>
-            <div className="tec-title">
+            <div className="know-title">
               <h3 className="tittle-3">{t.nombre}</h3>
               <p className="p-themes">{t.temas}</p>
             </div>
@@ -43,7 +43,7 @@ const BlockKnoledge = () => {
 const Tecnologies = () => {
   return (
     <>
-      <section className="block-tec">
+      <section className="block-know">
         <h2>KNOWLEDGE</h2>
         <BlockKnoledge />
       </section>
@@ -64,7 +64,7 @@ function App() {
           <h1>Hi I'm <span className="myName">RickFeR</span> <span className="emoji-header">🏋🏼‍♂️</span></h1>
           <p className="home-principal-text">Desarrollador Web que construye su propia versión de un mundo digital.</p>
         </section>
-        <section className="tecnologies">
+        <section className="knowledge">
           <Tecnologies />
         </section>
         <section className="projects">

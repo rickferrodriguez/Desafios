@@ -163,16 +163,17 @@ h2 {
   font-size: 16px;
 }
 
-.tecnologies {
+.knowledge {
   margin-top: 12rem;
   border-radius:1rem;
+  height: 640px;
   display: grid;
   grid-template-columns: repeat(2, 420px);
   justify-content: space-around;
   padding: 0 2rem;
 }
 
-.block-tec {
+.block-know {
   display: flex;
   flex-direction: column;
   background-color: var(--clr-primary-300);
@@ -181,7 +182,7 @@ h2 {
   gap: 1rem;
 }
 
-.block-tec-card {
+.block-know-card {
   display: flex;
   background-color: var(--clr-primary-600);
   height: 80px;
@@ -190,11 +191,31 @@ h2 {
   border-radius: 1rem;
 }
 
-.tec-img-container {
+.block-know-card:hover {
+  background-color: var(--clr-primary-400);
+  padding: .3rem;
+  transition: .3s;
+}
+
+.block-know-card:hover .tittle-3{
+  color: var(--clr-secondary-red-l);
+  transition: .3s
+}
+
+.block-know-card:hover .know-img{
+  background-color: var(--clr-primary-300);
+  transition: .3s
+}
+
+/* .tittle-3:hover{ */
+/*   color: var(--clr-secondary-red-l); */
+/* } */
+
+.know-img-container {
   display: flex;
   padding: 5px 0;
 }
-.tec-img {
+.know-img {
   width: 50px;
   
   margin-left: 1rem;
@@ -203,7 +224,7 @@ h2 {
   background-color: var(--clr-primary-400)
 }
 
-.tec-title {
+.know-title {
   flex-grow: 1;
   padding: 0 1rem 0 1rem;
   color: var(--clr-primary-100)
