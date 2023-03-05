@@ -26,7 +26,7 @@ const Projects = () => {
                   classN="social-project-icon" 
                   alt='GitHub' 
                   src='https://www.svgrepo.com/show/412040/see.svg' 
-                  href='https://github.com/rickferrodriguez'
+                  href={pr.href}
                 />
               </div>
             </div>
