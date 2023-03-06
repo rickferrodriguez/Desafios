@@ -97,7 +97,7 @@ function App() {
       <main>
         <section className="home-main-content">
           <h1>Hi I'm <span className="myName">RickFeR</span> <span className="emoji-header">🏋🏼‍♂️</span></h1>
-          <p className="home-principal-text">Web developer building their own version of a digital world.</p>
+          <p className="home-principal-text">Web developer building their own version of a digital world. </p>
         </section>
         <section className="knowledge" id="knowledge">
           <Tecnologies />
