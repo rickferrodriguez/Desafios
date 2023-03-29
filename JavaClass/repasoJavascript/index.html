@@ -10,9 +10,14 @@
     <main class="principal">
       <form id="formMovie" class="formMovie">
         <input type="text" name="search" id="search">
+        <select id="filters" name="filters">
+          <option value="all">All</option>
+          <option value="movies">Movies</option>
+          <option value="series">Series</option>
+        </select>
         <button type="submit">buscar</button>
       </form>
-      <p id="log"></p>
+      <section id="log" class="log"></section>
     </main>
     <script type="module" src="/main.js"></script>
   </body>

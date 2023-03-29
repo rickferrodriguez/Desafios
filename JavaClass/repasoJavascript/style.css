@@ -33,6 +33,10 @@ body {
   min-height: 100vh;
 }
 
+.principal {
+  width: 100%;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -71,4 +75,16 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.log {
+  width: 100%;
+}
+
+.movies {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
