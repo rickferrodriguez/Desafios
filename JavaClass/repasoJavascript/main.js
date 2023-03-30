@@ -26,7 +26,7 @@ const showMovies = async ({ search, filters }) => {
         }).join('\n')}
       </ul>
     `
-    : $log.innerHTML = '<p>no hay películas</p>'
+    : $log.innerHTML = `<p>no hay ${filters}</p>`
 }
 
 $formMovie.addEventListener('submit', (event) => {

@@ -2,7 +2,7 @@
 const PREFIX_MOVIES = 'https://www.omdbapi.com/?apikey=5a03f14a'
 
 export function getMovies ({ search, filters }) {
-  if (search === '') return null
+  if (search === '' || search === undefined) return null
 
   return fetch(`${PREFIX_MOVIES}&s=${search}`)
     .then(res => res.json())
