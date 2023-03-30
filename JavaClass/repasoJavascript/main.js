@@ -1,53 +1,40 @@
 import './style.css'
+import { getMovies } from './src/services/getMovies.js'
 
-const PREFIX_MOVIES = 'http://www.omdbapi.com/?apikey=5a03f14a'
+const $ = selector => document.querySelector(selector)
 
-const form = document.querySelector('#formMovie')
-const log = document.querySelector('#log')
-const filters = document.querySelector('#filters')
+const $log = $('#log')
+const $formMovie = $('#formMovie')
+const $search = $('#search')
+const $filters = $('#filters')
 
-const getMovies = async (event) => {
-  event.preventDefault()
-  const data = Object.fromEntries(
-    new FormData(event.target)
-  )
+const showMovies = async ({ search, filters }) => {
+  const mappedMovies = await getMovies({ search, filters })
+  console.log(mappedMovies)
+  const hasMovies = mappedMovies?.length > 0
 
-  if (data.search === ' ') return null
-
-  try {
-    const response = await fetch(`${PREFIX_MOVIES}&s=${data.search}`)
-    const json = await response.json()
-    const movies = json.Search
-    const mappedMovies = movies?.map(m => ({
-      id: m.imdbID,
-      title: m.Title,
-      poster: m.Poster,
-      year: m.Year,
-      type: m.Type
-    }))
-
-    showMovies({ mappedMovies })
-  } catch (e) {
-    throw new Error('Failed to get movies')
-  }
-}
-
-async function showMovies ({ mappedMovies }) {
-  const myMovies = await mappedMovies
-  myMovies
-    ? log.innerHTML = `
-      <ul class='movies'>
-        ${mappedMovies.map(movies => {
+  hasMovies
+    ? $log.innerHTML =
+    `
+      <ul class="movies">
+        ${mappedMovies.map((movie) => {
           return `
-        <li class='movie'>
-          <h3>${movies.title}</h3>
-          <img src=${movies.poster} alt=${movies.title} />
-          <p>${movies.year}</p>
+        <li>
+          <h3>${movie.title}</h3>
+          <img src=${movie.poster} alt=${movie.title} />
         </li>`
         }).join('\n')}
       </ul>
-      `
-    : log.innerText = 'no hay peliculas'
+    `
+    : $log.innerHTML = '<p>no hay películas</p>'
 }
 
-form.addEventListener('submit', getMovies)
+$formMovie.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const search = $search.value
+  const filters = $filters.value
+
+  if (search === '') return
+
+  showMovies({ search, filters })
+})
