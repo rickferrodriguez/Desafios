@@ -10,7 +10,6 @@ const $filters = $('#filters')
 
 const showMovies = async ({ search, filters }) => {
   const mappedMovies = await getMovies({ search, filters })
-  console.log(mappedMovies)
   const hasMovies = mappedMovies?.length > 0
 
   hasMovies
@@ -19,7 +18,7 @@ const showMovies = async ({ search, filters }) => {
       <ul class="movies">
         ${mappedMovies.map((movie) => {
           return `
-        <li>
+        <li class="movie">
           <h3>${movie.title}</h3>
           <img src=${movie.poster} alt=${movie.title} />
         </li>`
