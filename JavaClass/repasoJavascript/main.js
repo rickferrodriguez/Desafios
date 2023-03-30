@@ -29,7 +29,7 @@ const showMovies = async ({ search, filters }) => {
     : $log.innerHTML = `<p>no hay ${filters}</p>`
 }
 
-$formMovie.addEventListener('submit', (event) => {
+function filterMovies (event) {
   event.preventDefault()
   const search = $search.value
   const filters = $filters.value
@@ -37,4 +37,7 @@ $formMovie.addEventListener('submit', (event) => {
   if (search === '') return
 
   showMovies({ search, filters })
-})
+}
+
+$formMovie.addEventListener('submit', filterMovies)
+$filters.addEventListener('change', filterMovies)
