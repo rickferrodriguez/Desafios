@@ -16,7 +16,6 @@ export function getMovies ({ search, filters }) {
         year: movie.Year
       }))
 
-      console.log(filters)
       if (filters === 'all') return mappedMovies
 
       return mappedMovies.filter(m => m.type === filters)

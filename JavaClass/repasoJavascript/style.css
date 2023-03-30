@@ -26,15 +26,15 @@ a:hover {
 body {
   max-width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  justify-items: center;
-  align-items: center;
   min-height: 100vh;
 }
 
 .principal {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 h1 {
@@ -81,6 +81,12 @@ button:focus-visible {
   width: 100%;
 }
 
+.formMovie {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .movies {
   padding: 0;
   list-style: none;
@@ -106,7 +112,8 @@ button:focus-visible {
 }
 
 .movie img {
-  width: 100%;
+  max-width: 350px;
+  width: 250px;
   aspect-ratio: 3/4;
   object-fit: contain;
 }

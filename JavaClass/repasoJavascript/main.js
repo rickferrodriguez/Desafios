@@ -10,22 +10,22 @@ const $filters = $('#filters')
 
 const showMovies = async ({ search, filters }) => {
   const mappedMovies = await getMovies({ search, filters })
-  const hasMovies = mappedMovies?.length > 0
+  // const hasMovies = mappedMovies?.length > 0
 
-  hasMovies
-    ? $log.innerHTML =
-    `
-      <ul class="movies">
-        ${mappedMovies.map((movie) => {
-          return `
+  $log.innerHTML = mappedMovies.map((movie) => {
+    const { title, poster, year, id } = movie
+    return (`
         <li class="movie">
-          <h3>${movie.title}</h3>
-          <img src=${movie.poster} alt=${movie.title} />
-        </li>`
-        }).join('\n')}
-      </ul>
-    `
-    : $log.innerHTML = `<p>no hay ${filters}</p>`
+          <h3>${title}</h3>
+          <img src=${poster} alt=${movie.title} />
+          <p>${year}</p> 
+          <button onclick='datosPelicula(${id})'>my movie</button>
+        </li>`)
+  }).join('\n')
+}
+
+window.datosPelicula = function (id) {
+  return console.log(`hola ${id}`)
 }
 
 function filterMovies (event) {

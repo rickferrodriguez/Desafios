@@ -8,13 +8,16 @@
   </head>
   <body>
     <main class="principal">
+      <h1>Buscador de Películas</h1>
       <form id="formMovie" class="formMovie">
-        <input type="text" name="search" id="search">
-        <select id="filters" name="filters">
-          <option value="all">All</option>
-          <option value="movie">Movies</option>
-          <option value="series">Series</option>
-        </select>
+        <div>
+          <input type="text" name="search" id="search">
+          <select id="filters" name="filters">
+            <option value="all">All</option>
+            <option value="movie">Movies</option>
+            <option value="series">Series</option>
+          </select>
+        </div>
         <button type="submit">buscar</button>
       </form>
       <section id="log" class="log"></section>
